@@ -290,6 +290,24 @@ dependencies:
   detect-csv:
     specifier: ^1.1.0
     version: 1.1.0
+  diceware-generator:
+    specifier: ^3.0.1
+    version: 3.0.1
+  diceware-wordlist-en:
+    specifier: ^1.0.0
+    version: 1.0.0
+  diceware-wordlist-en-eff:
+    specifier: ^1.0.1
+    version: 1.0.1
+  diceware-wordlist-jp:
+    specifier: ^1.0.1
+    version: 1.0.1
+  diceware-wordlist-sp:
+    specifier: ^1.0.0
+    version: 1.0.0
+  diceware-wordlist-swe:
+    specifier: ^1.0.1
+    version: 1.0.1
   dmarc-report-parser:
     specifier: ^0.1.5
     version: 0.1.5
@@ -10607,6 +10625,33 @@ packages:
       dequal: 2.0.3
     dev: false
 
+  /diceware-generator@3.0.1:
+    resolution: {integrity: sha512-Nhyi2DCxqOUf3tS4inszAZhAYpeF6eHFD1NH0Tife5hPdCsLtoZn7UXO5ncO01U4hBwx1EzXVij5mmyY8aUUWw==}
+    engines: {node: '>=4'}
+    dependencies:
+      secure-random: 1.1.2
+    dev: false
+
+  /diceware-wordlist-en-eff@1.0.1:
+    resolution: {integrity: sha512-GdvxQdhl23fqk5NxH4Q6xv9x5yrMZmyQ14Im5fMHvRyEX68qgjHU1C0i/Ba+GYld5qWSbyel0TbHuc5i08gDcA==}
+    dev: false
+
+  /diceware-wordlist-en@1.0.0:
+    resolution: {integrity: sha512-LdM4vCEvZ7YshzldCAS7VLRUpqQIi11/2L5ywnAtLU5PrSVoQTzX41hSPmV8bhtYTayyIHulZHvs2TbNnazF/g==}
+    dev: false
+
+  /diceware-wordlist-jp@1.0.1:
+    resolution: {integrity: sha512-tG1apGoJLvIQMgJZ87Rx1pYmg7+tgGrA1B9Un1ZZ6Eq0i49Lval6qOZUT9GLUhgHxq74PKul1yFSjz1pyS+XLQ==}
+    dev: false
+
+  /diceware-wordlist-sp@1.0.0:
+    resolution: {integrity: sha512-lKXwov3PPCDbRcSTkcJwgjDbWVzDR92hesieARK853uYI7r5VGSlhlZg97NgwpKMOexqW3P/e7P7fNhkNEIhxg==}
+    dev: false
+
+  /diceware-wordlist-swe@1.0.1:
+    resolution: {integrity: sha512-u/i5oiaFSjqvAm3VyNZyKLKzv8g+6LRbHH/AQOgexw6VSTcL6FIktv7q4aaW1jUpQs7MM+s3sn+tgTVQUoLbXg==}
+    dev: false
+
   /diff-sequences@29.6.3:
     resolution: {integrity: sha512-EjePK1srD3P08o2j4f0ExnylqRs5B9tJjcp9t1krH2qRi8CCdsYfwe9JgSLurFBWwq4uOlipzfk5fHNvwFKr8Q==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
@@ -17158,6 +17203,10 @@ packages:
       extend-shallow: 2.0.1
       kind-of: 6.0.3
     dev: true
+
+  /secure-random@1.1.2:
+    resolution: {integrity: sha512-H2bdSKERKdBV1SwoqYm6C0y+9EA94v6SUBOWO8kDndc4NoUih7Dv6Tsgma7zO1lv27wIvjlD0ZpMQk7um5dheQ==}
+    dev: false
 
   /seedrandom@3.0.5:
     resolution: {integrity: sha512-8OwmbklUNzwezjGInmZ+2clQmExQPvomqjL7LFqOYqtmuxRgQYqOD3mHaU+MvZn5FLUeVxVfQjwLZW/n/JFuqg==}
