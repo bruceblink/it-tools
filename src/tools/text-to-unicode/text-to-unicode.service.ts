@@ -34,7 +34,7 @@ function convertTextToUnicode(text: string, { encoding = 'htmldec', skipAscii = 
   }
   else if (encoding === 'python') {
     prefix = (value: number) => value < 256 ? '\\x' : (value < 65536 ? '\\u' : '\\U');
-    padding = (value: number) => value < 256 ? 2 : 4;
+    padding = (value: number) => value < 256 ? 2 : (value < 65536 ? 4 : 8);
   }
   else if (encoding === 'js') {
     prefix = (value: number) => value < 65536 ? '\\u' : '\\u{';
