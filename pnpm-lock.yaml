@@ -245,6 +245,9 @@ dependencies:
   crc:
     specifier: ^4.3.2
     version: 4.3.2
+  creditcard:
+    specifier: ^0.1.3
+    version: 0.1.3
   creditcard-generator:
     specifier: ^0.0.7
     version: 0.0.7
@@ -9772,6 +9775,10 @@ packages:
 
   /creditcard-generator@0.0.7:
     resolution: {integrity: sha512-FJ54OdLGVW/lzIn1zUAVwUC/LK3sjhuj6WGaENdW8OnOUbNt6Y09lN/4SA0eVcB1/A/cGnEW0XqYAVPtlC2zJQ==}
+    dev: false
+
+  /creditcard@0.1.3:
+    resolution: {integrity: sha512-PqKqX+GRPuX91vhSJhJ7twRFYxg96+wNJeVleLselOrXcZy7Q7cRbvX03NFg4LFYGJUxmM/F2IHD/HpyqFJCXQ==}
     dev: false
 
   /crelt@1.0.6:
