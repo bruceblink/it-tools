@@ -61,6 +61,8 @@ const conversionConfig = useStorage<ConvertOptions>('list-converter:conversionCo
   sortList: null,
   itemsSeparator: ', ',
   splitBySeparator: '',
+  filterRegex: '',
+  notFilterRegex: '',
 });
 
 function transformer(value: string) {
@@ -127,6 +129,19 @@ function transformer(value: string) {
               mb-2
               :placeholder="t('tools.list-converter.texts.placeholder-separator-for-splitting')"
             />
+
+            <n-form-item :label="t('tools.list-converter.texts.label-filter-item')" label-placement="left" label-width="120" :show-feedback="false" mb-2>
+              <c-input-text
+                v-model:value="conversionConfig.filterRegex"
+                :placeholder="t('tools.list-converter.texts.placeholder-remove-item-filter-regex')"
+                test-id="filterRegex"
+              />
+              <c-input-text
+                v-model:value="conversionConfig.notFilterRegex"
+                :placeholder="t('tools.list-converter.texts.placeholder-remove-item-not-filter-regex')"
+                test-id="notFilterRegex"
+              />
+            </n-form-item>
 
             <n-form-item :label="t('tools.list-converter.texts.label-unwrap-item')" label-placement="left" label-width="120" :show-feedback="false" mb-2>
               <c-input-text

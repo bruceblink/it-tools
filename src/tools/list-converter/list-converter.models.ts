@@ -14,12 +14,16 @@ function convert(list: string, options: ConvertOptions): string {
 
   const splitSep = options.splitBySeparator ? `${options.splitBySeparator}|` : '';
   const splitRegExp = new RegExp(`(?:${splitSep}\\n)`, 'g');
+  const filterRegExp = options.filterRegex ? new RegExp(options.filterRegex, 'v') : null;
+  const notFilterRegExp = options.notFilterRegex ? new RegExp(options.notFilterRegex, 'v') : null;
   return _.chain(list)
     .thru(whenever(options.lowerCase, text => text.toLowerCase()))
     .split(splitRegExp)
     .thru(whenever(options.removeDuplicates, _.uniq))
     .thru(whenever(options.reverseList, _.reverse))
     .map(whenever(options.trimItems, _.trim))
+    .filter(text => filterRegExp === null || filterRegExp?.test(text))
+    .filter(text => notFilterRegExp === null || !notFilterRegExp?.test(text))
     .thru(whenever(!!options.sortList, parts => parts.sort(byOrder({ order: options.sortList }))))
     .without('')
     .map(p => options.removeItemPrefix ? p.replace(new RegExp(`^${options.removeItemPrefix}`, 'g'), '') : p)

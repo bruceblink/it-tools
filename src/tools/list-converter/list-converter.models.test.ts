@@ -113,5 +113,22 @@ describe('list-converter', () => {
 1`;
       expect(convert(input, options)).toEqual(expected);
     });
+    it('should filter', () => {
+      const options: ConvertOptions = {
+        keepLineBreaks: true,
+        sortList: undefined,
+        filterRegex: String.raw`^\d`,
+        notFilterRegex: '^10',
+      };
+      const input = `1
+20
+10
+a
+3`;
+      const expected = `1
+20
+3`;
+      expect(convert(input, options)).toEqual(expected);
+    });
   });
 });

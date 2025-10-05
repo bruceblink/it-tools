@@ -530,6 +530,9 @@ tools:
       placeholder-t-tools-list-converter-texts-input-placeholder-paste-your-input-data-here: >-
         t('tools.list-converter.texts.input-placeholder-paste-your-input-data-here')
       label-t-tools-list-converter-texts-output-label-your-transformed-data: t('tools.list-converter.texts.output-label-your-transformed-data')
+      label-filter-item: Filter items by Regex
+      placeholder-remove-item-filter-regex: Filter Regex
+      placeholder-remove-item-not-filter-regex: Not Filter Regex
   base64-string-converter:
     title: Base64 string encoder/decoder
     description: Simply encode and decode strings into their base64 representation.
