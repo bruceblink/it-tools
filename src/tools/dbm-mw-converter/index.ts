@@ -1,10 +1,11 @@
 import { DeviceAudioTape } from '@vicons/tabler';
 import { defineTool } from '../tool';
+import { translate as t } from '@/plugins/i18n.plugin';
 
 export const tool = defineTool({
-  name: 'dBm mW Converter',
+  name: t('tools.dbm-mw-converter.title'),
   path: '/dbm-mw-converter',
-  description: 'Convert dBm to mW and conversely',
+  description: t('tools.dbm-mw-converter.description'),
   keywords: ['dbm', 'mw', 'converter'],
   component: () => import('./dbm-mw-converter.vue'),
   icon: DeviceAudioTape,

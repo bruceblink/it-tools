@@ -1,6 +1,9 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n';
 import { GenCC, Schemes } from 'creditcard-generator';
 import { useQueryParamOrStorage } from '@/composable/queryParams';
+
+const { t } = useI18n();
 
 const schemes = Object.keys(Schemes);
 
@@ -19,26 +22,26 @@ function generateCards() {
     <c-select
       v-model:value="selectedScheme"
       :options="schemes"
-      label="Credit Card Scheme:"
+      :label="t('tools.credit-card-generator.texts.label-credit-card-scheme')"
       label-position="left"
-      placeholder="Select Scheme"
+      :placeholder="t('tools.credit-card-generator.texts.placeholder-select-scheme')"
       mb-1
     />
-    <n-form-item label="Number of Credit Card to generate:" label-placement="left">
+    <n-form-item :label="t('tools.credit-card-generator.texts.label-number-of-credit-card-to-generate')" label-placement="left">
       <n-input-number
         v-model:value="count"
         :min="1"
         :max="50"
-        placeholder="Number of cards"
+        :placeholder="t('tools.credit-card-generator.texts.placeholder-number-of-cards')"
       />
     </n-form-item>
     <n-space justify="center">
       <n-button type="primary" mb-3 @click="generateCards">
-        Generate Random Credit Card numbers
+        {{ t('tools.credit-card-generator.texts.tag-generate-random-credit-card-numbers') }}
       </n-button>
     </n-space>
 
-    <c-card v-if="cards" title="Generated Credit Card numbers">
+    <c-card v-if="cards" :title="t('tools.credit-card-generator.texts.title-generated-credit-card-numbers')">
       <textarea-copyable :value="cards" />
     </c-card>
   </div>

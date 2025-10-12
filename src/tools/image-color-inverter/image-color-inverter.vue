@@ -1,8 +1,11 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n';
 import { invertImageFile } from './image-color-inverter.service';
 import { useCopy } from '@/composable/copy';
 import { useDownloadFileFromBase64 } from '@/composable/downloadBase64';
 import { withDefaultOnError } from '@/utils/defaults';
+
+const { t } = useI18n();
 
 const originalImageSrc = ref<string>('');
 const invertedImageSrc = ref<string>('');
@@ -11,7 +14,7 @@ const error = ref<string | null>(null);
 
 const { copy: copyInvertedImage } = useCopy({
   source: invertedImageSrc,
-  text: 'Inverted image base64 copied to clipboard',
+  text: t('tools.image-color-inverter.texts.text-inverted-image-base64-copied-to-clipboard'),
 });
 
 const { download: downloadInvertedImage } = useDownloadFileFromBase64({
@@ -58,7 +61,7 @@ function clearImages() {
 <template>
   <c-card>
     <c-file-upload
-      title="Drag and drop an image here, or click to select"
+      :title="t('tools.image-color-inverter.texts.title-drag-and-drop-an-image-here-or-click-to-select')"
       accept="image/*"
       @file-upload="handleFileUpload"
     />
@@ -73,7 +76,7 @@ function clearImages() {
       <n-grid v-if="originalImageSrc || invertedImageSrc" :cols="2" :x-gap="16">
         <n-gi v-if="originalImageSrc">
           <div>
-            <n-h3>Original Image</n-h3>
+            <n-h3>{{ t('tools.image-color-inverter.texts.tag-original-image') }}</n-h3>
             <div class="image-container">
               <img :src="originalImageSrc" alt="Original">
             </div>
@@ -82,16 +85,16 @@ function clearImages() {
 
         <n-gi v-if="invertedImageSrc">
           <div>
-            <n-h3>Inverted Image</n-h3>
+            <n-h3>{{ t('tools.image-color-inverter.texts.tag-inverted-image') }}</n-h3>
             <div class="image-container">
               <img :src="invertedImageSrc" alt="Inverted">
             </div>
             <n-space style="margin-top: 12px" justify="start">
               <c-button @click="downloadInvertedImage()">
-                Download PNG
+                {{ t('tools.image-color-inverter.texts.tag-download-png') }}
               </c-button>
               <c-button @click="copyInvertedImage()">
-                Copy Base64
+                {{ t('tools.image-color-inverter.texts.tag-copy-base64') }}
               </c-button>
             </n-space>
           </div>
@@ -100,7 +103,7 @@ function clearImages() {
 
       <div v-if="originalImageSrc || invertedImageSrc" style="margin-top: 16px; text-align: center">
         <c-button secondary @click="clearImages()">
-          Clear & Upload New
+          {{ t('tools.image-color-inverter.texts.tag-clear-upload-new') }}
         </c-button>
       </div>
     </n-spin>

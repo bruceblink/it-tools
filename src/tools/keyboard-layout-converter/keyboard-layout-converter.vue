@@ -1,29 +1,32 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n';
 import { ArrowRight } from '@vicons/tabler';
 import layouts from '@langfreak/convert-layout';
 import { useQueryParam, useQueryParamOrStorage } from '@/composable/queryParams';
 
+const { t } = useI18n();
+
 // Layout options with keyword names
 const layoutOptions = [
-  { label: 'Arabic (ar) – Arabic Keyboard', value: 'ar' },
-  { label: 'Belarusian (by) – Cyrillic QWERTY', value: 'by' },
-  { label: 'Colemak (colemak) – Colemak Layout', value: 'colemak' },
-  { label: 'Czech (cs) – QWERTZ', value: 'cs' },
-  { label: 'Dvorak (dvorak) – Dvorak Layout', value: 'dvorak' },
-  { label: 'English (en) – QWERTY', value: 'en' },
-  { label: 'French (fr) – AZERTY', value: 'fr' },
-  { label: 'German (de) – QWERTZ', value: 'de' },
-  { label: 'Greek (gr) – Greek Keyboard', value: 'gr' },
-  { label: 'Hebrew (he) – Hebrew Keyboard', value: 'he' },
-  { label: 'Italian (it) – QWERTY', value: 'it' },
-  { label: 'Kazakh (kk) – Cyrillic QWERTY', value: 'kk' },
-  { label: 'Korean (kr) – Hangul Keyboard', value: 'kr' },
-  { label: 'Persian (fa) – Persian Keyboard', value: 'fa' },
-  { label: 'Russian (ru) – Cyrillic JCUKEN', value: 'ru' },
-  { label: 'Spanish (es) – QWERTY (Spanish ISO)', value: 'es' },
-  { label: 'Swedish (sv) – QWERTY (Nordic)', value: 'sv' },
-  { label: 'Turkish (tr) – Turkish QWERTY (Q)', value: 'tr' },
-  { label: 'Ukrainian (uk) – Cyrillic JCUKEN', value: 'uk' },
+  { label: t('tools.keyboard-layout-converter.texts.label-arabic-ar-arabic-keyboard'), value: 'ar' },
+  { label: t('tools.keyboard-layout-converter.texts.label-belarusian-by-cyrillic-qwerty'), value: 'by' },
+  { label: t('tools.keyboard-layout-converter.texts.label-colemak-colemak-colemak-layout'), value: 'colemak' },
+  { label: t('tools.keyboard-layout-converter.texts.label-czech-cs-qwertz'), value: 'cs' },
+  { label: t('tools.keyboard-layout-converter.texts.label-dvorak-dvorak-dvorak-layout'), value: 'dvorak' },
+  { label: t('tools.keyboard-layout-converter.texts.label-english-en-qwerty'), value: 'en' },
+  { label: t('tools.keyboard-layout-converter.texts.label-french-fr-azerty'), value: 'fr' },
+  { label: t('tools.keyboard-layout-converter.texts.label-german-de-qwertz'), value: 'de' },
+  { label: t('tools.keyboard-layout-converter.texts.label-greek-gr-greek-keyboard'), value: 'gr' },
+  { label: t('tools.keyboard-layout-converter.texts.label-hebrew-he-hebrew-keyboard'), value: 'he' },
+  { label: t('tools.keyboard-layout-converter.texts.label-italian-it-qwerty'), value: 'it' },
+  { label: t('tools.keyboard-layout-converter.texts.label-kazakh-kk-cyrillic-qwerty'), value: 'kk' },
+  { label: t('tools.keyboard-layout-converter.texts.label-korean-kr-hangul-keyboard'), value: 'kr' },
+  { label: t('tools.keyboard-layout-converter.texts.label-persian-fa-persian-keyboard'), value: 'fa' },
+  { label: t('tools.keyboard-layout-converter.texts.label-russian-ru-cyrillic-jcuken'), value: 'ru' },
+  { label: t('tools.keyboard-layout-converter.texts.label-spanish-es-qwerty-spanish-iso'), value: 'es' },
+  { label: t('tools.keyboard-layout-converter.texts.label-swedish-sv-qwerty-nordic'), value: 'sv' },
+  { label: t('tools.keyboard-layout-converter.texts.label-turkish-tr-turkish-qwerty-q'), value: 'tr' },
+  { label: t('tools.keyboard-layout-converter.texts.label-ukrainian-uk-cyrillic-jcuken'), value: 'uk' },
 ];
 
 const inputText = useQueryParam({ tool: 'keyboard-layout-conv', name: 'input', defaultValue: '' });
@@ -45,7 +48,7 @@ const outputText = computed(() => {
 </script>
 
 <template>
-  <NCard title="Keyboard Layout Converter">
+  <NCard :title="t('tools.keyboard-layout-converter.texts.title-keyboard-layout-converter')">
     <NSpace vertical size="large">
       <NSpace align="center" justify="center">
         <NSelect
@@ -53,7 +56,7 @@ const outputText = computed(() => {
           :options="layoutOptions"
           label-field="label"
           value-field="value"
-          placeholder="Source layout"
+          :placeholder="t('tools.keyboard-layout-converter.texts.placeholder-source-layout')"
           style="min-width: 200px;"
         />
         <NIcon size="20">
@@ -64,22 +67,22 @@ const outputText = computed(() => {
           :options="layoutOptions"
           label-field="label"
           value-field="value"
-          placeholder="Target layout"
+          :placeholder="t('tools.keyboard-layout-converter.texts.placeholder-target-layout')"
           style="min-width: 200px;"
         />
       </NSpace>
 
       <c-input-text
         v-model:value="inputText"
-        placeholder="Type here…"
-        label="Input value:"
+        :placeholder="t('tools.keyboard-layout-converter.texts.placeholder-type-here')"
+        :label="t('tools.keyboard-layout-converter.texts.label-input-value')"
         multiline
       />
 
-      <c-card title="Converted to target keyboard layout">
+      <c-card :title="t('tools.keyboard-layout-converter.texts.title-converted-to-target-keyboard-layout')">
         <textarea-copyable
           :value="outputText"
-          placeholder="Converted output"
+          :placeholder="t('tools.keyboard-layout-converter.texts.placeholder-converted-output')"
           readonly
         />
       </c-card>

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n';
 import dwGen from 'diceware-generator';
 import enWL from 'diceware-wordlist-en';
 import enEffWL from 'diceware-wordlist-en-eff';
@@ -9,16 +10,18 @@ import { computedRefreshable } from '@/composable/computedRefreshable';
 import { useQueryParamOrStorage } from '@/composable/queryParams';
 import { useCopy } from '@/composable/copy';
 
+const { t } = useI18n();
+
 const count = useQueryParamOrStorage({ name: 'count', storageName: 'diceware-generator:count', defaultValue: 1 });
 const words = useQueryParamOrStorage({ name: 'words', storageName: 'diceware-generator:words', defaultValue: 5 });
 const lang = useQueryParamOrStorage({ name: 'lang', storageName: 'diceware-generator:lang', defaultValue: 'en' });
 
 const langs = [
-  { value: 'en', label: 'English' },
-  { value: 'en-eff', label: 'English EFF' },
-  { value: 'sp', label: 'Spanish' },
-  { value: 'jp', label: 'Japanese' },
-  { value: 'swe', label: 'Swedish' },
+  { value: 'en', label: t('tools.diceware-generator.texts.label-english') },
+  { value: 'en-eff', label: t('tools.diceware-generator.texts.label-english-eff') },
+  { value: 'sp', label: t('tools.diceware-generator.texts.label-spanish') },
+  { value: 'jp', label: t('tools.diceware-generator.texts.label-japanese') },
+  { value: 'swe', label: t('tools.diceware-generator.texts.label-swedish') },
 ];
 
 const [dicewares, refreshDicewares] = computedRefreshable(
@@ -47,7 +50,7 @@ const [dicewares, refreshDicewares] = computedRefreshable(
     }).join('\n'),
 );
 
-const { copy } = useCopy({ source: dicewares, text: 'Diceward Passwords copied to clipboard!' });
+const { copy } = useCopy({ source: dicewares, text: t('tools.diceware-generator.texts.text-diceward-passwords-copied-to-clipboard') });
 </script>
 
 <template>
@@ -59,14 +62,14 @@ const { copy } = useCopy({ source: dicewares, text: 'Diceward Passwords copied t
           <n-input-number-i18n v-model:value="words" size="small" />
         </n-form-item>
 
-        <n-form-item label="Number of Diceware passwords to generate:" label-placement="left">
+        <n-form-item :label="t('tools.diceware-generator.texts.label-number-of-diceware-passwords-to-generate')" label-placement="left">
           <n-input-number-i18n v-model:value="count" size="small" />
         </n-form-item>
       </n-space>
 
       <c-select
         v-model:value="lang"
-        label="Languages:"
+        :label="t('tools.diceware-generator.texts.label-languages')"
         label-position="left"
         :options="langs"
         mb-4
@@ -74,9 +77,9 @@ const { copy } = useCopy({ source: dicewares, text: 'Diceward Passwords copied t
 
       <c-input-text
         v-model:value="dicewares"
-        label="Generated passwords:"
+        :label="t('tools.diceware-generator.texts.label-generated-passwords')"
         multiline
-        placeholder="Diceware passwords..."
+        :placeholder="t('tools.diceware-generator.texts.placeholder-diceware-passwords')"
         readonly
         rows="3"
         autosize
@@ -86,10 +89,10 @@ const { copy } = useCopy({ source: dicewares, text: 'Diceward Passwords copied t
 
       <div mt-5 flex justify-center gap-3>
         <c-button @click="copy()">
-          Copy
+          {{ t('tools.diceware-generator.texts.tag-copy') }}
         </c-button>
         <c-button @click="refreshDicewares">
-          Refresh
+          {{ t('tools.diceware-generator.texts.tag-refresh') }}
         </c-button>
       </div>
     </c-card>

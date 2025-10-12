@@ -1,35 +1,38 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n';
 import { useQueryParamOrStorage } from '@/composable/queryParams';
+
+const { t } = useI18n();
 
 const dbType = useQueryParamOrStorage({ name: 'type', storageName: 'conn-string-builder:t', defaultValue: 'postgres' });
 const dbOptions = [
-  { label: 'MySQL', value: 'mysql' },
-  { label: 'PostgreSQL', value: 'postgres' },
-  { label: 'SQL Server', value: 'sqlserver' },
-  { label: 'SQLite', value: 'sqlite' },
-  { label: 'MongoDB', value: 'mongodb' },
+  { label: t('tools.database-connection-string-builder.texts.label-mysql'), value: 'mysql' },
+  { label: t('tools.database-connection-string-builder.texts.label-postgresql'), value: 'postgres' },
+  { label: t('tools.database-connection-string-builder.texts.label-sql-server'), value: 'sqlserver' },
+  { label: t('tools.database-connection-string-builder.texts.label-sqlite'), value: 'sqlite' },
+  { label: t('tools.database-connection-string-builder.texts.label-mongodb'), value: 'mongodb' },
 ];
 
 const formatOptions = [
-  { label: 'URI Scheme', value: 'uri' },
-  { label: 'Keyword-Value Pairs', value: 'kvp' },
+  { label: t('tools.database-connection-string-builder.texts.label-uri-scheme'), value: 'uri' },
+  { label: t('tools.database-connection-string-builder.texts.label-keyword-value-pairs'), value: 'kvp' },
 ];
 
 const authOptions: Record<string, { label: string; value: string }[]> = {
-  mysql: [{ label: 'Username/Password', value: 'basic' }],
+  mysql: [{ label: t('tools.database-connection-string-builder.texts.label-username-password'), value: 'basic' }],
   postgres: [
-    { label: 'Username/Password', value: 'basic' },
-    { label: 'Peer', value: 'peer' },
-    { label: 'GSSAPI/SSPI', value: 'gssapi' },
+    { label: t('tools.database-connection-string-builder.texts.label-username-password'), value: 'basic' },
+    { label: t('tools.database-connection-string-builder.texts.label-peer'), value: 'peer' },
+    { label: t('tools.database-connection-string-builder.texts.label-gssapi-sspi'), value: 'gssapi' },
   ],
   sqlserver: [
-    { label: 'Username/Password', value: 'basic' },
-    { label: 'Windows Integrated', value: 'windows' },
+    { label: t('tools.database-connection-string-builder.texts.label-username-password'), value: 'basic' },
+    { label: t('tools.database-connection-string-builder.texts.label-windows-integrated'), value: 'windows' },
   ],
   sqlite: [],
   mongodb: [
-    { label: 'Username/Password (SCRAM)', value: 'basic' },
-    { label: 'X.509 Certificate', value: 'x509' },
+    { label: t('tools.database-connection-string-builder.texts.label-username-password-scram'), value: 'basic' },
+    { label: t('tools.database-connection-string-builder.texts.label-x-509-certificate'), value: 'x509' },
   ],
 };
 
@@ -123,12 +126,12 @@ const connectionString = computed(() => {
 </script>
 
 <template>
-  <n-card title="Database Connection String Generator" style="max-width: 750px; margin: auto;">
+  <n-card :title="t('tools.database-connection-string-builder.texts.title-database-connection-string-generator')" style="max-width: 750px; margin: auto;">
     <c-select
       v-model:value="dbType"
       :options="dbOptions"
-      placeholder="Select a database"
-      label="Database type:"
+      :placeholder="t('tools.database-connection-string-builder.texts.placeholder-select-a-database')"
+      :label="t('tools.database-connection-string-builder.texts.label-database-type')"
       label-position="left"
       mb-2
     />
@@ -136,61 +139,61 @@ const connectionString = computed(() => {
     <c-select
       v-model:value="form.format"
       :options="formatOptions"
-      placeholder="Select format"
-      label="Connection String Format:"
+      :placeholder="t('tools.database-connection-string-builder.texts.placeholder-select-format')"
+      :label="t('tools.database-connection-string-builder.texts.label-connection-string-format')"
       label-position="left"
       mb-2
     />
 
-    <n-divider>Options</n-divider>
+    <n-divider>{{ t('tools.database-connection-string-builder.texts.tag-options') }}</n-divider>
 
     <n-form :model="form" label-placement="left" label-width="140">
-      <n-form-item v-if="authOptions[dbType]?.length" label="Authentication Type">
+      <n-form-item v-if="authOptions[dbType]?.length" :label="t('tools.database-connection-string-builder.texts.label-authentication-type')">
         <n-select
           v-model:value="form.authType"
           :options="authOptions[dbType]"
-          placeholder="Select authentication"
+          :placeholder="t('tools.database-connection-string-builder.texts.placeholder-select-authentication')"
         />
       </n-form-item>
 
       <template v-if="dbType !== 'sqlite' && form.authType !== 'peer' && form.authType !== 'windows' && form.authType !== 'x509'">
-        <n-form-item label="Host">
-          <n-input v-model:value="form.host" placeholder="e.g. localhost" />
+        <n-form-item :label="t('tools.database-connection-string-builder.texts.label-host')">
+          <n-input v-model:value="form.host" :placeholder="t('tools.database-connection-string-builder.texts.placeholder-e-g-localhost')" />
         </n-form-item>
-        <n-form-item label="Port">
+        <n-form-item :label="t('tools.database-connection-string-builder.texts.label-port')">
           <n-input-number v-model:value="form.port" :min="1" :max="65535" />
         </n-form-item>
-        <n-form-item label="Username">
+        <n-form-item :label="t('tools.database-connection-string-builder.texts.label-username')">
           <n-input v-model:value="form.username" />
         </n-form-item>
-        <n-form-item label="Password">
+        <n-form-item :label="t('tools.database-connection-string-builder.texts.label-password')">
           <n-input v-model:value="form.password" type="password" />
         </n-form-item>
       </template>
 
-      <n-form-item label="Database">
-        <n-input v-model:value="form.database" placeholder="e.g. mydb" />
+      <n-form-item :label="t('tools.database-connection-string-builder.texts.label-database')">
+        <n-input v-model:value="form.database" :placeholder="t('tools.database-connection-string-builder.texts.placeholder-e-g-mydb')" />
       </n-form-item>
 
-      <n-form-item v-if="dbType === 'sqlite'" label="File Path">
-        <n-input v-model:value="form.filePath" placeholder="/path/to/sqlite.db" />
+      <n-form-item v-if="dbType === 'sqlite'" :label="t('tools.database-connection-string-builder.texts.label-file-path')">
+        <n-input v-model:value="form.filePath" :placeholder="t('tools.database-connection-string-builder.texts.placeholder-path-to-sqlite-db')" />
       </n-form-item>
 
       <details mb-3>
-        <summary>Advanced Options</summary>
-        <n-form-item label="SSL Enabled">
+        <summary>{{ t('tools.database-connection-string-builder.texts.tag-advanced-options') }}</summary>
+        <n-form-item :label="t('tools.database-connection-string-builder.texts.label-ssl-enabled')">
           <n-switch v-model:value="form.ssl" />
         </n-form-item>
-        <n-form-item label="Timeout (s)">
+        <n-form-item :label="t('tools.database-connection-string-builder.texts.label-timeout-s')">
           <n-input-number v-model:value="form.timeout" :min="0" />
         </n-form-item>
-        <n-form-item label="Extra Params">
-          <n-input v-model:value="form.extra" placeholder="e.g. charset=utf8&applicationName=myapp" />
+        <n-form-item :label="t('tools.database-connection-string-builder.texts.label-extra-params')">
+          <n-input v-model:value="form.extra" :placeholder="t('tools.database-connection-string-builder.texts.placeholder-e-g-charset-utf8-applicationname-myapp')" />
         </n-form-item>
       </details>
     </n-form>
 
-    <c-card title="Generate Connection String">
+    <c-card :title="t('tools.database-connection-string-builder.texts.title-generate-connection-string')">
       <textarea-copyable :value="connectionString" />
     </c-card>
   </n-card>

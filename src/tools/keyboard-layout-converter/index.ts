@@ -1,10 +1,11 @@
 import { Keyboard } from '@vicons/tabler';
 import { defineTool } from '../tool';
+import { translate as t } from '@/plugins/i18n.plugin';
 
 export const tool = defineTool({
-  name: 'Keyboard Layout Converter',
+  name: t('tools.keyboard-layout-converter.title'),
   path: '/keyboard-layout-converter',
-  description: 'Convert keys sequence from one keyboard layout to another',
+  description: t('tools.keyboard-layout-converter.description'),
   keywords: ['keyboard', 'layout', 'converter'],
   component: () => import('./keyboard-layout-converter.vue'),
   icon: Keyboard,

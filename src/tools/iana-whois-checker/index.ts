@@ -1,10 +1,11 @@
 import { World } from '@vicons/tabler';
 import { defineTool } from '../tool';
+import { translate as t } from '@/plugins/i18n.plugin';
 
 export const tool = defineTool({
-  name: 'Whois Checker',
+  name: t('tools.iana-whois-checker.title'),
   path: '/iana-whois-checker',
-  description: 'Check whois for a domain using IANA Website',
+  description: t('tools.iana-whois-checker.description'),
   keywords: ['iana', 'whois', 'checker'],
   component: () => import('./iana-whois-checker.vue'),
   icon: World,

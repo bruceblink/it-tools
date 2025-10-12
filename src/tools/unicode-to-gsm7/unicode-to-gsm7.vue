@@ -25,9 +25,9 @@ function transformer(value: string) {
 
 <template>
   <format-transformer
-    :input-label="t('tools.unicode-to-gsm7.texts.input-label-your-text-to-encode-to-gsm-7')"
-    :input-placeholder="t('tools.unicode-to-gsm7.texts.input-placeholder-put-your-text-here')"
-    :output-label="t('tools.unicode-to-gsm7.texts.output-label-gsm-7-encoded-version')"
+    :input-:label="t('tools.unicode-to-gsm7.texts.label-t-tools-unicode-to-gsm7-texts-input-label-your-text-to-encode-to-gsm-7')"
+    :input-:placeholder="t('tools.unicode-to-gsm7.texts.placeholder-t-tools-unicode-to-gsm7-texts-input-placeholder-put-your-text-here')"
+    :output-:label="t('tools.unicode-to-gsm7.texts.label-t-tools-unicode-to-gsm7-texts-output-label-gsm-7-encoded-version')"
     :transformer="transformer"
   />
 
