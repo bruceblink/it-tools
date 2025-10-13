@@ -8,6 +8,8 @@ Docker image listen to IPv6, so it needs to be enabled: https://serverfault.com/
 
 Especially for UI improvements and translation. And for anything else.
 
+Want to support this fork of IT Tools: [Buy me a coffee](https://www.buymeacoffee.com/sharevb)
+
 ## HTTPS is recommanded
 
 Some tools like PGP encryption rely on WebCrypto API that is only available in HTTPS/SSL. Also, if you want to use PWA, HTTPS is required.

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { Home2, Menu2 } from '@vicons/tabler';
+import { Coffee, Home2, Menu2 } from '@vicons/tabler';
 import { NIcon, useThemeVars } from 'naive-ui';
 import { storeToRefs } from 'pinia';
 import { RouterLink } from 'vue-router';
@@ -115,6 +115,20 @@ const tools = computed<ToolCategory[]>(() => [
         <div>
           <NavbarButtons v-if="!styleStore.isSmallScreen" />
         </div>
+
+        <c-tooltip position="bottom" :tooltip="$t('home.support')">
+          <c-button
+            round
+            href="https://www.buymeacoffee.com/sharevb"
+            rel="noopener"
+            target="_blank"
+            class="support-button"
+            :bordered="false"
+          >
+            <span v-if="!styleStore.isSmallScreen" mr-2>{{ $t('home.buyMeACoffee') }}</span>
+            <NIcon :component="Coffee" />
+          </c-button>
+        </c-tooltip>
       </div>
       <slot />
     </template>
