@@ -26,12 +26,25 @@ program
 
 const options = program.opts();
 
+function removeUnusedKeys(targetFlat, englishFlat) {
+  const cleaned = {};
+  for (const key of Object.keys(targetFlat)) {
+    if (englishFlat[key] !== undefined) {
+      cleaned[key] = targetFlat[key];
+    } else {
+      console.log(`Removed unused key: ${key}`);
+    }
+  }
+  return cleaned;
+}
+
 async function translateText(text, targetLang) {
   const response = await axios.post(TRANSLATE_ENDPOINT, null, {
     params: {
       q: text,
       target: targetLang,
       key: GOOGLE_TRANSLATE_API_KEY,
+      format: 'text',
     },
   });
   return response.data.data.translations[0].translatedText
@@ -80,7 +93,7 @@ async function syncTranslations(englishFile, targetFiles, dryRun = false) {
       continue;
     }
     const targetYaml = yaml.parse(await fs.readFile(file, 'utf8')) || {};
-    const targetFlat = flattenYaml(targetYaml);
+    const targetFlat = removeUnusedKeys(flattenYaml(targetYaml), englishFlat);
 
     const updatedFlat = { ...targetFlat };
     let langCharCount = 0;
