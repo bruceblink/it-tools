@@ -28,10 +28,14 @@ export default defineConfig({
       runtimeOnly: true,
       compositionOnly: true,
       fullInstall: true,
-      include: [
-        resolve(__dirname, 'src/tools/*/locales/**'),
-        resolve(__dirname, 'locales/**'),
-      ],
+      include: !process.env.VITEST
+        ? [
+            resolve(__dirname, 'src/tools/*/locales/**'),
+            resolve(__dirname, 'locales/**'),
+          ]
+        : [
+            resolve(__dirname, 'locales/en.yml'),
+          ],
       strictMessage: false,
       escapeHtml: true,
     }),
