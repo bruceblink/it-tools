@@ -41,9 +41,9 @@ const rules: UseValidationRule<string>[] = [
   </n-space>
 
   <format-transformer
-    :input-:label="t('tools.yaml-to-json-converter.texts.label-t-tools-yaml-to-json-converter-texts-input-label-your-yaml')"
-    :input-:placeholder="t('tools.yaml-to-json-converter.texts.placeholder-t-tools-yaml-to-json-converter-texts-input-placeholder-paste-your-yaml-here')"
-    :output-:label="t('tools.yaml-to-json-converter.texts.label-t-tools-yaml-to-json-converter-texts-output-label-json-from-your-yaml')"
+    :input-label="t('tools.yaml-to-json-converter.texts.input-label-your-yaml')"
+    :input-placeholder="t('tools.yaml-to-json-converter.texts.input-placeholder-paste-your-yaml-here')"
+    :output-label="t('tools.yaml-to-json-converter.texts.output-label-json-from-your-yaml')"
     output-language="json"
     :input-validation-rules="rules"
     :transformer="transformer"

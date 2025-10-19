@@ -105,11 +105,11 @@ const jsonBodyValidation = useValidation({
     </c-card>
 
     <c-card v-else :title="t('tools.curl-generator.texts.title-form-entries')" mb-2>
-      <NDynamicInput v-model:value="formData" preset="pair" key-:placeholder="t('tools.curl-generator.texts.placeholder-key')" value-:placeholder="t('tools.curl-generator.texts.placeholder-value')" />
+      <NDynamicInput v-model:value="formData" preset="pair" :key-placeholder="t('tools.curl-generator.texts.placeholder-key')" :value-placeholder="t('tools.curl-generator.texts.placeholder-value')" />
     </c-card>
 
     <c-card :title="t('tools.curl-generator.texts.title-http-headers')" mb-2>
-      <NDynamicInput v-model:value="headers" preset="pair" key-:placeholder="t('tools.curl-generator.texts.placeholder-header')" value-:placeholder="t('tools.curl-generator.texts.placeholder-value')" />
+      <NDynamicInput v-model:value="headers" preset="pair" :key-placeholder="t('tools.curl-generator.texts.placeholder-header')" :value-placeholder="t('tools.curl-generator.texts.placeholder-value')" />
     </c-card>
 
     <c-card :title="t('tools.curl-generator.texts.title-options')" mb-2>

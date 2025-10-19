@@ -21,9 +21,9 @@ const command = ref('');
           label-position="left"
           label-width="130px"
           :label="$t('tools.cli-command-editor.command')"
-          :aria-:label="t('tools.cli-command-editor.texts.label-t-tools-cli-command-editor-command')"
+          :aria-label="t('tools.cli-command-editor.command')"
           :placeholder="$t('tools.cli-command-editor.placeholder')"
-          :aria-:placeholder="t('tools.cli-command-editor.texts.placeholder-t-tools-cli-command-editor-placeholder')"
+          :aria-placeholder="t('tools.cli-command-editor.placeholder')"
           raw-text
           @update:value="() => { command = inputCommand }"
         />
@@ -34,9 +34,9 @@ const command = ref('');
             label-width="130px"
             label-align="left"
             :label="service.sanitizeOption(option)"
-            :aria-:label="t('tools.cli-command-editor.texts.label-service-sanitizeoption-option')"
+            :aria-label="service.sanitizeOption(option)"
             :placeholder="service.sanitizeOption(option)"
-            :aria-:placeholder="t('tools.cli-command-editor.texts.placeholder-service-sanitizeoption-option')"
+            :aria-placeholder="service.sanitizeOption(option)"
             mt-6
             @update:value="() => { command = service.buildEditedCommand(optionsInput, optionsObject, inputCommand) }"
           />

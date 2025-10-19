@@ -181,7 +181,7 @@ function onCreateIpRule() {
       </c-card>
 
       <c-card :title="t('tools.htaccess-generator.texts.title-301-redirect-file-or-directory')" mb-1>
-        <NDynamicInput v-model:value="formData.redirects" preset="pair" key-:placeholder="t('tools.htaccess-generator.texts.placeholder-old-path')" value-:placeholder="t('tools.htaccess-generator.texts.placeholder-new-path')" />
+        <NDynamicInput v-model:value="formData.redirects" preset="pair" :key-placeholder="t('tools.htaccess-generator.texts.placeholder-old-path')" :value-placeholder="t('tools.htaccess-generator.texts.placeholder-new-path')" />
       </c-card>
 
       <c-card :title="t('tools.htaccess-generator.texts.title-cache-settings')" mb-1>
@@ -225,7 +225,7 @@ function onCreateIpRule() {
       </c-card>
 
       <c-card :title="t('tools.htaccess-generator.texts.title-custom-error-pages')" mb-1>
-        <NDynamicInput v-model:value="formData.errorPages" preset="pair" key-:placeholder="t('tools.htaccess-generator.texts.placeholder-error-code')" value-:placeholder="t('tools.htaccess-generator.texts.placeholder-file-path')" />
+        <NDynamicInput v-model:value="formData.errorPages" preset="pair" :key-placeholder="t('tools.htaccess-generator.texts.placeholder-error-code')" :value-placeholder="t('tools.htaccess-generator.texts.placeholder-file-path')" />
       </c-card>
 
       <c-card :title="t('tools.htaccess-generator.texts.title-block-or-allow-ip-addresses')" mb-1>

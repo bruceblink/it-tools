@@ -204,9 +204,6 @@ tools:
       input-label-your-raw-json: Your raw JSON
       input-placeholder-paste-your-raw-json-here: Paste your raw JSON here...
       output-label-csv-version-of-your-json: CSV version of your JSON
-      label-t-tools-json-to-csv-texts-input-label-your-raw-json: t('tools.json-to-csv.texts.input-label-your-raw-json')
-      placeholder-t-tools-json-to-csv-texts-input-placeholder-paste-your-raw-json-here: t('tools.json-to-csv.texts.input-placeholder-paste-your-raw-json-here')
-      label-t-tools-json-to-csv-texts-output-label-csv-version-of-your-json: t('tools.json-to-csv.texts.output-label-csv-version-of-your-json')
   csv-to-json:
     title: CSV to JSON
     description: Convert CSV to JSON with automatic header detection.
@@ -216,9 +213,6 @@ tools:
       input-label-your-raw-csv: Your raw CSV
       input-placeholder-paste-your-raw-csv-here: Paste your raw CSV here...
       output-label-json-version-of-your-csv: JSON version of your CSV
-      label-t-tools-csv-to-json-texts-input-label-your-raw-csv: t('tools.csv-to-json.texts.input-label-your-raw-csv')
-      placeholder-t-tools-csv-to-json-texts-input-placeholder-paste-your-raw-csv-here: t('tools.csv-to-json.texts.input-placeholder-paste-your-raw-csv-here')
-      label-t-tools-csv-to-json-texts-output-label-json-version-of-your-csv: t('tools.csv-to-json.texts.output-label-json-version-of-your-csv')
   camera-recorder:
     title: Camera recorder
     description: Take a picture or record a video from your webcam or camera.
@@ -511,10 +505,6 @@ tools:
       input-label-your-input-data: Your input data
       input-placeholder-paste-your-input-data-here: Paste your input data here...
       output-label-your-transformed-data: Your transformed data
-      label-t-tools-list-converter-texts-input-label-your-input-data: t('tools.list-converter.texts.input-label-your-input-data')
-      placeholder-t-tools-list-converter-texts-input-placeholder-paste-your-input-data-here:
-        t('tools.list-converter.texts.input-placeholder-paste-your-input-data-here')
-      label-t-tools-list-converter-texts-output-label-your-transformed-data: t('tools.list-converter.texts.output-label-your-transformed-data')
       label-filter-item: Filter items by Regex
       placeholder-remove-item-filter-regex: Filter Regex
       placeholder-remove-item-not-filter-regex: Not Filter Regex
@@ -547,9 +537,6 @@ tools:
       input-label-your-toml: Your TOML
       input-placeholder-paste-your-toml-here: Paste your TOML here...
       output-label-yaml-from-your-toml: YAML from your TOML
-      label-t-tools-toml-to-yaml-texts-input-label-your-toml: t('tools.toml-to-yaml.texts.input-label-your-toml')
-      placeholder-t-tools-toml-to-yaml-texts-input-placeholder-paste-your-toml-here: t('tools.toml-to-yaml.texts.input-placeholder-paste-your-toml-here')
-      label-t-tools-toml-to-yaml-texts-output-label-yaml-from-your-toml: t('tools.toml-to-yaml.texts.output-label-yaml-from-your-toml')
   math-evaluator:
     title: Math evaluator
     description: A calculator for evaluating mathematical expressions. You can use
@@ -565,10 +552,6 @@ tools:
       input-label-your-json: Your JSON
       input-placeholder-paste-your-json-here: Paste your JSON here...
       output-label-yaml-from-your-json: YAML from your JSON
-      label-t-tools-json-to-yaml-converter-texts-input-label-your-json: t('tools.json-to-yaml-converter.texts.input-label-your-json')
-      placeholder-t-tools-json-to-yaml-converter-texts-input-placeholder-paste-your-json-here:
-        t('tools.json-to-yaml-converter.texts.input-placeholder-paste-your-json-here')
-      label-t-tools-json-to-yaml-converter-texts-output-label-yaml-from-your-json: t('tools.json-to-yaml-converter.texts.output-label-yaml-from-your-json')
   json-to-javascript:
     title: JSON to JS converter
     description: Simply convert JSON to Javascript object with this live online converter.
@@ -578,11 +561,6 @@ tools:
       input-label-your-json: Your JSON
       input-placeholder-paste-your-json-here: Paste your JSON here...
       output-label-javascript-object-from-your-json: JavaScript Object from your JSON
-      label-t-tools-json-to-javascript-texts-input-label-your-json: t('tools.json-to-javascript.texts.input-label-your-json')
-      placeholder-t-tools-json-to-javascript-texts-input-placeholder-paste-your-json-here:
-        t('tools.json-to-javascript.texts.input-placeholder-paste-your-json-here')
-      label-t-tools-json-to-javascript-texts-output-label-javascript-object-from-your-json:
-        t('tools.json-to-javascript.texts.output-label-javascript-object-from-your-json')
   javascript-to-json:
     title: JS to JSON converter
     description: Simply convert Javascript object to JSON with this live online converter.
@@ -592,11 +570,6 @@ tools:
       input-label-your-javascript-object: Your JavaScript Object
       input-placeholder-paste-your-js-object-here: Paste your JS Object here...
       output-label-json-from-your-javascript-object: JSON from your JavaScript Object
-      label-t-tools-javascript-to-json-texts-input-label-your-javascript-object: t('tools.javascript-to-json.texts.input-label-your-javascript-object')
-      placeholder-t-tools-javascript-to-json-texts-input-placeholder-paste-your-js-object-here:
-        t('tools.javascript-to-json.texts.input-placeholder-paste-your-js-object-here')
-      label-t-tools-javascript-to-json-texts-output-label-json-from-your-javascript-object:
-        t('tools.javascript-to-json.texts.output-label-json-from-your-javascript-object')
   numeronym-generator:
     title: Numeronym generator
     description: A numeronym is a word where a number is used to form an
@@ -696,9 +669,6 @@ tools:
       input-label-your-toml: Your TOML
       input-placeholder-paste-your-toml-here: Paste your TOML here...
       output-label-json-from-your-toml: JSON from your TOML
-      label-t-tools-toml-to-json-texts-input-label-your-toml: t('tools.toml-to-json.texts.input-label-your-toml')
-      placeholder-t-tools-toml-to-json-texts-input-placeholder-paste-your-toml-here: t('tools.toml-to-json.texts.input-placeholder-paste-your-toml-here')
-      label-t-tools-toml-to-json-texts-output-label-json-from-your-toml: t('tools.toml-to-json.texts.output-label-json-from-your-toml')
   lorem-ipsum-generator:
     title: Lorem ipsum generator
     description: Lorem ipsum is a placeholder text commonly used to demonstrate the
@@ -741,9 +711,6 @@ tools:
       output-label-formatted-xml-from-your-xml: Formatted XML from your XML
       tag-foo: foo
       tag-bar: bar
-      label-t-tools-xml-formatter-texts-input-label-your-xml: t('tools.xml-formatter.texts.input-label-your-xml')
-      placeholder-t-tools-xml-formatter-texts-input-placeholder-paste-your-xml-here: t('tools.xml-formatter.texts.input-placeholder-paste-your-xml-here')
-      label-t-tools-xml-formatter-texts-output-label-formatted-xml-from-your-xml: t('tools.xml-formatter.texts.output-label-formatted-xml-from-your-xml')
   temperature-converter:
     title: Temperature converter
     description: Degrees temperature conversions for Kelvin, Celsius, Fahrenheit,
@@ -789,9 +756,6 @@ tools:
       input-label-your-yaml: Your YAML
       input-placeholder-paste-your-yaml-here: Paste your YAML here...
       output-label-toml-from-your-yaml: TOML from your YAML
-      label-t-tools-yaml-to-toml-texts-input-label-your-yaml: t('tools.yaml-to-toml.texts.input-label-your-yaml')
-      placeholder-t-tools-yaml-to-toml-texts-input-placeholder-paste-your-yaml-here: t('tools.yaml-to-toml.texts.input-placeholder-paste-your-yaml-here')
-      label-t-tools-yaml-to-toml-texts-output-label-toml-from-your-yaml: t('tools.yaml-to-toml.texts.output-label-toml-from-your-yaml')
   json-diff:
     title: JSON diff
     description: Compare two JSON objects and get the differences between them.
@@ -870,9 +834,6 @@ tools:
       input-label-your-json: Your JSON
       input-placeholder-paste-your-json-here: Paste your JSON here...
       output-label-toml-from-your-json: TOML from your JSON
-      label-t-tools-json-to-toml-texts-input-label-your-json: t('tools.json-to-toml.texts.input-label-your-json')
-      placeholder-t-tools-json-to-toml-texts-input-placeholder-paste-your-json-here: t('tools.json-to-toml.texts.input-placeholder-paste-your-json-here')
-      label-t-tools-json-to-toml-texts-output-label-toml-from-your-json: t('tools.json-to-toml.texts.output-label-toml-from-your-json')
   json-to-ts:
     title: JSON to TS
     description: Parse and convert JSON to TS.
@@ -881,9 +842,6 @@ tools:
       input-label-your-json: Your JSON
       input-placeholder-paste-your-json-here: Paste your JSON here...
       output-label-ts-from-your-json: TS from your JSON
-      label-t-tools-json-to-ts-texts-input-label-your-json: t('tools.json-to-ts.texts.input-label-your-json')
-      placeholder-t-tools-json-to-ts-texts-input-placeholder-paste-your-json-here: t('tools.json-to-ts.texts.input-placeholder-paste-your-json-here')
-      label-t-tools-json-to-ts-texts-output-label-ts-from-your-json: t('tools.json-to-ts.texts.output-label-ts-from-your-json')
   device-information:
     title: Device information
     description: Get information about your current device (screen size,
@@ -931,9 +889,6 @@ tools:
       input-label-your-raw-json: Your raw JSON
       input-placeholder-paste-your-raw-json-here: Paste your raw JSON here...
       output-label-minified-version-of-your-json: Minified version of your JSON
-      label-t-tools-json-minify-texts-input-label-your-raw-json: t('tools.json-minify.texts.input-label-your-raw-json')
-      placeholder-t-tools-json-minify-texts-input-placeholder-paste-your-raw-json-here: t('tools.json-minify.texts.input-placeholder-paste-your-raw-json-here')
-      label-t-tools-json-minify-texts-output-label-minified-version-of-your-json: t('tools.json-minify.texts.output-label-minified-version-of-your-json')
   json-string-converter:
     title: Json string converter
     description: Convert your text or JavaScript objects to JSON string format and
@@ -946,11 +901,6 @@ tools:
       input-label-your-text-json-string: Your text / JSON string
       input-placeholder-paste-your-text-here: Paste your text here...
       output-label-json-string-conversion-of-your-input: JSON string conversion of your input
-      label-t-tools-json-string-converter-texts-input-label-your-text-json-string: t('tools.json-string-converter.texts.input-label-your-text-json-string')
-      placeholder-t-tools-json-string-converter-texts-input-placeholder-paste-your-text-here:
-        t('tools.json-string-converter.texts.input-placeholder-paste-your-text-here')
-      label-t-tools-json-string-converter-texts-output-label-json-string-conversion-of-your-input:
-        t('tools.json-string-converter.texts.output-label-json-string-conversion-of-your-input')
   ulid-generator:
     title: ULID generator
     description: Generate random Universally Unique Lexicographically Sortable
@@ -990,10 +940,6 @@ tools:
       input-placeholder-paste-your-yaml-here: Paste your yaml here...
       output-label-json-from-your-yaml: JSON from your YAML
       label-nestify-a-b-c-to-nested-objects: Nestify ('a.b.c' to nested objects)
-      label-t-tools-yaml-to-json-converter-texts-input-label-your-yaml: t('tools.yaml-to-json-converter.texts.input-label-your-yaml')
-      placeholder-t-tools-yaml-to-json-converter-texts-input-placeholder-paste-your-yaml-here:
-        t('tools.yaml-to-json-converter.texts.input-placeholder-paste-your-yaml-here')
-      label-t-tools-yaml-to-json-converter-texts-output-label-json-from-your-yaml: t('tools.yaml-to-json-converter.texts.output-label-json-from-your-yaml')
   uuid-generator:
     title: UUIDs generator
     description: A Universally Unique Identifier (UUID) is a 128-bit number used to
@@ -1211,9 +1157,6 @@ tools:
       input-label-your-json: Your JSON
       input-placeholder-paste-your-json-here: Paste your JSON here...
       output-label-object-from-your-json: Object from your JSON
-      label-t-tools-json-to-object-texts-input-label-your-json: t('tools.json-to-object.texts.input-label-your-json')
-      placeholder-t-tools-json-to-object-texts-input-placeholder-paste-your-json-here: t('tools.json-to-object.texts.input-placeholder-paste-your-json-here')
-      label-t-tools-json-to-object-texts-output-label-object-from-your-json: t('tools.json-to-object.texts.output-label-object-from-your-json')
   unicode-to-java-entities:
     title: Unicode Characters to Java Entities Converter
     description: Unicode Characters to Java Entities Converter and vice-versa
@@ -2499,9 +2442,6 @@ tools:
       input-label-your-json: Your JSON
       input-placeholder-paste-your-json-here: Paste your JSON here...
       output-label-php-array-version: PHP Array version
-      label-t-tools-json-to-php-array-texts-input-label-your-json: t('tools.json-to-php-array.texts.input-label-your-json')
-      placeholder-t-tools-json-to-php-array-texts-input-placeholder-paste-your-json-here: t('tools.json-to-php-array.texts.input-placeholder-paste-your-json-here')
-      label-t-tools-json-to-php-array-texts-output-label-php-array-version: t('tools.json-to-php-array.texts.output-label-php-array-version')
   json-to-schema:
     title: Json to Schema
     description: Convert JSON data to JSON Schema, MySQL DDL, Mongoose Schema,
@@ -2520,9 +2460,6 @@ tools:
       input-label-your-json: Your JSON
       input-placeholder-paste-your-json-here: Paste your JSON here...
       output-label-your-schema: Your schema
-      label-t-tools-json-to-schema-texts-input-label-your-json: t('tools.json-to-schema.texts.input-label-your-json')
-      placeholder-t-tools-json-to-schema-texts-input-placeholder-paste-your-json-here: t('tools.json-to-schema.texts.input-placeholder-paste-your-json-here')
-      label-t-tools-json-to-schema-texts-output-label-your-schema: t('tools.json-to-schema.texts.output-label-your-schema')
   jsonpath-memo:
     title: JSONPath Syntax Cheatsheet
     description: JSONPath Syntax Cheatsheet
@@ -2736,10 +2673,6 @@ tools:
       input-label-your-nginx-config: Your Nginx config
       input-placeholder-paste-your-nginx-config-here: Paste your Nginx config here...
       output-label-prettified-nginx-config: Prettified Nginx config
-      label-t-tools-nginx-formatter-texts-input-label-your-nginx-config: t('tools.nginx-formatter.texts.input-label-your-nginx-config')
-      placeholder-t-tools-nginx-formatter-texts-input-placeholder-paste-your-nginx-config-here:
-        t('tools.nginx-formatter.texts.input-placeholder-paste-your-nginx-config-here')
-      label-t-tools-nginx-formatter-texts-output-label-prettified-nginx-config: t('tools.nginx-formatter.texts.output-label-prettified-nginx-config')
   ocr-image:
     title: OCRize image and PDF
     description: Perform OCR (Tesseract) on an image or PDF
@@ -2941,10 +2874,6 @@ tools:
       input-label-your-php-array: Your PHP Array
       input-placeholder-paste-your-php-array-here: Paste your PHP Array here...
       output-label-json-version: JSON version
-      label-t-tools-php-array-to-json-texts-input-label-your-php-array: t('tools.php-array-to-json.texts.input-label-your-php-array')
-      placeholder-t-tools-php-array-to-json-texts-input-placeholder-paste-your-php-array-here:
-        t('tools.php-array-to-json.texts.input-placeholder-paste-your-php-array-here')
-      label-t-tools-php-array-to-json-texts-output-label-json-version: t('tools.php-array-to-json.texts.output-label-json-version')
   pin-code-generator:
     title: Pin Code Generator
     description: Generate Unique PIN (digits) codes
@@ -3088,10 +3017,6 @@ tools:
       input-label-your-log-textual-data: "Your log/textual data:"
       input-placeholder-paste-your-log-textual-data-here: Paste your log/textual data here...
       output-label-cleaned-version: "Cleaned version:"
-      label-t-tools-sensitive-data-masker-texts-input-label-your-log-textual-data: t('tools.sensitive-data-masker.texts.input-label-your-log-textual-data')
-      placeholder-t-tools-sensitive-data-masker-texts-input-placeholder-paste-your-log-textual-data-here:
-        t('tools.sensitive-data-masker.texts.input-placeholder-paste-your-log-textual-data-here')
-      label-t-tools-sensitive-data-masker-texts-output-label-cleaned-version: t('tools.sensitive-data-masker.texts.output-label-cleaned-version')
   sla-calculator:
     title: SLA calculator
     description: Service Level Agreement Calcultator
@@ -3443,11 +3368,6 @@ tools:
       generate the command with
     command: Command
     placeholder: Paste command here
-    texts:
-      label-t-tools-cli-command-editor-command: $t('tools.cli-command-editor.command')
-      placeholder-t-tools-cli-command-editor-placeholder: $t('tools.cli-command-editor.placeholder')
-      label-service-sanitizeoption-option: service.sanitizeOption(option)
-      placeholder-service-sanitizeoption-option: service.sanitizeOption(option)
   safelink-decoder:
     title: Outlook Safelink decoder
     description: Decode Outlook SafeLink links
@@ -3474,10 +3394,6 @@ tools:
     input-placeholder: Paste your JSON content here...
     output: Converted XML
     error: Provided JSON is not valid.
-    texts:
-      label-t-tools-json-to-xml-input: t('tools.json-to-xml.input')
-      placeholder-t-tools-json-to-xml-input-placeholder: t('tools.json-to-xml.input-placeholder')
-      label-t-tools-json-to-xml-output: t('tools.json-to-xml.output')
   xml-to-json:
     title: XML to JSON
     description: Convert XML to JSON
@@ -3485,10 +3401,6 @@ tools:
     input-placeholder: Paste your XML content here...
     output: Converted JSON
     error: Provided XML is not valid.
-    texts:
-      label-t-tools-xml-to-json-input: t('tools.xml-to-json.input')
-      placeholder-t-tools-xml-to-json-input-placeholder: t('tools.xml-to-json.input-placeholder')
-      label-t-tools-xml-to-json-output: t('tools.xml-to-json.output')
   email-normalizer:
     title: Email normalizer
     description: Normalize email addresses to a standard format for easier
@@ -4030,10 +3942,6 @@ tools:
       input-label-your-json: Your JSON
       input-placeholder-paste-your-json-here: Paste your JSON here...
       output-label-protobuf-version-of-your-json-objects: "ProtoBuf version of your JSON objects:"
-      label-t-tools-json-to-protobuf-texts-input-label-your-json: t('tools.json-to-protobuf.texts.input-label-your-json')
-      placeholder-t-tools-json-to-protobuf-texts-input-placeholder-paste-your-json-here: t('tools.json-to-protobuf.texts.input-placeholder-paste-your-json-here')
-      label-t-tools-json-to-protobuf-texts-output-label-protobuf-version-of-your-json-objects:
-        t('tools.json-to-protobuf.texts.output-label-protobuf-version-of-your-json-objects')
   json-to-python:
     title: Json to Python
     description: Convert JSON to Python classes
@@ -4060,9 +3968,6 @@ tools:
       input-label-your-json: Your JSON
       input-placeholder-paste-your-json-here: Paste your JSON here...
       output-label-your-sql-ddl: Your SQL DDL
-      label-t-tools-json-to-sql-ddl-texts-input-label-your-json: t('tools.json-to-sql-ddl.texts.input-label-your-json')
-      placeholder-t-tools-json-to-sql-ddl-texts-input-placeholder-paste-your-json-here: t('tools.json-to-sql-ddl.texts.input-placeholder-paste-your-json-here')
-      label-t-tools-json-to-sql-ddl-texts-output-label-your-sql-ddl: t('tools.json-to-sql-ddl.texts.output-label-your-sql-ddl')
   json-to-sql-insert:
     title: Json to SQL INSERT
     description: Convert JSON array to INSERT INTO
@@ -4218,14 +4123,6 @@ tools:
       input-label-your-yaml-content: "Your YAML content:"
       input-placeholder-paste-your-yaml-content-here: Paste your YAML content here...
       output-label-properties-version: ".properties version:"
-      label-t-tools-properties-converter-texts-input-label-your-properties-content: t('tools.properties-converter.texts.input-label-your-properties-content')
-      placeholder-t-tools-properties-converter-texts-input-placeholder-paste-your-properties-content-here:
-        t('tools.properties-converter.texts.input-placeholder-paste-your-properties-content-here')
-      label-t-tools-properties-converter-texts-output-label-yaml-version: t('tools.properties-converter.texts.output-label-yaml-version')
-      label-t-tools-properties-converter-texts-input-label-your-yaml-content: t('tools.properties-converter.texts.input-label-your-yaml-content')
-      placeholder-t-tools-properties-converter-texts-input-placeholder-paste-your-yaml-content-here:
-        t('tools.properties-converter.texts.input-placeholder-paste-your-yaml-content-here')
-      label-t-tools-properties-converter-texts-output-label-properties-version: t('tools.properties-converter.texts.output-label-properties-version')
   punycode-converter:
     title: Punycode Converter
     description: Convert international unicode domain names or emails from/to ASCII
@@ -4250,14 +4147,6 @@ tools:
       input-label-double-quoted-string: Double quoted string
       input-placeholder-paste-your-double-quoted-string-here: Paste your double quoted string here...
       output-label-single-quoted-string: Single quoted string
-      label-t-tools-quote-converter-texts-input-label-single-quoted-string: t('tools.quote-converter.texts.input-label-single-quoted-string')
-      placeholder-t-tools-quote-converter-texts-input-placeholder-paste-your-single-quoted-string-here:
-        t('tools.quote-converter.texts.input-placeholder-paste-your-single-quoted-string-here')
-      label-t-tools-quote-converter-texts-output-label-double-quoted-string: t('tools.quote-converter.texts.output-label-double-quoted-string')
-      label-t-tools-quote-converter-texts-input-label-double-quoted-string: t('tools.quote-converter.texts.input-label-double-quoted-string')
-      placeholder-t-tools-quote-converter-texts-input-placeholder-paste-your-double-quoted-string-here:
-        t('tools.quote-converter.texts.input-placeholder-paste-your-double-quoted-string-here')
-      label-t-tools-quote-converter-texts-output-label-single-quoted-string: t('tools.quote-converter.texts.output-label-single-quoted-string')
   rsync-generator:
     title: Rsync Generator
     description: Rsync command generator
@@ -4446,10 +4335,6 @@ tools:
       input-label-your-raw-html: Your raw HTML
       input-placeholder-paste-your-raw-html-here: Paste your raw HTML here...
       output-label-text-from-your-html: Text from your HTML
-      label-t-tools-extract-text-from-html-texts-input-label-your-raw-html: t('tools.extract-text-from-html.texts.input-label-your-raw-html')
-      placeholder-t-tools-extract-text-from-html-texts-input-placeholder-paste-your-raw-html-here:
-        t('tools.extract-text-from-html.texts.input-placeholder-paste-your-raw-html-here')
-      label-t-tools-extract-text-from-html-texts-output-label-text-from-your-html: t('tools.extract-text-from-html.texts.output-label-text-from-your-html')
     title: Extract text from HTML
     description: 'Paste your HTML in the input form on the left and you will get
       text instantly. Occasionally, you may need to extract plain text from an
@@ -4584,10 +4469,6 @@ tools:
     result: Result
     sucess: Success
     failure: Failure
-    texts:
-      label-t-tools-sip-auth-message: $t('tools.sip-auth.message')
-      placeholder-t-tools-sip-auth-message-tips: $t('tools.sip-auth.message-tips')
-      label-t-tools-sip-auth-result: $t('tools.sip-auth.result')
     text:
       not-found: Not Found
   sharepoint-decoder:
@@ -6149,10 +6030,6 @@ tools:
       output-label-transformed-json: "Transformed JSON:"
       tag-flatten: Flatten
       tag-unflatten-nestify: Unflatten/Nestify
-      label-t-tools-json-flatten-nestify-texts-input-label-your-json-content: t('tools.json-flatten-nestify.texts.input-label-your-json-content')
-      placeholder-t-tools-json-flatten-nestify-texts-input-placeholder-paste-your-json-content-here:
-        t('tools.json-flatten-nestify.texts.input-placeholder-paste-your-json-content-here')
-      label-t-tools-json-flatten-nestify-texts-output-label-transformed-json: t('tools.json-flatten-nestify.texts.output-label-transformed-json')
   json-merger:
     title: JSON Merger
     description: Merge deeply two JSON content
@@ -6194,10 +6071,6 @@ tools:
       output-label-transformed-yaml: "Transformed YAML:"
       tag-flatten: Flatten
       tag-unflatten-nestify: Unflatten/Nestify
-      label-t-tools-yaml-flatten-nestify-texts-input-label-your-yaml-content: t('tools.yaml-flatten-nestify.texts.input-label-your-yaml-content')
-      placeholder-t-tools-yaml-flatten-nestify-texts-input-placeholder-paste-your-yaml-content-here:
-        t('tools.yaml-flatten-nestify.texts.input-placeholder-paste-your-yaml-content-here')
-      label-t-tools-yaml-flatten-nestify-texts-output-label-transformed-yaml: t('tools.yaml-flatten-nestify.texts.output-label-transformed-yaml')
   yaml-merger:
     title: YAML Merger
     description: Merge deeply two YAML content
@@ -6859,9 +6732,6 @@ tools:
       label-total-size: "Total size:"
       label-segments-count: "Segments count:"
       label-non-gsm-7-characters: "Non GSM-7 characters:"
-      label-t-tools-unicode-to-gsm7-texts-input-label-your-text-to-encode-to-gsm-7: t('tools.unicode-to-gsm7.texts.input-label-your-text-to-encode-to-gsm-7')
-      placeholder-t-tools-unicode-to-gsm7-texts-input-placeholder-put-your-text-here: t('tools.unicode-to-gsm7.texts.input-placeholder-put-your-text-here')
-      label-t-tools-unicode-to-gsm7-texts-output-label-gsm-7-encoded-version: t('tools.unicode-to-gsm7.texts.output-label-gsm-7-encoded-version')
   which-day:
     title: Which Day?
     description: Given a day and month, and years range, list all day of week a

@@ -41,8 +41,8 @@ function generateSQL() {
           :min="1"
           preset="pair"
           show-sort-button
-          key-:placeholder="t('tools.sql-parameters.texts.placeholder-name-e-g-name-or-type')"
-          value-:placeholder="t('tools.sql-parameters.texts.placeholder-value-e-g-alice-or-42-or-1-3')"
+          :key-placeholder="t('tools.sql-parameters.texts.placeholder-name-e-g-name-or-type')"
+          :value-placeholder="t('tools.sql-parameters.texts.placeholder-value-e-g-alice-or-42-or-1-3')"
         />
       </n-card>
 
