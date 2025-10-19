@@ -48,8 +48,10 @@ jobs:
           push: true
           tags: |
             sharevb/it-tools:baseurl-it-tools
+            sharevb/it-tools:stable-baseurl-it-tools
             sharevb/it-tools:${{ env.RELEASE_VERSION}}-baseurl-it-tools
             ghcr.io/sharevb/it-tools:baseurl-it-tools
+            ghcr.io/sharevb/it-tools:stable-baseurl-it-tools
             ghcr.io/sharevb/it-tools:${{ env.RELEASE_VERSION}}-baseurl-it-tools
 
       - name: Build and push
@@ -61,8 +63,10 @@ jobs:
           push: true
           tags: |
             sharevb/it-tools:latest
+            sharevb/it-tools:stable
             sharevb/it-tools:${{ env.RELEASE_VERSION}}
             ghcr.io/sharevb/it-tools:latest
+            ghcr.io/sharevb/it-tools:stable
             ghcr.io/sharevb/it-tools:${{ env.RELEASE_VERSION}}
 
   github-release:
@@ -117,10 +121,12 @@ jobs:
 
             - Docker Hub Registry
               - `sharevb/it-tools:latest`
+              - `sharevb/it-tools:stable`
               - `sharevb/it-tools:${{ env.RELEASE_VERSION}}`
 
             - GitHub Container Registry
               - `ghcr.io/sharevb/it-tools:latest`
+              - `ghcr.io/sharevb/it-tools:stable`
               - `ghcr.io/sharevb/it-tools:${{ env.RELEASE_VERSION}}`
 
             ## Changelog
