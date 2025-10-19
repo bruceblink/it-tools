@@ -1,4 +1,5 @@
 <script setup lang="ts">
+/* NO EXTRACT SCRIPT */
 const allowedDomains = ref<string[]>([]);
 const allowedIPv4s = ref<string[]>([]);
 const allowedIPv6s = ref<string[]>([]);

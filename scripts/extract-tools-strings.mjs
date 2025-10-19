@@ -48,9 +48,22 @@ function processVueComponent(filePath, toolName) {
     return `${attr}: t('tools.${toolName}.texts.${key}')`;
   });
 
+  if (content.includes("/* NO EXTRACT SCRIPT */")) {
+    console.log(`Marked to not extract: ${filePath}`);
+    return;
+  }
+
+  const hasAlreayI18n = filePath.endsWith('.vue')
+    ? content.includes("const { t } = useI18n();")
+    : content.includes("import { translate as t } from '@/plugins/i18n.plugin';");
+  if (hasAlreayI18n) {
+    console.log(`Already extracted: ${filePath}`);
+    return;
+  }
+
   if (filePath.endsWith('.vue')) {
     // Regex to find label or placeholder attributes
-    regex = /(?<!:)((?:input-|output-)?(?:label|placeholder|title))="([^"]+)"/g;
+    regex = /(?<!:)((?:[a-z]+-)?(?:label|placeholder|title))="([^"]+)"/g;
     content = content.replace(regex, (match, attr, text) => {
       if (!text?.trim()) {
         return match;
@@ -88,13 +101,13 @@ function processVueComponent(filePath, toolName) {
 
   if (filePath.endsWith('.vue')) {
     // Ensure the useI18n import exists
-    if (!content.includes("const { t } = useI18n();")) {
+    if (!hasAlreayI18n) {
       content = content.replace(/\<script setup( lang="ts")?\>/, "<script setup lang=\"ts\">\nimport { useI18n } from 'vue-i18n';\nconst { t } = useI18n();");
     }
   }
   else {
     // Ensure the useI18n import exists
-    if (!content.includes("import { translate as t } from '@/plugins/i18n.plugin';")) {
+    if (!hasAlreayI18n) {
       content = 'import { translate as t } from "@/plugins/i18n.plugin";\n' + content;
     }
   }
