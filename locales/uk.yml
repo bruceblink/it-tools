@@ -256,6 +256,8 @@ tools:
       label-location: "Місцезнаходження:"
       label-modifiers: "Модифікатори:"
       tag-press-the-key-on-your-keyboard-you-want-to-get-info-about-this-key: Натисніть клавішу на клавіатурі, про яку хочете отримати інформацію
+      label-scancode: "Сканкод (шістнадцятковий):"
+      label-scancode-dec: "Сканкод (dec):"
   emoji-picker:
     title: Вибір емодзі
     description: Легко копіюйте та вставляйте емодзі та отримуйте значення юнікоду

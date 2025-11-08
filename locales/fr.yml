@@ -3760,6 +3760,8 @@ tools:
       tag-press-the-key-on-your-keyboard-you-want-to-get-info-about-this-key:
         Appuyez sur la touche de votre clavier, vous souhaitez obtenir des
         informations sur cette touche
+      label-scancode: "Code de balayage (hexadécimal) :"
+      label-scancode-dec: "Code de balayage (déc.) :"
     title: Informations sur le kicode
   length-converter:
     description: Convertir les valeurs des unités de longueur

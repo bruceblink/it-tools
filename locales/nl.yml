@@ -210,6 +210,8 @@ tools:
       tag-press-the-key-on-your-keyboard-you-want-to-get-info-about-this-key:
         Druk op de toets op uw toetsenbord waarvoor u informatie over deze toets
         wilt verkrijgen
+      label-scancode: "Scancode (hex):"
+      label-scancode-dec: "Scancode (dec):"
   emoji-picker:
     title: Emoji keuze
     description: Kopieer en plak eenvoudig emoji’s en verkrijg de Unicode en

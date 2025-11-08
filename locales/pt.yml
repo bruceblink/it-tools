@@ -244,6 +244,8 @@ tools:
       label-location: "Localização:"
       label-modifiers: "Modificadores:"
       tag-press-the-key-on-your-keyboard-you-want-to-get-info-about-this-key: Pressione a tecla do seu teclado para obter informações sobre esta tecla
+      label-scancode: "Código de varredura (hexadecimal):"
+      label-scancode-dec: "Código de varredura (dez):"
   bcrypt:
     title: Bcrypt
     description: Crie hash e compare strings de texto usando bcrypt. Bcrypt é uma

@@ -260,6 +260,8 @@ tools:
       label-location: "Расположение :"
       label-modifiers: "Модификаторы:"
       tag-press-the-key-on-your-keyboard-you-want-to-get-info-about-this-key: Нажмите клавишу на клавиатуре, чтобы получить информацию об этой клавише.
+      label-scancode: "Скан-код (шестнадцатеричный):"
+      label-scancode-dec: "Сканкод (десятичный):"
   emoji-picker:
     title: Выбор эмодзи
     description: Легко копируйте и вставляйте эмодзи и получайте значения юникода и

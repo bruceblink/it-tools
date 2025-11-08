@@ -245,6 +245,8 @@ tools:
       label-location: "Ubicación :"
       label-modifiers: "Modificadores:"
       tag-press-the-key-on-your-keyboard-you-want-to-get-info-about-this-key: Presione la tecla de su teclado sobre la que desea obtener información
+      label-scancode: "Código de escaneo (hexadecimal):"
+      label-scancode-dec: "Código de escaneo (dec):"
   bcrypt:
     title: Bcrypt
     description: Hash y comparación de cadenas de texto con bcrypt. Bcrypt es una

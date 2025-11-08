@@ -261,6 +261,8 @@ tools:
       tag-press-the-key-on-your-keyboard-you-want-to-get-info-about-this-key:
         اضغط على المفتاح الموجود على لوحة المفاتيح لديك الذي تريد الحصول على
         معلومات حول هذا المفتاح
+      label-scancode: "رمز المسح الضوئي (سداسي عشري):"
+      label-scancode-dec: "رمز المسح الضوئي (dec):"
   emoji-picker:
     title: منتقي الرموز التعبيرية
     description: نسخ ولصق الرموز التعبيرية بسهولة والحصول على   الترميز الموحد

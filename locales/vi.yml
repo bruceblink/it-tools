@@ -253,6 +253,8 @@ tools:
       label-location: "Vị trí :"
       label-modifiers: "Các từ bổ nghĩa:"
       tag-press-the-key-on-your-keyboard-you-want-to-get-info-about-this-key: Nhấn phím trên bàn phím của bạn nếu bạn muốn biết thông tin về phím này
+      label-scancode: "Scancode (hex) :"
+      label-scancode-dec: "Scancode (dec) :"
   emoji-picker:
     title: Bộ chọn biểu tượng cảm xúc
     description: Sao chép và dán biểu tượng cảm xúc một cách dễ dàng và nhận giá trị

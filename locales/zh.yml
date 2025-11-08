@@ -198,6 +198,8 @@ tools:
       label-location: 位置：
       label-modifiers: 修饰键：
       tag-press-the-key-on-your-keyboard-you-want-to-get-info-about-this-key: 按下您想获取信息的键盘按键
+      label-scancode: 扫描码（十六进制）：
+      label-scancode-dec: 扫描码（十进制）：
   bcrypt:
     title: 加密
     description: 使用bcrypt对文本字符串进行哈希和比较。bcrypt是一种基于Blowfish密码算法的密码哈希函数。

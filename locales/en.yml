@@ -20,9 +20,9 @@ about:
     shortcut bar!
 
     IT Tools is open-source (under the GPL-3.0 license) and free, and will
-    always be. If you
-    want to support my work on this fork, and encourage me to add more tools or functionalities, please consider
-    supporting by [sponsoring me](https://www.buymeacoffee.com/sharevb).
+    always be. If you want to support my work on this fork, and encourage me to
+    add more tools or functionalities, please consider supporting by [sponsoring
+    me](https://www.buymeacoffee.com/sharevb).
 
     ## Technologies
 
@@ -211,6 +211,8 @@ tools:
       label-location: "Location :"
       label-modifiers: "Modifiers :"
       tag-press-the-key-on-your-keyboard-you-want-to-get-info-about-this-key: Press the key on your keyboard you want to get info about this key
+      label-scancode: "Scancode (hex) :"
+      label-scancode-dec: "Scancode (dec) :"
   bcrypt:
     title: Bcrypt
     description: Hash and compare text string using bcrypt. Bcrypt is a

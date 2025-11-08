@@ -239,6 +239,8 @@ tools:
       label-location: "Lokalizacja:"
       label-modifiers: "Modyfikatory:"
       tag-press-the-key-on-your-keyboard-you-want-to-get-info-about-this-key: Naciśnij klawisz na klawiaturze, aby uzyskać informacje o tym klawiszu
+      label-scancode: "Kod skanowania (szesnastkowy):"
+      label-scancode-dec: "Kod skanowania (dec):"
   bcrypt:
     title: Bcrypt
     description: Haszuj i porównuj ciągi tekstowe za pomocą bcrypt. Bcrypt to

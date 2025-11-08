@@ -208,6 +208,8 @@ tools:
       label-location: "Konum :"
       label-modifiers: "Sıfatlar :"
       tag-press-the-key-on-your-keyboard-you-want-to-get-info-about-this-key: Klavyenizde bilgi almak istediğiniz tuşa basın
+      label-scancode: "Tarama kodu (onaltılık):"
+      label-scancode-dec: "Tarama kodu (ondalık) :"
   emoji-picker:
     title: Emoji seçici
     description: Kolayca emojileri kopyala yapıştır, emojilerin unicode ve kod puanı

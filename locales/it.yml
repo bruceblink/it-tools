@@ -211,6 +211,8 @@ tools:
       label-location: "Posizione :"
       label-modifiers: "Modificatori:"
       tag-press-the-key-on-your-keyboard-you-want-to-get-info-about-this-key: Premi il tasto sulla tastiera su cui vuoi ottenere informazioni
+      label-scancode: "Codice di scansione (esadecimale):"
+      label-scancode-dec: "Scancode (dec) :"
   emoji-picker:
     title: Selettore di emoji
     description: Copia e incolla facilmente le emoji e ottieni il valore unicode e i

@@ -207,6 +207,8 @@ tools:
       label-location: "Placering:"
       label-modifiers: "Modifikatorer:"
       tag-press-the-key-on-your-keyboard-you-want-to-get-info-about-this-key: Tryk på den tast på dit tastatur, du vil have information om
+      label-scancode: "Scankode (hex):"
+      label-scancode-dec: "Scankode (dec):"
   emoji-picker:
     title: Emoji vælger
     description: Kopiér og indsæt emojier nemt og få unicode og kode point værdi af

@@ -286,6 +286,8 @@ tools:
       tag-press-the-key-on-your-keyboard-you-want-to-get-info-about-this-key:
         Brúigh an eochair ar do mhéarchlár ar mhaith leat eolas a fháil faoin
         eochair seo
+      label-scancode: "Cód scanadh (heicsidheachúlach):"
+      label-scancode-dec: "Cód scanadh (dec):"
   emoji-picker:
     title: Roghnóir Emoji
     description: Cóipeáil agus greamaigh emojis go héasca agus faigh an cód cód agus

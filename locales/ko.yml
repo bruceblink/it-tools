@@ -201,6 +201,8 @@ tools:
       label-location: "위치 :"
       label-modifiers: "수정자 :"
       tag-press-the-key-on-your-keyboard-you-want-to-get-info-about-this-key: 이 키에 대한 정보를 얻고 싶은 키보드의 키를 누르세요
+      label-scancode: "스캔코드(16진수):"
+      label-scancode-dec: "스캔코드(10진수) :"
   emoji-picker:
     title: 이모지 선택기
     description: 이모지를 쉽게 복사하고 유니코드·코드포인트 값을 확인합니다.

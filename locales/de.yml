@@ -276,6 +276,8 @@ tools:
       tag-press-the-key-on-your-keyboard-you-want-to-get-info-about-this-key:
         Drücken Sie die Taste auf Ihrer Tastatur, zu der Sie Informationen
         erhalten möchten
+      label-scancode: "Scancode (hex):"
+      label-scancode-dec: "Scancode (dec) :"
   emoji-picker:
     title: Emoji-Picker
     description: Einfaches Kopieren und Einfügen von Emojis. Erhalte außerdem den

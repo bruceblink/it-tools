@@ -256,6 +256,8 @@ tools:
       label-location: "Sted:"
       label-modifiers: "Modifikatorer:"
       tag-press-the-key-on-your-keyboard-you-want-to-get-info-about-this-key: Trykk på tasten på tastaturet du vil ha informasjon om
+      label-scancode: "Skannekode (heks):"
+      label-scancode-dec: "Skanningskode (dec):"
   emoji-picker:
     title: Emoji velger
     description: Klipp og lim emojis og få unicode og kode verdien av hver emoji.
