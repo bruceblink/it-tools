@@ -246,6 +246,7 @@
     "moment": "^2.30.1",
     "monaco-editor": "^0.54.0",
     "morsee": "^1.0.10",
+    "msgpackr": "^1.11.5",
     "naive-ui": "^2.35.0",
     "nanoid": "^5.1.6",
     "nanoid-dictionary": "^5.0.0",
