@@ -152,6 +152,7 @@
     "email-bounce-parser-browser": "^1.1.0",
     "email-normalizer": "^1.0.0",
     "emojilib": "^4.0.2",
+    "ethers": "^6.15.0",
     "event-cron-parser": "^1.0.35",
     "exif-be-gone": "^1.5.1",
     "exifreader": "^4.26.1",
