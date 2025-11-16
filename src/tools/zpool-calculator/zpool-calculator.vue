@@ -418,9 +418,9 @@ await loadCapacity();
     </table>
 
     <n-space justify="center">
-      <router-link target="_blank" to="/zpool-memo" mb-1 mt-2>
+      <c-link target="_blank" to="/zpool-memo" mb-1 mt-2>
         {{ t('tools.zpool-calculator.texts.tag-see-zpool-openzfs-cheatsheet') }}
-      </router-link>
+      </c-link>
     </n-space>
 
     <p class="subsect_label">

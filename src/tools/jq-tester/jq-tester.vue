@@ -72,12 +72,12 @@ const jsonValidation = useValidation({
       </div>
 
       <div mb-2 flex justify-center>
-        <router-link v-if="jqtype === 'jq'" target="_blank" to="/jq-memo" mb-1 mt-1>
+        <c-link v-if="jqtype === 'jq'" target="_blank" to="/jq-memo" mb-1 mt-1>
           {{ t('tools.jq-tester.texts.tag-see') }}<code>{{ t('tools.jq-tester.texts.tag-jq') }}</code>{{ t('tools.jq-tester.texts.tag-cheatsheet') }}
-        </router-link>
-        <router-link v-if="jqtype === 'jsonpath'" target="_blank" to="/jsonpath-memo" mb-1 mt-1>
+        </c-link>
+        <c-link v-if="jqtype === 'jsonpath'" target="_blank" to="/jsonpath-memo" mb-1 mt-1>
           {{ t('tools.jq-tester.texts.tag-see-jsonpath-cheatsheet') }}
-        </router-link>
+        </c-link>
       </div>
 
       <c-input-text

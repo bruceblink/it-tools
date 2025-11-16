@@ -90,9 +90,9 @@ const umask = computed(() => computeUmaskRepresentation({ permissions: permissio
 <template>
   <div>
     <div mb-2 flex justify-center>
-      <router-link target="_blank" to="/chmod-memo">
+      <c-link target="_blank" to="/chmod-memo">
         See <code>chmod</code> command cheatsheet.
-      </router-link>
+      </c-link>
     </div>
 
     <n-space justify="center">

@@ -87,9 +87,9 @@ const result = computed(() => {
         <tbody>
           <tr v-for="(tool, ix) in unitsConversionTools" :key="ix">
             <td>
-              <router-link :to="tool.path" class="decoration-none" target="_blank">
+              <c-link :to="tool.path" class="decoration-none" target="_blank">
                 {{ tool.name }}
-              </router-link>
+              </c-link>
             </td>
             <td>
               {{ tool.description }}

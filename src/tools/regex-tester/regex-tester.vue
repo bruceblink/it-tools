@@ -109,9 +109,9 @@ tryOnBeforeUnmount(() => {
         rows="3"
         :validation="regexValidation"
       />
-      <router-link target="_blank" to="/regex-memo" mb-1 mt-1>
+      <c-link target="_blank" to="/regex-memo" mb-1 mt-1>
         {{ t('tools.regex-tester.link') }}
-      </router-link>
+      </c-link>
       <n-space>
         <n-checkbox v-model:checked="global">
           <span :title="t('tools.regex-tester.global')">{{ t('tools.regex-tester.texts.tag-global-search') }}<code>{{ t('tools.regex-tester.texts.tag-g') }}</code>{{ t('tools.regex-tester.texts.tag-') }}</span>

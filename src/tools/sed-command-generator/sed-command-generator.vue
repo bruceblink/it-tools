@@ -69,9 +69,9 @@ const sedCommand = computed(() => {
   <div>
     <n-space justify="center" mb-1 mt-1>
       <n-p>
-        {{ t('tools.sed-command-generator.texts.tag-for-more-information-about') }}<code>{{ t('tools.sed-command-generator.texts.tag-sed') }}</code>{{ t('tools.sed-command-generator.texts.tag-command-see') }}<router-link target="_blank" to="/sed-memo">
+        {{ t('tools.sed-command-generator.texts.tag-for-more-information-about') }}<code>{{ t('tools.sed-command-generator.texts.tag-sed') }}</code>{{ t('tools.sed-command-generator.texts.tag-command-see') }}<c-link target="_blank" to="/sed-memo">
           {{ t('tools.sed-command-generator.texts.tag-sed-command-cheatsheet') }}
-        </router-link>
+        </c-link>
       </n-p>
     </n-space>
 
@@ -97,9 +97,9 @@ const sedCommand = computed(() => {
 
       <n-card v-if="form.commandType !== 'number'" :title="t('tools.sed-command-generator.texts.title-search-pattern')">
         <n-input v-model:value="form.pattern" :placeholder="t('tools.sed-command-generator.texts.placeholder-e-g-foo')" />
-        <router-link target="_blank" to="/regex-memo">
+        <c-link target="_blank" to="/regex-memo">
           {{ t('tools.sed-command-generator.texts.tag-see-regex-cheatsheet') }}
-        </router-link>
+        </c-link>
       </n-card>
 
       <n-form-item v-if="form.commandType === 'substitute'" :label="t('tools.sed-command-generator.texts.label-replacement')" mt-3>

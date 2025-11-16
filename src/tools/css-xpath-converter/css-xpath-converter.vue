@@ -43,9 +43,9 @@ const cssOutput = computed(
         mb-5
       />
 
-      <router-link target="_blank" to="/css-selectors-memo" mb-1 mt-1>
+      <c-link target="_blank" to="/css-selectors-memo" mb-1 mt-1>
         {{ t('tools.css-xpath-converter.texts.tag-see-css-selectors-cheatsheet') }}
-      </router-link>
+      </c-link>
 
       <n-divider />
 
@@ -66,9 +66,9 @@ const cssOutput = computed(
         mb-5
       />
 
-      <router-link target="_blank" to="/xpath-memo" mb-1 mt-1>
+      <c-link target="_blank" to="/xpath-memo" mb-1 mt-1>
         {{ t('tools.css-xpath-converter.texts.tag-see-xpath-cheatsheet') }}
-      </router-link>
+      </c-link>
 
       <n-divider />
 
