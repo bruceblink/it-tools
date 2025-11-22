@@ -91,11 +91,7 @@ const CRCValues = computed(() => withDefaultOnError(() => {
 }, defaultCRCValues));
 
 watch(text,
-  (_, newValue) => {
-    if (newValue === '') {
-      return;
-    }
-
+  (newValue) => {
     file.value = null;
     hashes.value = getCRCs(newValue);
     status.value = 'done';
