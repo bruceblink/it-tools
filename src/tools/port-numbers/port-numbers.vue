@@ -9,7 +9,7 @@ const { t } = useI18n();
 const port = useQueryParam({ tool: 'port-numbers', name: 'port', defaultValue: 80 });
 const protocol = useQueryParam({ tool: 'port-numbers', name: 'proto', defaultValue: 'tcp' });
 const result = computed(() => {
-  const [type, description] = ports[`${port.value}/${protocol.value}` as (keyof typeof ports)];
+  const [type, description] = ports[`${port.value}/${protocol.value}` as (keyof typeof ports)] || [];
   return { type: type ?? 'unknown', description: description ?? 'Unknown' };
 });
 </script>
