@@ -2,13 +2,15 @@
 import { useI18n } from 'vue-i18n';
 import decomposerize from 'decomposerize';
 import TextareaCopyable from '@/components/TextareaCopyable.vue';
+import { useQueryParamOrStorage } from '@/composable/queryParams';
 
 const { t } = useI18n();
 
 const detachOption = ref<boolean>(false);
 const removeOption = ref<boolean>(false);
-const longArgsOption = ref<boolean>(false);
-const equalAsSepOption = ref<boolean>(false);
+const longArgsOption = useQueryParamOrStorage({ name: 'long', storageName: 'compose-to-run:l', defaultValue: false });
+const equalAsSepOption = useQueryParamOrStorage({ name: 'sepequal', storageName: 'compose-to-run:e', defaultValue: false });
+const multiline = useQueryParamOrStorage({ name: 'multiline', storageName: 'compose-to-run:m', defaultValue: false });
 
 const dockerCompose = ref(
   `version: '3.3'
@@ -32,6 +34,7 @@ const conversionResult = computed(() => {
       'rm': removeOption.value,
       'long-args': longArgsOption.value,
       'arg-value-separator': equalAsSepOption.value ? '=' : ' ',
+      'multiline': multiline.value,
     };
     return { commands: decomposerize(dockerCompose.value.trim(), config), errors: [] };
   }
@@ -86,8 +89,11 @@ const MONACO_EDITOR_OPTIONS = {
       <n-checkbox v-model:checked="longArgsOption">
         {{ t('tools.docker-compose-to-docker-run-converter.texts.tag-long-arguments') }}
       </n-checkbox>
+      <n-checkbox v-model:checked="multiline">
+        {{ t('tools.docker-compose-to-docker-run-converter.texts.tag-multiline') }}
+      </n-checkbox>
       <n-checkbox v-model:checked="equalAsSepOption">
-        {{ t('tools.docker-compose-to-docker-run-converter.texts.tag-') }}<i>{{ t('tools.docker-compose-to-docker-run-converter.texts.tag-arg') }}</i>{{ t('tools.docker-compose-to-docker-run-converter.texts.tag-') }}<i>{{ t('tools.docker-compose-to-docker-run-converter.texts.tag-value') }}</i>{{ t('tools.docker-compose-to-docker-run-converter.texts.tag-') }}
+        {{ t('tools.docker-compose-to-docker-run-converter.texts.tag-equal-sep') }}
       </n-checkbox>
     </div>
 

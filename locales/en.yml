@@ -1781,9 +1781,8 @@ tools:
       tag-detach-d: Detach (-d)
       tag-remove-rm: Remove (--rm)
       tag-long-arguments: Long Arguments
-      tag-: '?'
-      tag-arg: arg
-      tag-value: value
+      tag-multiline: Multiline
+      tag-equal-sep: '--arg=value'
   docker-compose-to-kubernetes:
     title: Docker compose to kubernetes
     description: Docker Compose to Kubernetes manifests
