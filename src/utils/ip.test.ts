@@ -93,7 +93,9 @@ describe('ipv4/6 util', () => {
         '248.0.0.0/6', // NOSONAR
         '252.0.0.0/6', // NOSONAR
       ]); // NOSONAR
-      expect(getSubnets('1.1.1.1/8')).to.eql([]); // NOSONAR
+      expect(getSubnets('1.1.1.1/8')).to.eql([
+        '1.0.0.0/8', // NOSONAR
+      ]); // NOSONAR
       expect(getSubnets('1.1.1.1/11')).to.eql([ // NOSONAR
         '1.0.0.0/11', // NOSONAR
         '1.32.0.0/11', // NOSONAR
@@ -104,7 +106,9 @@ describe('ipv4/6 util', () => {
         '1.192.0.0/11', // NOSONAR
         '1.224.0.0/11', // NOSONAR
       ]); // NOSONAR
-      expect(getSubnets('172.16.2.2/16')).to.eql([]); // NOSONAR
+      expect(getSubnets('172.16.2.2/16')).to.eql([
+        '172.16.0.0/16', // NOSONAR
+      ]); // NOSONAR
       expect(getSubnets('172.16.2.2/26')).to.eql([ // NOSONAR
         '172.16.2.0/26', // NOSONAR
         '172.16.2.64/26', // NOSONAR
@@ -112,7 +116,9 @@ describe('ipv4/6 util', () => {
         '172.16.2.192/26', // NOSONAR
       ]); // NOSONAR
       expect(getSubnets('172.16.2.2/31').length).to.eql(128); // NOSONAR
-      expect(getSubnets('255.255.255.0/32')).to.eql([]); // NOSONAR
+      expect(getSubnets('255.255.255.0/32')).to.eql([
+        '255.255.255.0/32', // NOSONAR
+      ]); // NOSONAR
       expect(getSubnets('2001:db8:0:85a3::ac1f:8001/62')).to.eql([]); // NOSONAR
       expect(getSubnets('2001:db8:0:85a3:0:0:ac1f:8001/62')).to.eql([]); // NOSONAR
       expect(getSubnets('2001:db8:0:85a3::ac1f:8001/112')).to.eql([]); // NOSONAR

@@ -31,7 +31,16 @@ export function parseAsCIDR(form: string) {
   return (ipMatch.convertToMasks() || [])[0]?.convertToSubnet()?.toString() || '';
 }
 
-export function getSubnets(cidr: string) {
+export interface SubnetInfo {
+  netAddress: string
+  firstIP: string
+  lastIP: string
+  broadcastIP: string
+  prefix: number
+  hostsCount: number
+}
+
+export function getSubnetsInfos(cidr: string): SubnetInfo[] {
   const [address, prefix] = cidr.split('/');
   if (isIPv4(address)) {
     const prefix4Int = Number(prefix || '32');
@@ -43,21 +52,28 @@ export function getSubnets(cidr: string) {
     if (prefix4Int < 8) {
       startNetwork = 0;
     }
-    if (prefix4Int % 8 === 0) {
-      return [];
-    }
     startNetwork = bigInt & getMask(prefix4Int);
     const increment = BigInt(2) ** BigInt(32 - prefix4Int);
-    const netCount = getNetworksCount(cidr);
+    const netCount = getNetworksCount(cidr) || 1;
     for (let netIndex = 0; netIndex < netCount; netIndex += 1) {
-      const netAddr = Address4.fromBigInt(startNetwork).correctForm();
-      subnets.push(`${netAddr}/${prefix4Int}`);
+      subnets.push({
+        netAddress: Address4.fromBigInt(startNetwork).correctForm(),
+        firstIP: Address4.fromBigInt(startNetwork + 1n).correctForm(),
+        lastIP: Address4.fromBigInt(startNetwork + increment - 2n).correctForm(),
+        broadcastIP: Address4.fromBigInt(startNetwork + increment - 1n).correctForm(),
+        prefix: prefix4Int,
+        hostsCount: Number(increment - 2n),
+      });
       startNetwork += increment;
     }
     return subnets;
   }
 
   return [];
+}
+
+export function getSubnets(cidr: string) {
+  return getSubnetsInfos(cidr).map(({ netAddress, prefix }) => `${netAddress}/${prefix}`);
 }
 
 export function getNetworksCount(cidr: string) {
