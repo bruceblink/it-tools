@@ -88,8 +88,11 @@ const properties: { title: string; key: keyof URL }[] = [
         <icon-mdi-arrow-right-bottom />
       </div>
 
-      <InputCopyable :value="param.key" readonly />
-      <InputCopyable :value="param.value" readonly />
+      <InputCopyable :value="param.key" readonly mr-1 style="width: 40%" />
+      <InputCopyable :value="param.value" readonly mr-1 />
+      <c-button v-if="/^[a-z]+:\/\//.test(param.value || '')" target="_blank" :href="param.value">
+        {{ t('tools.url-parser.texts.button-open-url') }}
+      </c-button>
     </div>
   </c-card>
 </template>
