@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import markdownit from 'markdown-it';
 import { type GeneratorConfig, generateMarkdown, getSupportedLanguages } from './markdown-lorem-ipsum.service';
 
 const headerStyleOptions = [
@@ -39,6 +40,15 @@ function generate() {
 }
 
 const supportedLanguages = getSupportedLanguages();
+
+function printLorem() {
+  const w = window.open();
+  if (w === null) {
+    return;
+  }
+  w.document.body.innerHTML = markdownit().render(markdown.value || '');
+  w.print();
+}
 
 onMounted(generate);
 </script>
@@ -143,6 +153,11 @@ onMounted(generate);
 
     <c-card title="Generated Markdown" mt-2>
       <textarea-copyable :value="markdown" language="markdown" />
+      <n-space justify="center" mt-2>
+        <c-button @click="printLorem">
+          Print (ie, use a PDF Printer to get a PDF file)
+        </c-button>
+      </n-space>
     </c-card>
   </div>
 </template>

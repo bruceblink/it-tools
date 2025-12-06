@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n';
+import markdownit from 'markdown-it';
 import { generateLoremIpsum, getSupportedLanguages } from './lorem-ipsum-generator.service';
 import { computedRefreshable } from '@/composable/computedRefreshable';
 import { useCopy } from '@/composable/copy';
@@ -28,6 +29,15 @@ const [loremIpsumText, refreshLoremIpsum] = computedRefreshable(() =>
 );
 
 const { copy } = useCopy({ source: loremIpsumText, text: t('tools.lorem-ipsum-generator.texts.text-lorem-ipsum-copied-to-the-clipboard') });
+
+function printLorem() {
+  const w = window.open();
+  if (w === null) {
+    return;
+  }
+  w.document.body.innerHTML = markdownit().render(loremIpsumText.value || '');
+  w.print();
+}
 </script>
 
 <template>
@@ -63,6 +73,9 @@ const { copy } = useCopy({ source: loremIpsumText, text: t('tools.lorem-ipsum-ge
       </c-button>
       <c-button @click="refreshLoremIpsum">
         {{ t('tools.lorem-ipsum-generator.texts.tag-refresh') }}
+      </c-button>
+      <c-button @click="printLorem">
+        {{ t('tools.lorem-ipsum-generator.texts.tag-print-ie-use-a-pdf-printer-to-get-a-pdf-file') }}
       </c-button>
     </div>
   </c-card>

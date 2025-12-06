@@ -679,6 +679,7 @@ tools:
       placeholder-your-lorem-ipsum: Your lorem ipsum...
       tag-copy: Copy
       tag-refresh: Refresh
+      tag-print-ie-use-a-pdf-printer-to-get-a-pdf-file: Print (ie, use a PDF Printer to get a PDF file)
   qrcode-generator:
     title: QR Code generator
     description: >-
@@ -3236,7 +3237,7 @@ tools:
       tag-category: Category
       tag-html: Html
       tag-name: Name
-      tag-gt-more-info: 'More info about this character'
+      tag-gt-more-info: More info about this character
   url-cleaner:
     title: Url Cleaner
     description: >-
