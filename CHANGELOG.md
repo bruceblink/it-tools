@@ -2,6 +2,83 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## Version 2025.12.07
+
+### Features
+-  Custom External Tools (801e3d5)
+- **new tool**: Argon2 Hasher (6e525b9)
+- **new tool**: GitIgnore Generator (9e2eca2)
+- **Url Parser**: add Open URL button for url params that contains xxx:// (acaa5d7)
+- **JSON Viewer**: add repair search keyword (0579995)
+- **JSON Linter**: add auto repair option (f0d2347)
+- **new tool**: IP Subnets Lister (99f4be6)
+- **Lorem Ipsum Generators**: add a Print to PDF button (7955f50)
+- **unicode-search**: Added ability to search using unicode characters (#213) (2781815)
+- **new tool**: Shamir's Secret Sharing (2461cba)
+- **new tool**: Short Urls expander (6e90119)
+- **new tool**: Markdown Lorem Ipsum generator (484729c)
+- **new tool**: CSS Units Converter (835ff8d)
+- **new tool**: CSS Gradient Generator (86683d8)
+- **HTML to Markdown**: heading and emphasis variants (fb9ddb0)
+- **new tool**: Pdf Compressor (4db9743)
+- **Docker Compose to Docker Run**: add multiline options (6af606b)
+- **JWT Generator**: allow to paste an existing token to edit (23581a3)
+- **new tools**: JSON to TOON, TOON to JSON (b240217)
+- **JWT Parser**: secret encoding (text, hex array or base64) (504cbe1)
+- **JWT Generator**: handle secret encodings (base64, hex array or text) (475a86a)
+- **Many Units Converter**: references other units conversion (6aa69eb)
+- **new tool**: Binary Calculator (4df614e)
+- **new tool**: EMV TLV Parser (5d8b28d)
+- **new tool**: ETH Transaction Decoder (3fc1614)
+- **new tool**: JSON <> Message Pack (b7a28db)
+- **new tool**: File Splitter (json, txt, xml) (29c1483)
+- **new tool**: Serial Terminal (5dd16d4)
+- **new tool**: Docker Compose to .env file (bc71663)
+- **JSON Linter**: add copyable formatted json (4a148b5)
+- **Keycode Info**: add scancodes (73483fa)
+- **Chmod Calculator**: add a cheatsheet (b3fb940)
+- **new tool**: I or L checker (c156222)
+- **Base64 File Converter**: add paste-image (935600c)
+
+### Bug fixes
+- **Text Statistics**: word counts for only spaces (e6cbe08)
+- **token-generator**: add the missing character 'N' & 'n' (#221) (ac08813)
+- **JSON DIff**: wrap and indent diffs (8fad718)
+-  remove sponsor banner (cb0725d)
+- **dBm mW Converter**: change category (ecb81ec)
+- **Text Diff**: sticky overlap fix (a4af330)
+- **Port Numbers**: unknown port throws (3763f9e)
+-  invalid watch callback (461dabf)
+- **CRC Calculator**: input text watcher was wrong (a3161e9)
+-  router-link color contrast (c7d77e1)
+- **Translate Missings Script**: ensure format of en.yml (8c97e19)
+-  remove Credit Card Generator as usage could be malicious (814bae2)
+- **Image Formats Converter**: add SVG in keywords (ba5c950)
+- **Vite/PWA**: on vite preload error, reload (a182595)
+- **Data Storage Converter**: make precision even for 1.00 (c8f0d53)
+
+### Chores
+-  overrides @vueuse/shared (811e52f)
+- **Vercel**: ensure no cache for index.html (6737df4)
+-  clean qpdf (c25ec86)
+- **Vercel**: limit PWA precaching to avoid Fast Data Transfer exceed (20f484c)
+- **Build**: ignore scripts (8873b9d)
+
+### Other
+-  Use async versions of bcrypt methods to avoid freezing browser tab (#204) (102cfce)
+
+### I18n
+-  translate all (6fd3c6b)
+
+### Merge branch 'chore/all-my-stuffs' of https
+-  //github.com/sharevb/it-tools into chore/all-my-stuffs (f811b99)
+
+### Documentation
+-  spelling updates and quadlet instructions (#203) (58db3b3)
+
+### Fixup! chore
+-  optimize unit test memory use (c1b0694)
+
 ## Version 2025.10.19
 
 ### Features
