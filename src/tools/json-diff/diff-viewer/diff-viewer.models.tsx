@@ -104,7 +104,7 @@ function formatValue(value: unknown) {
     return 'null';
   }
 
-  return JSON.stringify(value);
+  return JSON.stringify(value, null, 8);
 }
 
 function Value({ value, status }: { value: unknown; status: string }) {
@@ -113,7 +113,7 @@ function Value({ value, status }: { value: unknown; status: string }) {
   const { copy } = useCopy({ source: formatedValue });
 
   return (
-    <span class={['value', status]} onClick={() => copy()}>
+    <span class={['value', status]} style="word-break: break-word; white-space: pre-wrap" onClick={() => copy()}>
       {formatedValue}
     </span>
   );
