@@ -263,8 +263,14 @@ tools:
       placeholder-your-string-to-compare: Karşılaştırılacak dizeniz...
       label-your-hash: "Hash'iniz:"
       placeholder-your-hash-to-compare: Karşılaştırılacak hash'iniz...
-      label-do-they-match: Birbirlerine uyuyorlar mı?
       tag-copy-hash: Karmayı kopyala
+      hashed-string: Karma dize
+      comparison-result: Karşılaştırma sonucu
+      matched: Eşleşti
+      no-match: Eşleşme yok
+      timed-out-after-timeout-period: "{timeoutPeriod} süresinden sonra zaman aşımına uğradı"
+      hashed-in-elapsed-period: "{elapsedPeriod} içinde karma"
+      compared-in-elapsed-period: "{elapsedPeriod} içinde karşılaştırıldı"
   crontab-generator:
     title: Crontab oluşturucu
     description: Crontab oluşturun, doğrulayın ve cron schedule'larının göze hitap
@@ -911,6 +917,7 @@ tools:
       placeholder-your-lorem-ipsum: Senin lorem ipsum'un...
       tag-copy: Kopyala
       tag-refresh: Yenile
+      tag-print-ie-use-a-pdf-printer-to-get-a-pdf-file: Yazdır (yani, bir PDF dosyası almak için bir PDF Yazıcısı kullanın)
   qrcode-generator:
     title: QR Kod üreteci
     description: Bir URL için QR kodu oluşturun ve indirin (veya sadece düz metin)
@@ -2009,9 +2016,8 @@ tools:
       tag-detach-d: Ayır (-d)
       tag-remove-rm: (--rm) öğesini kaldır
       tag-long-arguments: Uzun Tartışmalar
-      tag-: "?"
-      tag-arg: arg
-      tag-value: değer
+      tag-multiline: Çok satırlı
+      tag-equal-sep: --arg=değer
   docker-compose-to-kubernetes:
     title: Docker Compose'u Kubernetes'e dönüştürme
     description: Docker Compose'dan Kubernetes bildirimlerine
@@ -2329,6 +2335,14 @@ tools:
       placeholder-your-html-content: Html içeriğiniz...
       label-your-html-to-convert-can-paste-from-clipboard: "Dönüştürülecek Html'iniz (panodan yapıştırabilirsiniz):"
       label-output-markdown: "Çıktı işaretlemesi:"
+      label-heading-style: "Başlık Stili:"
+      label-emphasis-style: "Vurgu Stili:"
+      label-hash: Doğramak (#)
+      label-underline: Altı çizili (=/-)
+      label-surround-heading: Çevrele (= Başlık =)
+      label-asterisk: Yıldız işareti (*)
+      label-underscore: Alt çizgi (_)
+      label-tilde: Tilde (~)
   ical-parser:
     title: ICAL Dosya Ayrıştırıcısı
     description: ICAL/ICS dosyasını olay görüntüsüne ayrıştır
@@ -2640,6 +2654,8 @@ tools:
       title-schema-validation-errors: Şema Doğrulama Hataları
       title-formatted-version: Biçimlendirilmiş sürüm
       label-indent-size-0-compact: "Girinti boyutu (0 = Sıkıştırılmış):"
+      title-repaired-version: Otomatik Onarılmış ve Biçimlendirilmiş sürüm
+      label-auto-repair-json: "Otomobil Tamir JSON'u:"
   json-size-analyzer:
     title: Json Boyut Analizcisi
     description: JSON düğümlerinin göreceli ağırlıklarını ölçün
@@ -2745,6 +2761,17 @@ tools:
       label-public-key-jwk: "Genel Anahtar (JWK):"
       label-private-key-jwk: "Özel Anahtar (JWK):"
       title-generated-jwt-token: "Oluşturulan JWT Token:"
+      label-secret-encoding: "Gizli Kodlama:"
+      label-raw-text: Ham Metin
+      label-hex-array: Hex Dizisi
+      verify-description: "{0}: {1} ({2} ile doğrulayın)"
+      token-secret: Jeton Sırrı
+      token-keys: Jeton Anahtarları
+      cannot-parse-secret-as-encoding: "'{0}' '{1}' olarak ayrıştırılamıyor: {2}"
+      invalid-base64-string: Geçersiz Base64 dizesi
+      placeholder-input-token: Düzenlemek için JWT token'ınızı yapıştırın...
+      click-to-input-a-existing-jwt-token-to-modify: Mevcut bir JWT belirtecini değiştirmek için girmek üzere tıklayın
+      label-base64: Base64
   length-converter:
     title: Uzunluk Birimleri Dönüştürücü
     description: Uzunluk birimlerinden değerleri dönüştürün
@@ -2803,6 +2830,8 @@ tools:
       placeholder-select-the-target-unit: Hedef birimi seçin
       title-result: Sonuç
       label-best-target-unit: En İyi Hedef Birimi
+      label-selected-target-unit-outputunit: Seçili Hedef Birimi ({0})
+      title-other-units-conversion-tools: Diğer Birim Dönüştürme Araçları
   markdown-cheatsheet:
     title: Markdown Hile Sayfası
     description: Markdown Hile Sayfası
@@ -4731,6 +4760,7 @@ tools:
       label-your-url-to-parse: "Ayrıştırılacak url'niz:"
       placeholder-your-url-to-parse: Ayrıştırılacak url'niz...
       url-must-have-http-or-https-prefix: Url'nin http:// veya https:// öneki olması gerekir
+      button-open-url: URL'yi aç
   text-to-binary:
     title: Metinden UTF-8 ikilisine
     description: Metni UTF-8 ikili gösterimine dönüştürün ve tersini yapın.
@@ -5483,6 +5513,13 @@ tools:
       label-secret-or-public-key-spki-or-jwk: Gizli veya Genel Anahtar (SPKI veya JWK)
       placeholder-put-your-secret-or-public-key-here: Gizli veya açık anahtarınızı buraya yazın...
       tag-signature-verified: İmza doğrulandı
+      label-jwk: JWK Anahtarı
+      label-pub-key: PEM Genel Anahtarı
+      label-secret-raw-text: Gizli - Ham Metin
+      label-secret-hex-array: Gizli - Hex Dizisi
+      label-secret-base64: Gizli - Base64
+      label-secret-encoding: "Gizli Kodlama/Türü:"
+      key-or-secret-or-verification-error-e-tostring: "Anahtar veya sır veya doğrulama hatası: {0}"
     constants:
       text:
         token-introspection-response: Jeton içgözlem yanıtı
@@ -7054,6 +7091,342 @@ tools:
       label-converted-to-hex-array: "Hex dizisine dönüştürüldü:"
       tag-digit-0-no-grouping: (Rakam 0 = Gruplama yok)
       tag-digit-0-no-row: (0. Basamak = Satır yok)
+  toon-to-json:
+    texts:
+      message-provided-json-is-not-valid: TOON geçerli değilse
+      output-label-json-version: "TOON içeriğinizin JSON sürümü:"
+      input-placeholder-paste-your-raw-toon-here: Ham TOON içeriğinizi buraya yapıştırın...
+      input-label-your-raw-toon: "Ham TOON içeriğiniz:"
+    title: TOON'dan JSON'a
+    description: TOON gösterimini LLM kullanımı için JSON nesnesine dönüştürün
+  json-to-toon:
+    texts:
+      message-provided-json-is-not-valid: JSON geçerli değilse.
+      input-placeholder-paste-your-raw-json-here: Ham JSON'unuzu buraya yapıştırın...
+      input-label-your-raw-json: "Ham JSON'unuz:"
+      output-label-toon-version-of-your-json: "JSON'unuzun TOON versiyonu:"
+    title: JSON'dan TOON'a
+    description: LLM/GPT kullanımı için JSON nesnesini TOON gösterimine dönüştürün
+  external-link-goto: "Bu aracı açmak için şu bağlantıyı takip edin:"
+  argon2-hash:
+    title: Argon2 Karıştırıcı
+    description: Parametrelerle Argon2 karmalarını hesaplayın
+    texts:
+      label-argon2id: Argon2id
+      label-argon2i: Argon2i
+      label-argon2d: Argon2d
+      label-hex: Altıgen
+      label-encoded: Kodlanmış
+      label-binary: İkili
+      label-algorithm: "Algoritma:"
+      label-password: "Şifre:"
+      placeholder-enter-password: Şifreyi girin
+      label-salt-hex: "Tuz (altıgen):"
+      placeholder-optional-hex-salt: İsteğe bağlı altıgen tuz
+      label-iterations: "Tekrarlar:"
+      label-memory-kib: "Bellek (KiB):"
+      label-parallelism: "Paralellik:"
+      label-hash-length: "Karma uzunluğu:"
+      label-output-type: "Çıktı türü:"
+      title-argon2-hash: Argon2 Karma
+      tag-generate: Oluştur
+  binary-calculator:
+    title: İkili Hesap Makinesi
+    description: İki sayı arasındaki bitsel/ikili işlemleri (VE, VEYA, XOR, DEĞİL,
+      kaydırmalar) hesaplayın
+    texts:
+      label-decimal: Ondalık
+      label-hexadecimal: "Onaltılık:"
+      label-octal: "Sekizli:"
+      label-binary: "İkili:"
+      label-a-and-b: A VE B
+      label-a-or-b: A VEYA B
+      label-a-xor-b: A XOR B
+      label-not-a: DEĞİL
+      label-a-b-left-shift: A << B (Sol Shift)
+      label-a-b-right-shift: A >> B (Sağa Kaydırma)
+      message-number-is-invalid: Numara geçersiz
+      label-a: A=
+      placeholder-enter-a: A'ya girin
+      label-b: B=
+      placeholder-enter-b: B'ye girin
+      label-operation: "İşlem:"
+      placeholder-select-operation: İşlemi Seçin
+      title-result: Sonuç
+      label-decimal-signed: "Ondalık (İmzalı):"
+      label-decimal-unigned: "Ondalık (İmzasız):"
+      title-bitmask: Bit maskesi
+  chmod-memo:
+    title: chmod Komut Hile Sayfası
+    description: Linux izin değişiklikleri için kısa bilgi sayfaları
+  css-gradient-generator:
+    title: CSS Gradyan Oluşturucu
+    description: Belirli bir adım ve renk kümesi için CSS Gradient CSS kodu oluşturun
+    texts:
+      label-gradient-type: "Gradyan Türü:"
+      label-angle-degrees: "Açı (derece):"
+      title-color-stops: Renk Durakları
+      title-preview: Önizleme
+      title-generated-css: Oluşturulan CSS
+      tag-linear: Doğrusal
+      tag-radial: Radyal
+      tag-remove: Kaldırmak
+      tag-add-color-stop: Renk Durağı Ekle
+  css-units-converter:
+    title: CSS Birim Dönüştürücü
+    description: Yaygın CSS birimlerinden (em, rem, px, vw, vh, %) değerleri dönüştürün
+    texts:
+      label-pixels-px: Pikseller (px)
+      label-ems-em: Ems (em)
+      label-rems-rem: Remler (rem)
+      label-percent: Yüzde (%)
+      label-viewport-width-vw: Görünüm Alanı Genişliği (vw)
+      label-viewport-height-vh: Görüntüleme Alanı Yüksekliği (vh)
+      label-value-to-convert: "Dönüştürülecek değer:"
+      label-from-unit: "Üniteden:"
+      label-to-unit: "Birime:"
+      label-base-font-size-px: Temel Yazı Tipi Boyutu (px)
+      label-viewport-width-px: Görünüm Alanı Genişliği (px)
+      label-viewport-height-px: Görünüm Alanı Yüksekliği (px)
+      title-conversion: Dönüşüm
+      label-converted-value: "Dönüştürülen değer:"
+  docker-compose-to-env-file:
+    title: Docker Compose'u .env dosyasına dönüştürme
+    description: Mevcut bir Docker Compose dosyasından .env dosyasını çıkarın
+    texts:
+      label-docker-compose-file: "Docker Compose dosyası:"
+      placeholder-paste-your-docker-compose-yaml-here: docker-compose YAML'ınızı buraya yapıştırın...
+      title-extract-env: .env'yi çıkar
+  emv-tlv-decoder:
+    title: EMV TLV kod çözücü
+    description: EMV TLV (etiket-uzunluk-değer) verilerini ve genişletilmiş anlam
+      taşıyan bireysel etiketlerini (örneğin TVR (Etiket 95), Terminal
+      Yetenekleri (Etiket 9F33) vb.) çözer.
+    texts:
+      tag-: —
+      tag-tag: Etiket
+      tag-length: Uzunluk
+      tag-value: Değer
+      tag-description: Tanım
+      tag-bit-level-interpretation: Bit Düzeyinde Yorumlama
+      label-tlv-hex-input: TLV Hex Girişi
+      placeholder-paste-emv-tlv-hex-string-e-g-6f1a8407a0000000031010a50f500b5649534120435245444954:
+        EMV TLV onaltılık dizesini yapıştırın (örneğin
+        6F1A8407A0000000031010A50F500B5649534120435245444954)
+      label-kernel-type: "Çekirdek Türü:"
+      title-decoded-emv-tags: Kodlanmış EMV Etiketleri
+      tag-parse-tlv: TLV'yi ayrıştır
+  eth-transaction-decoder:
+    title: ETH İşlem Kod Çözücü
+    description: Akıllı Sözleşme ABI'lı Ethereum işlem kod çözücü
+    texts:
+      label-smart-contract-abi: "Akıllı Sözleşme ABI:"
+      placeholder-paste-abi-json-here: ABI JSON'u buraya yapıştırın
+      label-raw-transaction-0x-or-json-transaction: "Ham İşlem (0x...) veya JSON İşlemi:"
+      title-decoded-transaction: Kodlanmış İşlem
+      label-from: İtibaren
+      label-to: İle
+      label-value: Değer
+      label-gas: Gaz
+      label-gas-price: Gaz Fiyatı
+      label-nonce: Tek seferlik
+      label-method: Yöntem
+      label-signature: İmza
+      label-arguments: Argümanlar
+      title-structured-output-json: Yapılandırılmış Çıktı JSON
+  file-splitter:
+    title: Dosya Bölücü
+    description: JSON, XML veya metin dosyasını düğüm gruplarına veya satır
+      gruplarına göre bölün
+    texts:
+      placeholder-strategy-value: Strateji değeri...
+      title-drag-and-drop-a-txt-json-or-xml-file-here-or-click-to-select-a-file:
+        Buraya bir TXT, JSON veya XML dosyası sürükleyip bırakın veya bir dosya
+        seçmek için tıklayın
+      tag-split-by-lines: Çizgilerle Böl
+      tag-split-by-nodes: Düğümlere Göre Böl
+      tag-max-chunk-size-kb: "Maksimum Parça boyutu (KB):"
+      tag-fixed-count: "Sabit Sayım:"
+      tag-chunk-count: "Parça Sayısı:"
+      tag-preview-chunks: Parçaların önizlemesi?
+      tag-process-chunks: İşlem parçaları
+      tag-download-all: Tümünü indir
+      tag-download: İndirmek
+  gitignore-generator:
+    title: GitIgnore Oluşturucu
+    description: Ortak şablonlar kümesi için .gitignore oluşturun
+    texts:
+      placeholder-select-templates-e-g-node-python-vue: Şablonları seçin (örneğin node, python, vue)
+      title-gitignore: .gitignore
+      tag-const-availabletemplates-ref: sabit kullanılabilirŞablonlar = ref
+      tag-this-tool-use: "Bu araç şunları kullanır:"
+      tag-https-www-toptal-com-developers-gitignore: https://www.toptal.com/developers/gitignore
+      tag-generate: Oluştur
+  i-and-l-checker:
+    title: I ve L Denetleyicisi
+    description: 1, l, I, 0, O vurgulanarak bir şifre veya metin kontrol edilir
+    texts:
+      label-text-to-check: "Kontrol edilecek metin:"
+      placeholder-paste-your-text-here: Metninizi buraya yapıştırın...
+      title-legend: Efsane
+      tag-i: BEN
+      tag-uppercase-letter-i: "- Büyük harf i"
+      tag-l: ben
+      tag-lowercase-letter-l: "- Küçük harf L"
+      tag-1: "1"
+      tag-number-1: "- 1 numara"
+      tag-0: "0"
+      tag-number-0: "- Sayı 0"
+      tag-o: O
+      tag-uppercase-letter-o: "- Büyük harf O"
+  ipv4-subnets-list:
+    title: IPv4 Alt Ağ Listeleyicisi
+    description: Belirli bir CIDR'nin tüm olası alt ağlarını listeleyin
+    texts:
+      message-we-cannot-parse-this-address-check-the-format: Bu adresi ayrıştıramıyoruz, biçimini kontrol edin
+      label-an-ipv4-address-with-or-without-mask-cidr-ip-range-wildcard-ip-ip-mask:
+        Maskeli veya maskesiz bir IPv4 adresi (CIDR/IP Aralığı/Joker Karakterli
+        IP/IP Maskesi)
+      placeholder-ipv4-or-cidr: IPv4 veya cidr...
+      tag-network: Ağ
+      tag-first-ip: İlk IP
+      tag-last-ip: Son IP
+      tag-broadcast: Yayın
+  json-to-msgpack:
+    title: JSON'dan MessagePack'e
+    description: JSON'u MessagePack'e dönüştürün
+    texts:
+      message-json-is-invalid: JSON geçersiz
+      label-output-filename: "Çıktı dosya adı:"
+      placeholder-enter-output-filename: Çıktı dosya adını girin
+      label-json-to-convert: "Dönüştürülecek JSON:"
+      placeholder-enter-json-to-convert: Dönüştürülecek JSON'u girin...
+      title-msgpack-binary: "MsgPack İkilisi:"
+      tag-convert: Dönüştürmek
+      tag-download-msgpack-file: MsgPack dosyasını indirin
+  markdown-lorem-ipsum:
+    title: Markdown Lorem Ipsum
+    description: Markdown'da Lorem Ipsum oluşturun
+    texts:
+      label-atx: "ATX (#, ##, ###)"
+      label-setext: Settext (====, ----)
+      label-unordered: Sıralanmamış (-, *, +)
+      label-ordered-1-2-3: Sıralı (1., 2., 3.)
+      label-language: "Dil:"
+      label-blocks: "Bloklar:"
+      label-sentences-per-paragraph: "Paragraf başına cümle sayısı:"
+      title-styles: Stiller
+      label-block-types: "Blok tipleri:"
+      label-inline-styles: Satır içi stiller
+      label-header-style: "Başlık stili:"
+      label-list-style: "Liste stili:"
+      title-block-frequencies: Blok frekansları
+      label-headers: "Başlıklar:"
+      label-lists: "Listeler:"
+      label-code: "Kod:"
+      label-quotes: "Alıntılar:"
+      title-generated-markdown: Oluşturulan Markdown
+      tag-headers: Başlıklar
+      tag-lists: Listeler
+      tag-code: Kod
+      tag-quotes: Alıntılar
+      tag-emphasis: Vurgu
+      tag-strong: Güçlü
+      tag-links: Bağlantılar
+      tag-inline-code: Satır içi kod
+      tag-generate: Oluştur
+      tag-print-ie-use-a-pdf-printer-to-get-a-pdf-file: Yazdır (yani, bir PDF dosyası almak için bir PDF Yazıcısı kullanın)
+  msgpack-to-json:
+    title: Mesaj Paketini JSON'a Dönüştür
+    description: MessagePack dosyasını JSON'a dönüştürün
+    texts:
+      title-input-message-pack-file-or-content: Giriş Mesaj Paketi dosyası veya içeriği
+      label-file: Dosya
+      label-hex-content: "Hex İçeriği:"
+      title-drag-and-drop-msgpack-file-here-or-click-to-select-a-file:
+        MsgPack dosyasını buraya sürükleyip bırakın veya bir dosya seçmek için
+        tıklayın
+      title-json-content: JSON İçeriği
+  pdf-compressor:
+    title: PDF Sıkıştırıcı
+    description: Ghostscript kullanarak PDF'yi optimize edin ve sıkıştırın
+    texts:
+      label-screen-smallest: Ekran (en küçük)
+      label-ebook-balanced: eKitap (dengeli)
+      label-printer-high-quality: Yazıcı (yüksek kalite)
+      label-prepress-best-quality: Baskı Öncesi (en iyi kalite)
+      label-pdf-1-4: PDF 1.4
+      label-pdf-1-5: PDF 1.5
+      label-pdf-1-6: PDF 1.6
+      label-pdf-1-7: PDF 1.7
+      label-compression-quality: "Sıkıştırma kalitesi:"
+      placeholder-select-compression-quality: Sıkıştırma kalitesini seçin
+      label-compatibility-level: "Uyumluluk düzeyi:"
+      placeholder-select-compatibility-level: Uyumluluk düzeyini seçin
+      title-drag-and-drop-a-pdf-file-here-or-click-to-select-a-file:
+        Bir PDF dosyasını buraya sürükleyip bırakın veya bir dosya seçmek için
+        tıklayın
+      title-logs: Günlükler
+      label-ghostscript: Hayalet senaryosu
+  serial-console:
+    title: Seri Port Konsolu
+    description: Seri Porta bağlanın, mesajı okuyun ve gönderin
+    texts:
+      label-9600: "9600"
+      label-19200: "19200"
+      label-38400: "38400"
+      label-57600: "57600"
+      label-115200: "115200"
+      label-lf-n: LF (\\n)
+      label-cr-r: CR (\\r)
+      label-crlf-r-n: CRLF (\\r\\n)
+      title-serial-terminal: Seri Terminal
+      placeholder-baud-rate: Baud Hızı
+      placeholder-line-ending: Satır Sonu
+      placeholder-select-port: Bağlantı Noktasını Seçin
+      placeholder-type-a-command: Bir komut yazın...
+      tag-connect: Bağlamak
+      tag-disconnect: Bağlantıyı kes
+      tag-send: Göndermek
+  shamirs-secret-sharing:
+    title: Shamir'in Gizli Paylaşımı
+    description: Shamir\ kullanarak bir sırrın paylaşılmasına ve yeniden
+      oluşturulmasına izin verin
+    texts:
+      label-text: Metin
+      label-hexadecimal: Onaltılık
+      label-base64: Base64
+      label-secret-mode: "Gizli Mod:"
+      title-share-a-secret-split: Bir sırrı paylaşmak (bölmek)
+      label-secret: "Gizli:"
+      placeholder-enter-secret-text: Gizli metni girin
+      label-threshold-minimum-shares-to-recover: "Eşik (geri kazanılacak minimum hisse sayısı):"
+      label-number-of-shares: "Hisse sayısı:"
+      title-generated-shares: Oluşturulan Hisse Senetleri
+      title-recombine-a-secret: Bir sırrı yeniden birleştirin
+      label-your-shares: "Hisseleriniz:"
+      placeholder-paste-your-shares-here: Paylaşımlarınızı buraya yapıştırın...
+      title-recombined-secret: Yeniden birleştirilmiş sır
+      tag-split-secret: Bölünmüş Sır
+      tag-recombine: Yeniden birleştirmek
+  short-urls-expander:
+    title: Kısa URL Genişletici
+    description: Kısa URL'leri tam URL'leri hedefleyecek şekilde genişletin
+    texts:
+      label-short-urls-to-expand: "Genişletilecek kısa URL'ler:"
+      placeholder-enter-short-urls-one-per-line: Kısa URL'leri girin (satır başına bir tane)
+      title-result: Sonuç
+      tag-this-tool-make-use-of-https-cors-anywhere-com-to-bypass-cors-this-is-a-community-driven-server:
+        Bu araç, CORS'u atlatmak için https://cors-anywhere.com adresini
+        kullanır. Bu, topluluk tarafından yönetilen bir sunucudur.
+      tag-see-here-for-more-information: Daha fazla bilgi için buraya bakın
+      tag-expand-all: Tümünü Genişlet
+      tag-download-resuls-as-csv: Sonuçları CSV olarak indir
+      tag-short-url: Kısa URL
+      tag-expanded-url: Genişletilmiş URL
+      tag-link: Bağlantı
+      tag-status: Durum
+      tag-open-url: Açık URL
 about:
   alltools-title: Tüm {toolsCount} Araç
   tools:

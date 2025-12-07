@@ -1,23 +1,26 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n';
 import { Base64 } from 'js-base64';
 import createGSModule from 'ghostscript-wasm-esm';
 import { useDownloadFileFromBase64 } from '@/composable/downloadBase64';
+
+const { t } = useI18n();
 
 const quality = ref('screen');
 const compatibility = ref('1.4');
 
 const qualityOptions = [
-  { label: 'Screen (smallest)', value: 'screen' },
-  { label: 'eBook (balanced)', value: 'ebook' },
-  { label: 'Printer (high quality)', value: 'printer' },
-  { label: 'Prepress (best quality)', value: 'prepress' },
+  { label: t('tools.pdf-compressor.texts.label-screen-smallest'), value: 'screen' },
+  { label: t('tools.pdf-compressor.texts.label-ebook-balanced'), value: 'ebook' },
+  { label: t('tools.pdf-compressor.texts.label-printer-high-quality'), value: 'printer' },
+  { label: t('tools.pdf-compressor.texts.label-prepress-best-quality'), value: 'prepress' },
 ];
 
 const compatibilityOptions = [
-  { label: 'PDF 1.4', value: '1.4' },
-  { label: 'PDF 1.5', value: '1.5' },
-  { label: 'PDF 1.6', value: '1.6' },
-  { label: 'PDF 1.7', value: '1.7' },
+  { label: t('tools.pdf-compressor.texts.label-pdf-1-4'), value: '1.4' },
+  { label: t('tools.pdf-compressor.texts.label-pdf-1-5'), value: '1.5' },
+  { label: t('tools.pdf-compressor.texts.label-pdf-1-6'), value: '1.6' },
+  { label: t('tools.pdf-compressor.texts.label-pdf-1-7'), value: '1.7' },
 ];
 
 const status = ref<'idle' | 'done' | 'error' | 'processing'>('idle');
@@ -93,29 +96,29 @@ async function callMainWithInOutPdf(data: ArrayBuffer, args: string[], expected_
   <div>
     <c-select
       v-model:value="quality"
-      label="Compression quality:"
+      :label="t('tools.pdf-compressor.texts.label-compression-quality')"
       label-position="left"
       label-width="150px"
       :options="qualityOptions"
-      placeholder="Select compression quality"
+      :placeholder="t('tools.pdf-compressor.texts.placeholder-select-compression-quality')"
       :disabled="status === 'processing'"
       mb-1
     />
 
     <c-select
       v-model:value="compatibility"
-      label="Compatibility level:"
+      :label="t('tools.pdf-compressor.texts.label-compatibility-level')"
       label-position="left"
       label-width="150px"
       :options="compatibilityOptions"
-      placeholder="Select compatibility level"
+      :placeholder="t('tools.pdf-compressor.texts.placeholder-select-compatibility-level')"
       :disabled="status === 'processing'"
       mb-4
     />
 
     <div style="flex: 0 0 100%">
       <div mx-auto max-w-600px>
-        <c-file-upload title="Drag and drop a PDF file here, or click to select a file" accept=".pdf" @file-upload="onFileUploaded" />
+        <c-file-upload :title="t('tools.pdf-compressor.texts.title-drag-and-drop-a-pdf-file-here-or-click-to-select-a-file')" accept=".pdf" @file-upload="onFileUploaded" />
       </div>
     </div>
 
@@ -129,8 +132,8 @@ async function callMainWithInOutPdf(data: ArrayBuffer, args: string[], expected_
       />
     </div>
 
-    <c-card title="Logs">
-      <input-copyable label="Ghostscript" :value="gsCommand" mb-1 />
+    <c-card :title="t('tools.pdf-compressor.texts.title-logs')">
+      <input-copyable :label="t('tools.pdf-compressor.texts.label-ghostscript')" :value="gsCommand" mb-1 />
       <pre>{{ logs.join('\n') }}</pre>
     </c-card>
   </div>

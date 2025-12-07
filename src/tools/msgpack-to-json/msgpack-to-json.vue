@@ -1,7 +1,10 @@
 <script setup lang="ts">
 import { Buffer } from 'node:buffer';
+import { useI18n } from 'vue-i18n';
 import { unpack } from 'msgpackr';
 import hexArray from 'hex-array';
+
+const { t } = useI18n();
 
 const inputType = ref<'file' | 'content'>('file');
 const fileInput = ref() as Ref<File | null>;
@@ -39,30 +42,30 @@ function onUpload(file: File) {
 
 <template>
   <div>
-    <c-card title="Input Message Pack file or content" mb-2>
+    <c-card :title="t('tools.msgpack-to-json.texts.title-input-message-pack-file-or-content')" mb-2>
       <n-radio-group v-model:value="inputType" name="radiogroup" mb-2 flex justify-center>
         <n-space>
           <n-radio
             value="file"
-            label="File"
+            :label="t('tools.msgpack-to-json.texts.label-file')"
           />
           <n-radio
             value="content"
-            label="Hex Content"
+            :label="t('tools.msgpack-to-json.texts.label-hex-content')"
           />
         </n-space>
       </n-radio-group>
 
       <c-file-upload
         v-if="inputType === 'file'"
-        title="Drag and drop MsgPack file here, or click to select a file"
+        :title="t('tools.msgpack-to-json.texts.title-drag-and-drop-msgpack-file-here-or-click-to-select-a-file')"
         @file-upload="onUpload"
       />
 
       <c-input-text
         v-if="inputType === 'content'"
         v-model:value="hexInput"
-        label="Hex Content:"
+        :label="t('tools.msgpack-to-json.texts.label-hex-content')"
         multiline
       />
     </c-card>
@@ -71,7 +74,7 @@ function onUpload(file: File) {
       {{ error }}
     </c-alert>
 
-    <c-card title="JSON Content">
+    <c-card :title="t('tools.msgpack-to-json.texts.title-json-content')">
       <textarea-copyable :value="resultsJson" language="json" :download-file-name="`${fileInput?.name}.json`" />
     </c-card>
   </div>

@@ -1,5 +1,8 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n';
 import { extractEnvFromCompose } from './docker-compose-to-env-file.service';
+
+const { t } = useI18n();
 
 const yamlInput = ref(`services:
   web:
@@ -25,14 +28,14 @@ const envOutput = computed(() => {
   <div>
     <c-input-text
       v-model:value="yamlInput"
-      label="Docker Compose file:"
+      :label="t('tools.docker-compose-to-env-file.texts.label-docker-compose-file')"
       multiline
-      placeholder="Paste your docker-compose YAML here..."
+      :placeholder="t('tools.docker-compose-to-env-file.texts.placeholder-paste-your-docker-compose-yaml-here')"
       rows="10"
       mb-2
     />
 
-    <n-card title="Extract .env">
+    <n-card :title="t('tools.docker-compose-to-env-file.texts.title-extract-env')">
       <textarea-copyable
         v-model:value="envOutput"
         rows="3"

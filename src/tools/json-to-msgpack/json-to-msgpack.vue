@@ -1,8 +1,11 @@
 <script setup lang="ts">
 import type { Buffer } from 'node:buffer';
+import { useI18n } from 'vue-i18n';
 import { pack } from 'msgpackr';
 import JSON5 from 'json5';
 import { useValidation } from '@/composable/validation';
+
+const { t } = useI18n();
 
 const jsonInput = ref('');
 const fileName = ref('');
@@ -14,7 +17,7 @@ const jsonValidation = useValidation({
       validator: (v) => {
         return JSON5.parse(v);
       },
-      message: 'JSON is invalid',
+      message: t('tools.json-to-msgpack.texts.message-json-is-invalid'),
     },
   ],
 });
@@ -58,17 +61,17 @@ function downloadBlob(data: Uint8Array, fileName: string) {
   <div>
     <c-input-text
       v-model:value="fileName"
-      label="Output filename:"
+      :label="t('tools.json-to-msgpack.texts.label-output-filename')"
       label-position="left"
-      placeholder="Enter output filename"
+      :placeholder="t('tools.json-to-msgpack.texts.placeholder-enter-output-filename')"
       mb-2
     />
 
     <c-input-text
       v-model:value="jsonInput"
-      label="JSON to convert:"
+      :label="t('tools.json-to-msgpack.texts.label-json-to-convert')"
       multiline
-      placeholder="Enter JSON to convert..."
+      :placeholder="t('tools.json-to-msgpack.texts.placeholder-enter-json-to-convert')"
       :validation="jsonValidation"
       rows="5"
       mb-2
@@ -76,16 +79,16 @@ function downloadBlob(data: Uint8Array, fileName: string) {
 
     <div mb-2 flex justify-center>
       <n-button @click="convertToMsgPack()">
-        Convert
+        {{ t('tools.json-to-msgpack.texts.tag-convert') }}
       </n-button>
     </div>
 
-    <c-card v-if="msgPackHex" title="MsgPack Binary:">
+    <c-card v-if="msgPackHex" :title="t('tools.json-to-msgpack.texts.title-msgpack-binary')">
       <textarea-copyable :value="msgPackHex" mb-3 />
 
       <div flex justify-center>
         <c-button :disabled="jsonInput === '' || !jsonValidation.isValid" @click="downloadBlob(msgPacked!, fileName)">
-          Download MsgPack file
+          {{ t('tools.json-to-msgpack.texts.tag-download-msgpack-file') }}
         </c-button>
       </div>
     </c-card>

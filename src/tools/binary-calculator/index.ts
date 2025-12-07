@@ -1,10 +1,11 @@
 import { Calculator } from '@vicons/tabler';
 import { defineTool } from '../tool';
+import { translate as t } from '@/plugins/i18n.plugin';
 
 export const tool = defineTool({
-  name: 'Binary Calculator',
+  name: t('tools.binary-calculator.title'),
   path: '/binary-calculator',
-  description: 'Calculate bitwise/binary operations (AND, OR, XOR, NOT, shifts) between two numbers',
+  description: t('tools.binary-calculator.description'),
   keywords: ['binary', 'and', 'or', 'xor', 'not', 'bitwise', 'calculator'],
   component: () => import('./binary-calculator.vue'),
   icon: Calculator,

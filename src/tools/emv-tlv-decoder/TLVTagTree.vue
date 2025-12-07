@@ -1,10 +1,13 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n';
 import type { EmvTag } from 'node-emv';
 
 defineProps<{
   tags: EmvTag[]
   title?: string
 }>();
+
+const { t } = useI18n();
 </script>
 
 <template>
@@ -13,11 +16,11 @@ defineProps<{
       <NTable :bordered="true" :single-line="false">
         <thead>
           <tr>
-            <th>Tag</th>
-            <th>Length</th>
-            <th>Value</th>
-            <th>Description</th>
-            <th>Bit-Level Interpretation</th>
+            <th>{{ t('tools.emv-tlv-decoder.texts.tag-tag') }}</th>
+            <th>{{ t('tools.emv-tlv-decoder.texts.tag-length') }}</th>
+            <th>{{ t('tools.emv-tlv-decoder.texts.tag-value') }}</th>
+            <th>{{ t('tools.emv-tlv-decoder.texts.tag-description') }}</th>
+            <th>{{ t('tools.emv-tlv-decoder.texts.tag-bit-level-interpretation') }}</th>
           </tr>
         </thead>
         <tbody>

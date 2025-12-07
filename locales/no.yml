@@ -310,8 +310,14 @@ tools:
       placeholder-your-string-to-compare: Strengen din som skal sammenlignes...
       label-your-hash: "Din hash: "
       placeholder-your-hash-to-compare: Din hash å sammenligne...
-      label-do-they-match: "Stemmer de overens? "
       tag-copy-hash: Kopier hash
+      hashed-string: Hashet streng
+      comparison-result: Sammenligningsresultat
+      matched: Matchet
+      no-match: Ingen treff
+      timed-out-after-timeout-period: Tidsavbrutt etter {timeoutPeriod}
+      hashed-in-elapsed-period: Hashet i {elapsedPeriod}
+      compared-in-elapsed-period: Sammenlignet i {elapsedPeriod}
   crontab-generator:
     title: Crontab-generator
     description: Verifiser og generer crontab og få den mennesklig leselige
@@ -844,6 +850,7 @@ tools:
       label-your-url-to-parse: "Nettadressen din som skal analyseres:"
       placeholder-your-url-to-parse: Nettadressen din som skal analyseres...
       url-must-have-http-or-https-prefix: Nettadressen må ha prefikset http:// eller https://
+      button-open-url: Åpne URL-adressen
   iban-validator-and-parser:
     title: IBAN validering og analysering
     description: Valider og parser IBAN numre. Sjekk om et IBAN er gyldig og få
@@ -996,6 +1003,7 @@ tools:
       placeholder-your-lorem-ipsum: Din lorem ipsum...
       tag-copy: Kopiere
       tag-refresh: Forfriske
+      tag-print-ie-use-a-pdf-printer-to-get-a-pdf-file: Skriv ut (dvs. bruk en PDF-skriver for å få en PDF-fil)
   qrcode-generator:
     title: QR Kode generator
     description: Generer og last ned en QR kode til en URL (eller ren tekst), og
@@ -1128,6 +1136,13 @@ tools:
       label-secret-or-public-key-spki-or-jwk: Hemmelig eller offentlig nøkkel (SPKI eller JWK)
       placeholder-put-your-secret-or-public-key-here: Skriv inn din hemmelige eller offentlige nøkkel her ...
       tag-signature-verified: Signatur bekreftet
+      label-jwk: JWK-nøkkel
+      label-pub-key: PEM offentlig nøkkel
+      label-secret-raw-text: Hemmelig - Rå tekst
+      label-secret-hex-array: Hemmelighet - Heksadesimal array
+      label-secret-base64: Hemmelighet - Base64
+      label-secret-encoding: "Hemmelig koding/type:"
+      key-or-secret-or-verification-error-e-tostring: "Nøkkel-, hemmelighets- eller bekreftelsesfeil: {0}"
     constants:
       text:
         token-introspection-response: Token introspeksjonsrespons
@@ -2324,9 +2339,8 @@ tools:
       tag-detach-d: Løsne (-d)
       tag-remove-rm: Fjern (--rm)
       tag-long-arguments: Lange argumenter
-      tag-: "?"
-      tag-arg: argument
-      tag-value: verdi
+      tag-multiline: Flerlinjers
+      tag-equal-sep: --arg=verdi
   docker-compose-to-kubernetes:
     title: Docker-skriving til kubernetes
     description: Docker Compose til Kubernetes-manifester
@@ -2636,6 +2650,14 @@ tools:
       placeholder-your-html-content: Html-innholdet ditt...
       label-your-html-to-convert-can-paste-from-clipboard: "Din HTML-fil som skal konverteres (kan limes inn fra utklippstavlen):"
       label-output-markdown: "Nedsatt utgangspris:"
+      label-heading-style: "Overskriftsstil:"
+      label-emphasis-style: "Vektleggingsstil:"
+      label-hash: Hash (#)
+      label-underline: Understrek (=/-)
+      label-surround-heading: Surround (= Overskrift =)
+      label-asterisk: Stjerne (*)
+      label-underscore: Understrek (_)
+      label-tilde: Tilde (~)
   ical-parser:
     title: ICAL-filparser
     description: Parse ICAL/ICS-fil til hendelsesvisning
@@ -2938,6 +2960,8 @@ tools:
       title-schema-validation-errors: Skjemavalideringsfeil
       title-formatted-version: Formatert versjon
       label-indent-size-0-compact: "Innrykksstørrelse (0 = Kompakt):"
+      title-repaired-version: Autoreparert og formatert versjon
+      label-auto-repair-json: "Bilreparasjon JSON:"
   json-size-analyzer:
     title: Json-størrelsesanalysator
     description: Mål relative vekter av JSON-noder
@@ -3043,6 +3067,17 @@ tools:
       label-public-key-jwk: "Offentlig nøkkel (JWK):"
       label-private-key-jwk: "Privatnøkkel (JWK):"
       title-generated-jwt-token: "Generert JWT-token:"
+      label-secret-encoding: "Hemmelig koding:"
+      label-raw-text: Rå tekst
+      label-hex-array: Heksadesimal array
+      verify-description: "{0}: {1} (bekreft med {2})"
+      token-secret: Token-hemmelighet
+      token-keys: Tokennøkler
+      cannot-parse-secret-as-encoding: "Kan ikke analysere '{0}' som '{1}': {2}"
+      invalid-base64-string: Ugyldig Base64-streng
+      placeholder-input-token: Lim inn JWT-tokenet ditt for å redigere ...
+      click-to-input-a-existing-jwt-token-to-modify: Klikk for å legge inn et eksisterende JWT-token for å endre det
+      label-base64: Base64
   length-converter:
     title: Lengdeenheter Konverter
     description: Konverter verdier fra lengdeenheter
@@ -3100,6 +3135,8 @@ tools:
       placeholder-select-the-target-unit: Velg målenheten
       title-result: Resultat
       label-best-target-unit: Beste målenhet
+      label-selected-target-unit-outputunit: Valgt målenhet ({0})
+      title-other-units-conversion-tools: Andre verktøy for enhetskonvertering
   markdown-cheatsheet:
     title: Jukseark for nedbetaling
     description: Jukseark for nedbetaling
@@ -7038,6 +7075,337 @@ tools:
       label-converted-to-hex-array: "Konvertert til heksadesimal array:"
       tag-digit-0-no-grouping: (Siffer 0 = Ingen gruppering)
       tag-digit-0-no-row: (Siffer 0 = Ingen rad)
+  toon-to-json:
+    texts:
+      message-provided-json-is-not-valid: Den oppgitte TOON-en er ikke gyldig
+      output-label-json-version: "JSON-versjon av TOON-innholdet ditt:"
+      input-placeholder-paste-your-raw-toon-here: Lim inn rått TOON-innhold her ...
+      input-label-your-raw-toon: "Ditt rå TOON-innhold:"
+    title: TOON til JSON
+    description: Konverter TOON-representasjon til JSON-objekt for LLM-bruk
+  json-to-toon:
+    texts:
+      message-provided-json-is-not-valid: Forutsatt at JSON ikke er gyldig.
+      input-placeholder-paste-your-raw-json-here: Lim inn den rå JSON-en din her...
+      input-label-your-raw-json: "Din rå JSON:"
+      output-label-toon-version-of-your-json: "TOON-versjon av JSON-en din:"
+    title: JSON til TOON
+    description: Konverter JSON-objekt til TOON-representasjon for LLM/GPT-bruk
+  external-link-goto: "For å åpne dette verktøyet, følg denne lenken:"
+  argon2-hash:
+    title: Argon2 Hasher
+    description: Beregn Argon2-hasher med parametere
+    texts:
+      label-argon2id: Argon2id
+      label-argon2i: Argon2i
+      label-argon2d: Argon2d
+      label-hex: Heksagon
+      label-encoded: Kodet
+      label-binary: Binær
+      label-algorithm: "Algoritme:"
+      label-password: "Passord:"
+      placeholder-enter-password: Skriv inn passord
+      label-salt-hex: "Salt (heks):"
+      placeholder-optional-hex-salt: Valgfritt heksadesimalt salt
+      label-iterations: "Iterasjoner:"
+      label-memory-kib: "Minne (KiB):"
+      label-parallelism: "Parallellisme:"
+      label-hash-length: "Hash-lengde:"
+      label-output-type: "Utgangstype:"
+      title-argon2-hash: Argon2 Hash
+      tag-generate: Generere
+  binary-calculator:
+    title: Binær kalkulator
+    description: Beregn bitvise/binære operasjoner (OG, ELLER, XOR, IKKE,
+      forskyvninger) mellom to tall
+    texts:
+      label-decimal: Desimal
+      label-hexadecimal: "Heksadesimal:"
+      label-octal: "Oktal:"
+      label-binary: "Binær:"
+      label-a-and-b: A OG B
+      label-a-or-b: A ELLER B
+      label-a-xor-b: A XOR B
+      label-not-a: IKKE EN
+      label-a-b-left-shift: A << B (Venstre Shift)
+      label-a-b-right-shift: A >> B (Høyre Shift)
+      message-number-is-invalid: Nummeret er ugyldig
+      label-a: A=
+      placeholder-enter-a: Skriv inn A
+      label-b: B=
+      placeholder-enter-b: Skriv inn B
+      label-operation: "Operasjon:"
+      placeholder-select-operation: Velg operasjon
+      title-result: Resultat
+      label-decimal-signed: "Desimal (med fortegn):"
+      label-decimal-unigned: "Desimal (usignert):"
+      title-bitmask: Bitmaske
+  chmod-memo:
+    title: chmod-kommandoen Cheatsheet
+    description: Jukseark for endringer i Linux-tillatelser
+  css-gradient-generator:
+    title: CSS-gradientgenerator
+    description: Generer CSS Gradient CSS-kode for et gitt sett med trinn og farger
+    texts:
+      label-gradient-type: "Gradienttype:"
+      label-angle-degrees: "Vinkel (grader):"
+      title-color-stops: Fargestopp
+      title-preview: Forhåndsvisning
+      title-generated-css: Generert CSS
+      tag-linear: Lineær
+      tag-radial: Radial
+      tag-remove: Fjerne
+      tag-add-color-stop: Legg til fargestopp
+  css-units-converter:
+    title: CSS-enhetskonverterer
+    description: Konverter verdier fra vanlige CSS-enheter (em, rem, px, vw, vh, %)
+    texts:
+      label-pixels-px: Piksler (px)
+      label-ems-em: Ems (em)
+      label-rems-rem: Rems (rem)
+      label-percent: Prosent (%)
+      label-viewport-width-vw: Viewportbredde (vw)
+      label-viewport-height-vh: Høyde på visningsport (vh)
+      label-value-to-convert: "Verdi som skal konverteres:"
+      label-from-unit: "Fra enhet:"
+      label-to-unit: "Til enhet:"
+      label-base-font-size-px: Basisskriftstørrelse (px)
+      label-viewport-width-px: Viewportbredde (px)
+      label-viewport-height-px: Høyde på visningsport (px)
+      title-conversion: Omdannelse
+      label-converted-value: "Konvertert verdi:"
+  docker-compose-to-env-file:
+    title: Docker Compose til .env-fil
+    description: Pakk ut .env-fil fra en eksisterende Docker Compose-fil
+    texts:
+      label-docker-compose-file: "Docker Compose-fil:"
+      placeholder-paste-your-docker-compose-yaml-here: Lim inn docker-compose YAML-filen din her ...
+      title-extract-env: Pakk ut .env
+  emv-tlv-decoder:
+    title: EMV TLV-dekoder
+    description: Dekoder EMV TLV-dataene (tag-lengde-verdi) og de individuelle
+      taggene med utvidet betydning (som TVR (tag 95), terminalfunksjoner (tag
+      9F33) osv.)
+    texts:
+      tag-: —
+      tag-tag: Tagg
+      tag-length: Lengde
+      tag-value: Verdi
+      tag-description: Beskrivelse
+      tag-bit-level-interpretation: Bitnivåtolkning
+      label-tlv-hex-input: TLV heksadesimal inndata
+      placeholder-paste-emv-tlv-hex-string-e-g-6f1a8407a0000000031010a50f500b5649534120435245444954:
+        Lim inn EMV TLV heksadesimalstreng (f.eks.
+        6F1A8407A0000000031010A50F500B5649534120435245444954)
+      label-kernel-type: "Kjernetype:"
+      title-decoded-emv-tags: Dekodede EMV-tagger
+      tag-parse-tlv: Analyser TLV
+  eth-transaction-decoder:
+    title: ETH-transaksjonsdekoder
+    description: Ethereum-transaksjonsdekoder med Smart Contract ABI
+    texts:
+      label-smart-contract-abi: "Smart kontrakt ABI:"
+      placeholder-paste-abi-json-here: Lim inn ABI JSON her
+      label-raw-transaction-0x-or-json-transaction: "Rå transaksjon (0x...) eller JSON-transaksjon:"
+      title-decoded-transaction: Dekodet transaksjon
+      label-from: Fra
+      label-to: Til
+      label-value: Verdi
+      label-gas: Gass
+      label-gas-price: Bensinpris
+      label-nonce: Nonce
+      label-method: Metode
+      label-signature: Signatur
+      label-arguments: Argumenter
+      title-structured-output-json: Strukturert utdata JSON
+  file-splitter:
+    title: Fildeler
+    description: Del JSON-, XML- eller tekstfilen enten etter gruppe noder eller
+      etter gruppe linjer
+    texts:
+      placeholder-strategy-value: Strategiverdi...
+      title-drag-and-drop-a-txt-json-or-xml-file-here-or-click-to-select-a-file:
+        Dra og slipp en TXT-, JSON- eller XML-fil hit, eller klikk for å velge
+        en fil
+      tag-split-by-lines: Delt etter linjer
+      tag-split-by-nodes: Delt etter noder
+      tag-max-chunk-size-kb: "Maksimal Chunk-størrelse (KB):"
+      tag-fixed-count: "Fast antall:"
+      tag-chunk-count: "Antall biter:"
+      tag-preview-chunks: Forhåndsvise biter?
+      tag-process-chunks: Prosessbiter
+      tag-download-all: Last ned alle
+      tag-download: Last ned
+  gitignore-generator:
+    title: GitIgnore-generator
+    description: Generer .gitignore for et sett med vanlige maler
+    texts:
+      placeholder-select-templates-e-g-node-python-vue: Velg maler (f.eks. node, python, vue)
+      title-gitignore: .gitignore
+      tag-const-availabletemplates-ref: const tilgjengeligeMaler = ref
+      tag-this-tool-use: "Dette verktøyet bruker:"
+      tag-https-www-toptal-com-developers-gitignore: https://www.toptal.com/developers/gitignore
+      tag-generate: Generere
+  i-and-l-checker:
+    title: I og L Checker
+    description: Sjekk et passord eller en tekstmelding med utheving av 1, l, I, 0, O
+    texts:
+      label-text-to-check: "Tekst for å sjekke:"
+      placeholder-paste-your-text-here: Lim inn teksten din her...
+      title-legend: Legende
+      tag-i: jeg
+      tag-uppercase-letter-i: "- Stor bokstav i"
+      tag-l: l
+      tag-lowercase-letter-l: "- Liten bokstav L"
+      tag-1: "1"
+      tag-number-1: "- Nummer 1"
+      tag-0: "0"
+      tag-number-0: "- Nummer 0"
+      tag-o: DE
+      tag-uppercase-letter-o: "- Stor bokstav O"
+  ipv4-subnets-list:
+    title: IPv4-delnettliste
+    description: List opp alle mulige undernett for en gitt CIDR
+    texts:
+      message-we-cannot-parse-this-address-check-the-format: Vi kan ikke analysere denne adressen, sjekk formatet.
+      label-an-ipv4-address-with-or-without-mask-cidr-ip-range-wildcard-ip-ip-mask:
+        En IPv4-adresse med eller uten maske
+        (CIDR/IP-område/Wildcard-IP/IP-maske)
+      placeholder-ipv4-or-cidr: IPv4 eller Cidr...
+      tag-network: Nettverk
+      tag-first-ip: Første IP-adresse
+      tag-last-ip: Siste IP-adresse
+      tag-broadcast: Kringkaste
+  json-to-msgpack:
+    title: JSON til MessagePack
+    description: Konverter JSON til MessagePack
+    texts:
+      message-json-is-invalid: JSON er ugyldig
+      label-output-filename: "Utdatafilnavn:"
+      placeholder-enter-output-filename: Skriv inn navnet på utdatafilen
+      label-json-to-convert: "JSON for å konvertere:"
+      placeholder-enter-json-to-convert: Skriv inn JSON for å konvertere...
+      title-msgpack-binary: "MsgPack binærfil:"
+      tag-convert: Konvertere
+      tag-download-msgpack-file: Last ned MsgPack-filen
+  markdown-lorem-ipsum:
+    title: Markdown Lorem Ipsum
+    description: Generer Lorem Ipsum i markdown
+    texts:
+      label-atx: "ATX (#, ##, ###)"
+      label-setext: Setttekst (====, ----)
+      label-unordered: Uordnet (-, *, +)
+      label-ordered-1-2-3: Bestilt (1., 2., 3.)
+      label-language: "Språk:"
+      label-blocks: "Blokker:"
+      label-sentences-per-paragraph: "Setninger per avsnitt:"
+      title-styles: Stiler
+      label-block-types: "Blokktyper:"
+      label-inline-styles: Innebygde stiler
+      label-header-style: "Overskriftsstil:"
+      label-list-style: "Listestil:"
+      title-block-frequencies: Blokkfrekvenser
+      label-headers: "Overskrifter:"
+      label-lists: "Lister:"
+      label-code: "Kode:"
+      label-quotes: "Sitater:"
+      title-generated-markdown: Generert avslag
+      tag-headers: Overskrifter
+      tag-lists: Lister
+      tag-code: Kode
+      tag-quotes: Sitater
+      tag-emphasis: Vektlegging
+      tag-strong: Sterk
+      tag-links: Lenker
+      tag-inline-code: Innebygd kode
+      tag-generate: Generere
+      tag-print-ie-use-a-pdf-printer-to-get-a-pdf-file: Skriv ut (dvs. bruk en PDF-skriver for å få en PDF-fil)
+  msgpack-to-json:
+    title: Meldingspakke til JSON
+    description: Konverter MessagePack-fil til JSON
+    texts:
+      title-input-message-pack-file-or-content: Input Message Pack-fil eller innhold
+      label-file: Fil
+      label-hex-content: "Heksadesimalt innhold:"
+      title-drag-and-drop-msgpack-file-here-or-click-to-select-a-file: Dra og slipp MsgPack-filen hit, eller klikk for å velge en fil
+      title-json-content: JSON-innhold
+  pdf-compressor:
+    title: PDF-kompressor
+    description: Optimaliser og komprimer PDF med Ghostscript
+    texts:
+      label-screen-smallest: Skjerm (minste)
+      label-ebook-balanced: e-bok (balansert)
+      label-printer-high-quality: Skriver (høy kvalitet)
+      label-prepress-best-quality: Fortrykk (beste kvalitet)
+      label-pdf-1-4: PDF 1.4
+      label-pdf-1-5: PDF 1.5
+      label-pdf-1-6: PDF 1.6
+      label-pdf-1-7: PDF 1.7
+      label-compression-quality: "Kompresjonskvalitet:"
+      placeholder-select-compression-quality: Velg komprimeringskvalitet
+      label-compatibility-level: "Kompatibilitetsnivå:"
+      placeholder-select-compatibility-level: Velg kompatibilitetsnivå
+      title-drag-and-drop-a-pdf-file-here-or-click-to-select-a-file: Dra og slipp en PDF-fil hit, eller klikk for å velge en fil
+      title-logs: Logger
+      label-ghostscript: Ghostscript
+  serial-console:
+    title: Seriell portkonsoll
+    description: Koble til, les og send melding til serieporten
+    texts:
+      label-9600: "9600"
+      label-19200: "19200"
+      label-38400: "38400"
+      label-57600: "57600"
+      label-115200: "115200"
+      label-lf-n: LF (\\n)
+      label-cr-r: CR (\\r)
+      label-crlf-r-n: CRLF (\\r\\n)
+      title-serial-terminal: Seriell terminal
+      placeholder-baud-rate: Baudhastighet
+      placeholder-line-ending: Linjeslutt
+      placeholder-select-port: Velg port
+      placeholder-type-a-command: Skriv inn en kommando...
+      tag-connect: Koble til
+      tag-disconnect: Frakople
+      tag-send: Sende
+  shamirs-secret-sharing:
+    title: Shamirs hemmelige deling
+    description: Tillat deling og omskriving av en hemmelighet ved hjelp av Shamir\
+    texts:
+      label-text: Tekst
+      label-hexadecimal: Heksadesimal
+      label-base64: Base64
+      label-secret-mode: "Hemmelig modus:"
+      title-share-a-secret-split: Del en hemmelighet (delt)
+      label-secret: "Hemmelig:"
+      placeholder-enter-secret-text: Skriv inn hemmelig tekst
+      label-threshold-minimum-shares-to-recover: "Terskel (minimum antall aksjer som skal gjenopprettes):"
+      label-number-of-shares: "Antall aksjer:"
+      title-generated-shares: Genererte delinger
+      title-recombine-a-secret: Rekombiner en hemmelighet
+      label-your-shares: "Dine aksjer:"
+      placeholder-paste-your-shares-here: Lim inn delingene dine her...
+      title-recombined-secret: Rekombinert hemmelighet
+      tag-split-secret: Del hemmeligheten
+      tag-recombine: Rekombiner
+  short-urls-expander:
+    title: Utvider for korte URL-er
+    description: Utvid korte nettadresser for å målrette mot fullstendige nettadresser
+    texts:
+      label-short-urls-to-expand: "Korte nettadresser for utvidelse:"
+      placeholder-enter-short-urls-one-per-line: Skriv inn korte nettadresser (én per linje)
+      title-result: Resultat
+      tag-this-tool-make-use-of-https-cors-anywhere-com-to-bypass-cors-this-is-a-community-driven-server:
+        Dette verktøyet bruker https://cors-anywhere.com for å omgå CORS. Dette
+        er en fellesskapsdrevet server.
+      tag-see-here-for-more-information: Se her for mer informasjon
+      tag-expand-all: Utvid alle
+      tag-download-resuls-as-csv: Last ned resultatene som CSV
+      tag-short-url: Kort URL
+      tag-expanded-url: Utvidet nettadresse
+      tag-link: Lenke
+      tag-status: Status
+      tag-open-url: Åpne URL
 spanCopyable:
   copy: Kopier til utklippstavlen
   copied: Kopiert!

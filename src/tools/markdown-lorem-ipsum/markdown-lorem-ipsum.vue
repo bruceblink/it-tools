@@ -1,14 +1,17 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n';
 import markdownit from 'markdown-it';
 import { type GeneratorConfig, generateMarkdown, getSupportedLanguages } from './markdown-lorem-ipsum.service';
 
+const { t } = useI18n();
+
 const headerStyleOptions = [
-  { label: 'ATX (#, ##, ###)', value: 'atx' },
-  { label: 'Setext (====, ----)', value: 'setext' },
+  { label: t('tools.markdown-lorem-ipsum.texts.label-atx'), value: 'atx' },
+  { label: t('tools.markdown-lorem-ipsum.texts.label-setext'), value: 'setext' },
 ];
 const listStyleOptions = [
-  { label: 'Unordered (-, *, +)', value: 'unordered' },
-  { label: 'Ordered (1., 2., 3.)', value: 'ordered' },
+  { label: t('tools.markdown-lorem-ipsum.texts.label-unordered'), value: 'unordered' },
+  { label: t('tools.markdown-lorem-ipsum.texts.label-ordered-1-2-3'), value: 'ordered' },
 ];
 
 const ui = ref<GeneratorConfig>({
@@ -60,85 +63,85 @@ onMounted(generate);
         <c-select
           v-model:value="ui.language"
           searchable
-          label="Language:"
+          :label="t('tools.markdown-lorem-ipsum.texts.label-language')"
           label-position="left"
           style="width: 200px"
           :options="Object.values(supportedLanguages)"
           mb-2
         />
 
-        <n-form-item label="Blocks:">
+        <n-form-item :label="t('tools.markdown-lorem-ipsum.texts.label-blocks')">
           <n-input-number v-model:value="ui.blocks" :min="1" :max="50" />
         </n-form-item>
 
-        <n-form-item label="Sentences per paragraph:">
+        <n-form-item :label="t('tools.markdown-lorem-ipsum.texts.label-sentences-per-paragraph')">
           <n-input-number v-model:value="ui.avgSentencePerPara" :min="1" :max="12" />
         </n-form-item>
       </n-space>
 
-      <c-card title="Styles" mb-2>
+      <c-card :title="t('tools.markdown-lorem-ipsum.texts.title-styles')" mb-2>
         <n-space justify="center">
-          <n-form-item label="Block types:">
+          <n-form-item :label="t('tools.markdown-lorem-ipsum.texts.label-block-types')">
             <n-space wrap>
               <n-checkbox v-model:checked="ui.enableHeaders">
-                Headers
+                {{ t('tools.markdown-lorem-ipsum.texts.tag-headers') }}
               </n-checkbox>
               <n-checkbox v-model:checked="ui.enableLists">
-                Lists
+                {{ t('tools.markdown-lorem-ipsum.texts.tag-lists') }}
               </n-checkbox>
               <n-checkbox v-model:checked="ui.enableCode">
-                Code
+                {{ t('tools.markdown-lorem-ipsum.texts.tag-code') }}
               </n-checkbox>
               <n-checkbox v-model:checked="ui.enableBlockquotes">
-                Quotes
+                {{ t('tools.markdown-lorem-ipsum.texts.tag-quotes') }}
               </n-checkbox>
             </n-space>
           </n-form-item>
 
-          <n-form-item label="Inline styles">
+          <n-form-item :label="t('tools.markdown-lorem-ipsum.texts.label-inline-styles')">
             <n-space wrap>
               <n-checkbox v-model:checked="ui.inlineEmphasis">
-                Emphasis
+                {{ t('tools.markdown-lorem-ipsum.texts.tag-emphasis') }}
               </n-checkbox>
               <n-checkbox v-model:checked="ui.inlineStrong">
-                Strong
+                {{ t('tools.markdown-lorem-ipsum.texts.tag-strong') }}
               </n-checkbox>
               <n-checkbox v-model:checked="ui.inlineLinks">
-                Links
+                {{ t('tools.markdown-lorem-ipsum.texts.tag-links') }}
               </n-checkbox>
               <n-checkbox v-model:checked="ui.inlineCode">
-                Inline code
+                {{ t('tools.markdown-lorem-ipsum.texts.tag-inline-code') }}
               </n-checkbox>
             </n-space>
           </n-form-item>
         </n-space>
 
         <n-space justify="center">
-          <n-form-item label="Header style:">
+          <n-form-item :label="t('tools.markdown-lorem-ipsum.texts.label-header-style')">
             <n-select v-model:value="ui.headerStyle" :options="headerStyleOptions" />
           </n-form-item>
 
-          <n-form-item label="List style:">
+          <n-form-item :label="t('tools.markdown-lorem-ipsum.texts.label-list-style')">
             <n-select v-model:value="ui.listStyle" :options="listStyleOptions" />
           </n-form-item>
         </n-space>
       </c-card>
 
-      <c-card title="Block frequencies" mb-2>
+      <c-card :title="t('tools.markdown-lorem-ipsum.texts.title-block-frequencies')" mb-2>
         <n-space>
-          <n-form-item label="Headers:">
+          <n-form-item :label="t('tools.markdown-lorem-ipsum.texts.label-headers')">
             <n-input-number v-model:value="ui.headerFrequency" :step="0.05" :min="0" :max="1" size="small" style="width:180px" />
           </n-form-item>
 
-          <n-form-item label="Lists:">
+          <n-form-item :label="t('tools.markdown-lorem-ipsum.texts.label-lists')">
             <n-input-number v-model:value="ui.listFrequency" :step="0.05" :min="0" :max="1" size="small" style="width:180px" />
           </n-form-item>
 
-          <n-form-item label="Code:">
+          <n-form-item :label="t('tools.markdown-lorem-ipsum.texts.label-code')">
             <n-input-number v-model:value="ui.codeFrequency" :step="0.05" :min="0" :max="1" size="small" style="width:180px" />
           </n-form-item>
 
-          <n-form-item label="Quotes:">
+          <n-form-item :label="t('tools.markdown-lorem-ipsum.texts.label-quotes')">
             <n-input-number v-model:value="ui.quoteFrequency" :step="0.05" :min="0" :max="1" size="small" style="width:180px" />
           </n-form-item>
         </n-space>
@@ -146,16 +149,16 @@ onMounted(generate);
 
       <n-space justify="center">
         <n-button type="primary" @click="generate">
-          Generate
+          {{ t('tools.markdown-lorem-ipsum.texts.tag-generate') }}
         </n-button>
       </n-space>
     </n-form>
 
-    <c-card title="Generated Markdown" mt-2>
+    <c-card :title="t('tools.markdown-lorem-ipsum.texts.title-generated-markdown')" mt-2>
       <textarea-copyable :value="markdown" language="markdown" />
       <n-space justify="center" mt-2>
         <c-button @click="printLorem">
-          Print (ie, use a PDF Printer to get a PDF file)
+          {{ t('tools.markdown-lorem-ipsum.texts.tag-print-ie-use-a-pdf-printer-to-get-a-pdf-file') }}
         </c-button>
       </n-space>
     </c-card>

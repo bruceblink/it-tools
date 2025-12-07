@@ -1,6 +1,9 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n';
 import { splitContent } from './file-splitter.service';
 import { useQueryParamOrStorage } from '@/composable/queryParams';
+
+const { t } = useI18n();
 
 const splitMode = useQueryParamOrStorage<'lines' | 'nodes'>({ name: 'mode', storageName: 'file-split:m', defaultValue: 'lines' });
 const strategy = useQueryParamOrStorage<'maxSize' | 'fixedCount' | 'chunkCount'>({ name: 'strategy', storageName: 'file-split:s', defaultValue: 'fixedCount' });
@@ -78,32 +81,32 @@ function downloadAllChunks() {
     <n-space justify="center" mb-2>
       <NRadioGroup v-model:value="splitMode">
         <NRadio value="lines">
-          Split by Lines
+          {{ t('tools.file-splitter.texts.tag-split-by-lines') }}
         </NRadio>
         <NRadio value="nodes">
-          Split by Nodes
+          {{ t('tools.file-splitter.texts.tag-split-by-nodes') }}
         </NRadio>
       </NRadioGroup>
     </n-space>
     <n-space justify="center" align="baseline" mb-2>
       <NRadioGroup v-model:value="strategy">
         <NRadio value="maxSize">
-          Max Chunk size (KB):
+          {{ t('tools.file-splitter.texts.tag-max-chunk-size-kb') }}
         </NRadio>
         <NRadio value="fixedCount">
-          Fixed Count:
+          {{ t('tools.file-splitter.texts.tag-fixed-count') }}
         </NRadio>
         <NRadio value="chunkCount">
-          Chunk Count:
+          {{ t('tools.file-splitter.texts.tag-chunk-count') }}
         </NRadio>
       </NRadioGroup>
-      <NInputNumber v-model:value="count" :min="1" placeholder="Strategy value..." style="width: 150px" />
+      <NInputNumber v-model:value="count" :min="1" :placeholder="t('tools.file-splitter.texts.placeholder-strategy-value')" style="width: 150px" />
     </n-space>
 
     <div style="flex: 0 0 100%" mb-2>
       <div mx-auto max-w-600px>
         <c-file-upload
-          title="Drag and drop a TXT, JSON or XML file here, or click to select a file"
+          :title="t('tools.file-splitter.texts.title-drag-and-drop-a-txt-json-or-xml-file-here-or-click-to-select-a-file')"
           accept=".txt,.json,.xml"
           @file-upload="onFileUploaded"
         />
@@ -112,13 +115,13 @@ function downloadAllChunks() {
 
     <div mb-1 flex justify-center>
       <n-checkbox v-model:checked="preview">
-        Preview chunks?
+        {{ t('tools.file-splitter.texts.tag-preview-chunks') }}
       </n-checkbox>
     </div>
 
     <div mb-2 flex justify-center>
       <NButton size="small" @click="prepareChunks()">
-        Process chunks
+        {{ t('tools.file-splitter.texts.tag-process-chunks') }}
       </NButton>
     </div>
 
@@ -129,7 +132,7 @@ function downloadAllChunks() {
     <c-card v-if="chunks && chunks.length" :title="`Chunks (${chunks.length})`">
       <div flex justify-center>
         <NButton size="small" @click="downloadAllChunks()">
-          Download all
+          {{ t('tools.file-splitter.texts.tag-download-all') }}
         </NButton>
       </div>
       <div v-if="preview">
@@ -141,7 +144,7 @@ function downloadAllChunks() {
           <textarea-copyable :value="chunk" :language="extension" style="max-height: 10em" multiline word-wrap mb-1 />
           <div flex justify-center>
             <NButton size="small" @click="downloadChunk(index)">
-              Download
+              {{ t('tools.file-splitter.texts.tag-download') }}
             </NButton>
           </div>
         </template>

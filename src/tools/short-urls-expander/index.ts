@@ -1,10 +1,11 @@
 import { WorldDownload } from '@vicons/tabler';
 import { defineTool } from '../tool';
+import { translate as t } from '@/plugins/i18n.plugin';
 
 export const tool = defineTool({
-  name: 'Short Urls Expander',
+  name: t('tools.short-urls-expander.title'),
   path: '/short-urls-expander',
-  description: 'Expand short urls to target full urls',
+  description: t('tools.short-urls-expander.description'),
   keywords: ['short', 'urls', 'expander'],
   component: () => import('./short-urls-expander.vue'),
   icon: WorldDownload,

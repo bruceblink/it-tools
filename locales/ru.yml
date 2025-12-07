@@ -315,8 +315,14 @@ tools:
       placeholder-your-string-to-compare: Ваша строка для сравнения...
       label-your-hash: "Ваш хэш: "
       placeholder-your-hash-to-compare: Ваш хеш для сравнения...
-      label-do-they-match: "Они совпадают? "
       tag-copy-hash: Копировать хэш
+      hashed-string: Хешированная строка
+      comparison-result: Результат сравнения
+      matched: Совпало
+      no-match: Нет совпадений
+      timed-out-after-timeout-period: Истек тайм-аут после {timeoutPeriod}
+      hashed-in-elapsed-period: Хешировано в {elapsedPeriod}
+      compared-in-elapsed-period: Сравнено в {elapsedPeriod}
   crontab-generator:
     title: Генератор Crontab
     description: Проверяйте и генерируйте crontab и получайте описание расписания
@@ -833,6 +839,7 @@ tools:
       label-your-url-to-parse: "Ваш URL для анализа:"
       placeholder-your-url-to-parse: Ваш URL для анализа...
       url-must-have-http-or-https-prefix: URL должен иметь префикс http:// или https://
+      button-open-url: Открыть URL
   iban-validator-and-parser:
     title: Валидатор и парсер IBAN
     description: Проверяйте и разбирайте номера IBAN. Проверяйте, является ли IBAN
@@ -986,6 +993,7 @@ tools:
       placeholder-your-lorem-ipsum: Ваш lorem ipsum...
       tag-copy: Копировать
       tag-refresh: Обновить
+      tag-print-ie-use-a-pdf-printer-to-get-a-pdf-file: Печать (т. е. использование PDF-принтера для получения PDF-файла)
   qrcode-generator:
     title: Генератор QR-кодов
     description: Генерируйте и загружайте QR-код для URL (или простого текста) и
@@ -1124,6 +1132,13 @@ tools:
       label-secret-or-public-key-spki-or-jwk: Секретный или открытый ключ (SPKI или JWK)
       placeholder-put-your-secret-or-public-key-here: Введите здесь свой секретный или открытый ключ...
       tag-signature-verified: Подпись проверена
+      label-jwk: Ключ JWK
+      label-pub-key: Открытый ключ PEM
+      label-secret-raw-text: Секрет - Необработанный текст
+      label-secret-hex-array: Секрет - Шестнадцатеричный массив
+      label-secret-base64: Секрет - Base64
+      label-secret-encoding: "Секретная кодировка/тип:"
+      key-or-secret-or-verification-error-e-tostring: "Ключ, секрет или ошибка проверки: {0}"
     constants:
       text:
         token-introspection-response: Токен-реакция самоанализа
@@ -2458,9 +2473,8 @@ tools:
       tag-detach-d: Отделить (-d)
       tag-remove-rm: Удалить (--rm)
       tag-long-arguments: Длинные аргументы
-      tag-: "?"
-      tag-arg: арг
-      tag-value: ценить
+      tag-multiline: Многострочный
+      tag-equal-sep: --arg=значение
   docker-compose-to-kubernetes:
     title: Docker Compose в Kubernetes
     description: Преобразуйте Docker Compose в манифесты Kubernetes
@@ -2882,6 +2896,14 @@ tools:
       placeholder-your-html-content: Ваш HTML-контент...
       label-your-html-to-convert-can-paste-from-clipboard: "Ваш HTML-код для конвертации (можно вставить из буфера обмена):"
       label-output-markdown: "Выходная уценка:"
+      label-heading-style: "Стиль заголовков:"
+      label-emphasis-style: "Стиль акцента:"
+      label-hash: Решетка (#)
+      label-underline: Подчеркивание (=/-)
+      label-surround-heading: Окружать (= Заголовок =)
+      label-asterisk: Звездочка (*)
+      label-underscore: Подчеркивание (_)
+      label-tilde: Тильда (~)
   htpasswd-generator:
     title: Генератор Htpasswd/Htaccess
     description: Генератор пользователей/паролей для htpasswd/htaccess
@@ -3259,6 +3281,8 @@ tools:
       title-schema-validation-errors: Ошибки проверки схемы
       title-formatted-version: Форматированная версия
       label-indent-size-0-compact: "Размер отступа (0 = Компактный):"
+      title-repaired-version: Автоматически восстановленная и отформатированная версия
+      label-auto-repair-json: "Авторемонт JSON:"
   json-size-analyzer:
     title: Анализатор размера JSON
     description: Измеряйте относительный вес узлов JSON
@@ -3371,6 +3395,17 @@ tools:
       label-public-key-jwk: "Открытый ключ (JWK):"
       label-private-key-jwk: "Закрытый ключ (JWK):"
       title-generated-jwt-token: "Сгенерированный токен JWT:"
+      label-secret-encoding: "Секретное кодирование:"
+      label-raw-text: Необработанный текст
+      label-hex-array: Шестнадцатеричный массив
+      verify-description: "{0}: {1} (уточните у {2})"
+      token-secret: Секретный токен
+      token-keys: Ключи токенов
+      cannot-parse-secret-as-encoding: "Невозможно проанализировать «{0}» как «{1}»: {2}"
+      invalid-base64-string: Недопустимая строка Base64
+      placeholder-input-token: Вставьте свой токен JWT для редактирования...
+      click-to-input-a-existing-jwt-token-to-modify: Нажмите, чтобы ввести существующий токен JWT для изменения.
+      label-base64: Base64
   length-converter:
     title: Конвертер единиц длины
     description: Конвертируйте значения между единицами длины
@@ -3429,6 +3464,8 @@ tools:
       placeholder-select-the-target-unit: Выберите целевую единицу
       title-result: Результат
       label-best-target-unit: Лучшая целевая единица
+      label-selected-target-unit-outputunit: Выбранный целевой блок ({0})
+      title-other-units-conversion-tools: Другие инструменты преобразования единиц
   markdown-cheatsheet:
     title: Шпаргалка по Markdown
     description: Шпаргалка по Markdown
@@ -7097,6 +7134,334 @@ tools:
       label-converted-to-hex-array: "Преобразовано в шестнадцатеричный массив:"
       tag-digit-0-no-grouping: (Цифра 0 = Без группировки)
       tag-digit-0-no-row: (Цифра 0 = Нет строки)
+  toon-to-json:
+    texts:
+      message-provided-json-is-not-valid: При условии, что TOON недействителен
+      output-label-json-version: "JSON-версия вашего TOON-контента:"
+      input-placeholder-paste-your-raw-toon-here: Вставьте сюда необработанный контент TOON...
+      input-label-your-raw-toon: "Ваш сырой контент TOON:"
+    title: TOON в JSON
+    description: Преобразовать представление TOON в объект JSON для использования LLM
+  json-to-toon:
+    texts:
+      message-provided-json-is-not-valid: Указанный JSON недействителен.
+      input-placeholder-paste-your-raw-json-here: Вставьте сюда необработанный JSON...
+      input-label-your-raw-json: "Ваш необработанный JSON:"
+      output-label-toon-version-of-your-json: "TOON-версия вашего JSON:"
+    title: JSON в TOON
+    description: Преобразовать объект JSON в представление TOON для использования LLM/GPT
+  external-link-goto: "Чтобы открыть этот инструмент, перейдите по этой ссылке:"
+  argon2-hash:
+    title: Argon2 Hasher
+    description: Вычислить хеши Argon2 с параметрами
+    texts:
+      label-argon2id: Argon2id
+      label-argon2i: Аргон2i
+      label-argon2d: Аргон2д
+      label-hex: Шестигранник
+      label-encoded: Закодировано
+      label-binary: Двоичный
+      label-algorithm: "Алгоритм:"
+      label-password: "Пароль:"
+      placeholder-enter-password: Введите пароль
+      label-salt-hex: "Соль (гекс.):"
+      placeholder-optional-hex-salt: Необязательная гексагональная соль
+      label-iterations: "Итерации:"
+      label-memory-kib: "Память (КиБ):"
+      label-parallelism: "Параллелизм:"
+      label-hash-length: "Длина хеша:"
+      label-output-type: "Тип вывода:"
+      title-argon2-hash: Argon2 Hash
+      tag-generate: Генерировать
+  binary-calculator:
+    title: Двоичный калькулятор
+    description: Вычислить побитовые/бинарные операции (AND, OR, XOR, NOT, сдвиги)
+      между двумя числами
+    texts:
+      label-decimal: Десятичная дробь
+      label-hexadecimal: "Шестнадцатеричный:"
+      label-octal: "Восьмеричный:"
+      label-binary: "Двоичный:"
+      label-a-and-b: А И Б
+      label-a-or-b: А ИЛИ Б
+      label-a-xor-b: A XOR B
+      label-not-a: НЕ А
+      label-a-b-left-shift: A << B (сдвиг влево)
+      label-a-b-right-shift: A >> B (сдвиг вправо)
+      message-number-is-invalid: Номер недействителен
+      label-a: А=
+      placeholder-enter-a: Введите А
+      label-b: Б=
+      placeholder-enter-b: Введите B
+      label-operation: "Операция:"
+      placeholder-select-operation: Выберите операцию
+      title-result: Результат
+      label-decimal-signed: "Десятичная дробь (со знаком):"
+      label-decimal-unigned: "Десятичная дробь (без знака):"
+      title-bitmask: Битовая маска
+  chmod-memo:
+    title: Шпаргалка по команде chmod
+    description: Шпаргалки по изменению разрешений в Linux
+  css-gradient-generator:
+    title: Генератор градиентов CSS
+    description: Генерация CSS-кода градиента CSS для заданного набора шагов и цветов
+    texts:
+      label-gradient-type: "Тип градиента:"
+      label-angle-degrees: "Угол (градусы):"
+      title-color-stops: Остановки цвета
+      title-preview: Предварительный просмотр
+      title-generated-css: Сгенерированный CSS
+      tag-linear: Линейный
+      tag-radial: Радиальный
+      tag-remove: Удалять
+      tag-add-color-stop: Добавить цветовую остановку
+  css-units-converter:
+    title: Конвертер единиц CSS
+    description: Преобразование значений из общепринятых единиц CSS (em, rem, px, vw, vh, %)
+    texts:
+      label-pixels-px: Пиксели (px)
+      label-ems-em: Эмс (эм)
+      label-rems-rem: Бэр (рем)
+      label-percent: Процент (%)
+      label-viewport-width-vw: Ширина области просмотра (vw)
+      label-viewport-height-vh: Высота области просмотра (vh)
+      label-value-to-convert: "Значение для преобразования:"
+      label-from-unit: "Из подразделения:"
+      label-to-unit: "В подразделение:"
+      label-base-font-size-px: Базовый размер шрифта (px)
+      label-viewport-width-px: Ширина области просмотра (пикс.)
+      label-viewport-height-px: Высота области просмотра (пикс.)
+      title-conversion: Конверсия
+      label-converted-value: "Конвертированное значение:"
+  docker-compose-to-env-file:
+    title: Docker Compose в файл .env
+    description: Извлечь файл .env из существующего файла Docker Compose
+    texts:
+      label-docker-compose-file: "Файл Docker Compose:"
+      placeholder-paste-your-docker-compose-yaml-here: Вставьте сюда ваш docker-compose YAML...
+      title-extract-env: Извлечь .env
+  emv-tlv-decoder:
+    title: Декодер EMV TLV
+    description: Декодирует данные EMV TLV (тег-длина-значение) и их отдельные теги,
+      имеющие расширенное значение (например, TVR (тег 95), возможности
+      терминала (тег 9F33) и т. д.)
+    texts:
+      tag-: —
+      tag-tag: Ярлык
+      tag-length: Длина
+      tag-value: Ценить
+      tag-description: Описание
+      tag-bit-level-interpretation: Интерпретация на битовом уровне
+      label-tlv-hex-input: Шестнадцатеричный вход TLV
+      placeholder-paste-emv-tlv-hex-string-e-g-6f1a8407a0000000031010a50f500b5649534120435245444954:
+        Вставьте шестнадцатеричную строку EMV TLV (например,
+        6F1A8407A0000000031010A50F500B5649534120435245444954)
+      label-kernel-type: "Тип ядра:"
+      title-decoded-emv-tags: Декодированные теги EMV
+      tag-parse-tlv: Анализ TLV
+  eth-transaction-decoder:
+    title: Декодер транзакций ETH
+    description: Декодер транзакций Ethereum с ABI смарт-контракта
+    texts:
+      label-smart-contract-abi: "ABI смарт-контракта:"
+      placeholder-paste-abi-json-here: Вставьте ABI JSON сюда
+      label-raw-transaction-0x-or-json-transaction: "Необработанная транзакция (0x...) или транзакция JSON:"
+      title-decoded-transaction: Декодированная транзакция
+      label-from: От
+      label-to: К
+      label-value: Ценить
+      label-gas: Газ
+      label-gas-price: Цена на газ
+      label-nonce: Одноразовый номер
+      label-method: Метод
+      label-signature: Подпись
+      label-arguments: Аргументы
+      title-structured-output-json: Структурированный вывод JSON
+  file-splitter:
+    title: Разделитель файлов
+    description: Разделить JSON, XML или текстовый файл по группе узлов или по группе строк
+    texts:
+      placeholder-strategy-value: Стратегическая ценность...
+      title-drag-and-drop-a-txt-json-or-xml-file-here-or-click-to-select-a-file: Перетащите сюда файл TXT, JSON или XML или щелкните, чтобы выбрать файл.
+      tag-split-by-lines: Разделить по линиям
+      tag-split-by-nodes: Разделить по узлам
+      tag-max-chunk-size-kb: "Максимальный размер фрагмента (КБ):"
+      tag-fixed-count: "Фиксированное количество:"
+      tag-chunk-count: "Количество фрагментов:"
+      tag-preview-chunks: Предварительный просмотр фрагментов?
+      tag-process-chunks: Процессные фрагменты
+      tag-download-all: Скачать все
+      tag-download: Скачать
+  gitignore-generator:
+    title: Генератор GitIgnore
+    description: Сгенерировать .gitignore для набора общих шаблонов
+    texts:
+      placeholder-select-templates-e-g-node-python-vue: Выберите шаблоны (например, node, python, vue)
+      title-gitignore: .gitignore
+      tag-const-availabletemplates-ref: const availableTemplates = ref
+      tag-this-tool-use: "Этот инструмент использует:"
+      tag-https-www-toptal-com-developers-gitignore: https://www.toptal.com/developers/gitignore
+      tag-generate: Генерировать
+  i-and-l-checker:
+    title: Проверка I и L
+    description: Проверьте пароль или текст с подсветкой 1, l, I, 0, O
+    texts:
+      label-text-to-check: "Текст для проверки:"
+      placeholder-paste-your-text-here: Вставьте свой текст сюда...
+      title-legend: Легенда
+      tag-i: я
+      tag-uppercase-letter-i: "- Заглавная буква i"
+      tag-l: л
+      tag-lowercase-letter-l: "- строчная буква L"
+      tag-1: "1"
+      tag-number-1: "- Номер 1"
+      tag-0: "0"
+      tag-number-0: "- Номер 0"
+      tag-o: ТО
+      tag-uppercase-letter-o: "- Заглавная буква О"
+  ipv4-subnets-list:
+    title: Список подсетей IPv4
+    description: Перечислить все возможные подсети заданной CIDR
+    texts:
+      message-we-cannot-parse-this-address-check-the-format: Мы не можем разобрать этот адрес, проверьте формат.
+      label-an-ipv4-address-with-or-without-mask-cidr-ip-range-wildcard-ip-ip-mask:
+        Адрес IPv4 с маской или без нее (CIDR/диапазон IP-адресов/подстановочный
+        IP-адрес/маска IP-адреса)
+      placeholder-ipv4-or-cidr: IPv4 или cidr...
+      tag-network: Сеть
+      tag-first-ip: Первый IP
+      tag-last-ip: Последний IP
+      tag-broadcast: Транслировать
+  json-to-msgpack:
+    title: JSON в MessagePack
+    description: Конвертировать JSON в MessagePack
+    texts:
+      message-json-is-invalid: JSON недействителен
+      label-output-filename: "Имя выходного файла:"
+      placeholder-enter-output-filename: Введите имя выходного файла
+      label-json-to-convert: "JSON для преобразования:"
+      placeholder-enter-json-to-convert: Введите JSON для конвертации...
+      title-msgpack-binary: "Двоичный файл MsgPack:"
+      tag-convert: Конвертировать
+      tag-download-msgpack-file: Загрузить файл MsgPack
+  markdown-lorem-ipsum:
+    title: Markdown Lorem Ipsum
+    description: Создать Lorem Ipsum в уценке
+    texts:
+      label-atx: "АТХ (#, ##, ###)"
+      label-setext: Setext (====, ----)
+      label-unordered: Неупорядоченный (-, *, +)
+      label-ordered-1-2-3: Заказано (1., 2., 3.)
+      label-language: "Язык:"
+      label-blocks: "Блоки:"
+      label-sentences-per-paragraph: "Предложений в абзаце:"
+      title-styles: Стили
+      label-block-types: "Типы блоков:"
+      label-inline-styles: Встроенные стили
+      label-header-style: "Стиль заголовка:"
+      label-list-style: "Стиль списка:"
+      title-block-frequencies: Частоты блоков
+      label-headers: "Заголовки:"
+      label-lists: "Списки:"
+      label-code: "Код:"
+      label-quotes: "Кавычки:"
+      title-generated-markdown: Сгенерированная разметка
+      tag-headers: Заголовки
+      tag-lists: Списки
+      tag-code: Код
+      tag-quotes: Кавычки
+      tag-emphasis: Акцент
+      tag-strong: Сильный
+      tag-links: Ссылки
+      tag-inline-code: Встроенный код
+      tag-generate: Генерировать
+      tag-print-ie-use-a-pdf-printer-to-get-a-pdf-file: Печать (т. е. использование PDF-принтера для получения PDF-файла)
+  msgpack-to-json:
+    title: Пакет сообщений в JSON
+    description: Конвертировать файл MessagePack в JSON
+    texts:
+      title-input-message-pack-file-or-content: Файл или содержимое входного пакета сообщений
+      label-file: Файл
+      label-hex-content: "Содержание Hex:"
+      title-drag-and-drop-msgpack-file-here-or-click-to-select-a-file: Перетащите файл MsgPack сюда или щелкните, чтобы выбрать файл.
+      title-json-content: JSON-контент
+  pdf-compressor:
+    title: PDF-компрессор
+    description: Оптимизируйте и сжимайте PDF с помощью Ghostscript
+    texts:
+      label-screen-smallest: Экран (самый маленький)
+      label-ebook-balanced: электронная книга (сбалансированная)
+      label-printer-high-quality: Принтер (высокого качества)
+      label-prepress-best-quality: Допечатная подготовка (наилучшее качество)
+      label-pdf-1-4: PDF 1.4
+      label-pdf-1-5: PDF 1.5
+      label-pdf-1-6: PDF 1.6
+      label-pdf-1-7: PDF 1.7
+      label-compression-quality: "Качество сжатия:"
+      placeholder-select-compression-quality: Выберите качество сжатия
+      label-compatibility-level: "Уровень совместимости:"
+      placeholder-select-compatibility-level: Выберите уровень совместимости
+      title-drag-and-drop-a-pdf-file-here-or-click-to-select-a-file: Перетащите PDF-файл сюда или щелкните, чтобы выбрать файл.
+      title-logs: Журналы
+      label-ghostscript: Ghostscript
+  serial-console:
+    title: Консоль последовательного порта
+    description: Подключение, чтение и отправка сообщения через последовательный порт
+    texts:
+      label-9600: "9600"
+      label-19200: "19200"
+      label-38400: "38400"
+      label-57600: "57600"
+      label-115200: "115200"
+      label-lf-n: ЛФ (\\н)
+      label-cr-r: CR (\\r)
+      label-crlf-r-n: CRLF (\\r\\n)
+      title-serial-terminal: Последовательный терминал
+      placeholder-baud-rate: Скорость передачи данных
+      placeholder-line-ending: Конец строки
+      placeholder-select-port: Выберите порт
+      placeholder-type-a-command: Введите команду...
+      tag-connect: Соединять
+      tag-disconnect: Отключить
+      tag-send: Отправлять
+  shamirs-secret-sharing:
+    title: Секретный обмен Шамира
+    description: Разрешить делиться и пересоставлять секрет с помощью Шамира\
+    texts:
+      label-text: Текст
+      label-hexadecimal: Шестнадцатеричный
+      label-base64: Base64
+      label-secret-mode: "Секретный режим:"
+      title-share-a-secret-split: Поделиться секретом (разделить)
+      label-secret: "Секрет:"
+      placeholder-enter-secret-text: Введите секретный текст
+      label-threshold-minimum-shares-to-recover: "Порог (минимальное количество акций для восстановления):"
+      label-number-of-shares: "Количество акций:"
+      title-generated-shares: Сгенерированные акции
+      title-recombine-a-secret: Восстановить секрет
+      label-your-shares: "Ваши акции:"
+      placeholder-paste-your-shares-here: Вставьте свои акции сюда...
+      title-recombined-secret: Рекомбинированный секрет
+      tag-split-secret: Разделить секрет
+      tag-recombine: Рекомбинировать
+  short-urls-expander:
+    title: Расширитель коротких URL-адресов
+    description: Расширьте короткие URL-адреса, чтобы использовать полные URL-адреса
+    texts:
+      label-short-urls-to-expand: "Короткие URL-адреса для расширения:"
+      placeholder-enter-short-urls-one-per-line: Введите короткие URL-адреса (по одному в строке)
+      title-result: Результат
+      tag-this-tool-make-use-of-https-cors-anywhere-com-to-bypass-cors-this-is-a-community-driven-server:
+        Этот инструмент использует https://cors-anywhere.com для обхода CORS.
+        Это сервер, управляемый сообществом.
+      tag-see-here-for-more-information: Более подробную информацию смотрите здесь.
+      tag-expand-all: Развернуть все
+      tag-download-resuls-as-csv: Загрузить результаты в формате CSV
+      tag-short-url: Короткий URL
+      tag-expanded-url: Расширенный URL
+      tag-link: Связь
+      tag-status: Статус
+      tag-open-url: Открыть URL
 spanCopyable:
   copy: Копировать в буфер обмена
   copied: Скопировано!

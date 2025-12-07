@@ -1,10 +1,11 @@
 import { Binary } from '@vicons/tabler';
 import { defineTool } from '../tool';
+import { translate as t } from '@/plugins/i18n.plugin';
 
 export const tool = defineTool({
-  name: 'JSON to MessagePack',
+  name: t('tools.json-to-msgpack.title'),
   path: '/json-to-msgpack',
-  description: 'Convert JSON to MessagePack',
+  description: t('tools.json-to-msgpack.description'),
   keywords: ['json', 'message', 'pack', 'msgpack'],
   component: () => import('./json-to-msgpack.vue'),
   icon: Binary,

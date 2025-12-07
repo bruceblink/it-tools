@@ -1,5 +1,8 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n';
 import { useQueryParamOrStorage } from '@/composable/queryParams';
+
+const { t } = useI18n();
 
 const inputValue = ref(16);
 const baseFontSize = ref(16);
@@ -9,12 +12,12 @@ const fromUnit = useQueryParamOrStorage({ name: 'from', storageName: 'css-units-
 const toUnit = useQueryParamOrStorage({ name: 'to', storageName: 'css-units-conv:t', defaultValue: 'em' });
 
 const unitOptions = [
-  { label: 'Pixels (px)', value: 'px' },
-  { label: 'Ems (em)', value: 'em' },
-  { label: 'Rems (rem)', value: 'rem' },
-  { label: 'Percent (%)', value: '%' },
-  { label: 'Viewport Width (vw)', value: 'vw' },
-  { label: 'Viewport Height (vh)', value: 'vh' },
+  { label: t('tools.css-units-converter.texts.label-pixels-px'), value: 'px' },
+  { label: t('tools.css-units-converter.texts.label-ems-em'), value: 'em' },
+  { label: t('tools.css-units-converter.texts.label-rems-rem'), value: 'rem' },
+  { label: t('tools.css-units-converter.texts.label-percent'), value: '%' },
+  { label: t('tools.css-units-converter.texts.label-viewport-width-vw'), value: 'vw' },
+  { label: t('tools.css-units-converter.texts.label-viewport-height-vh'), value: 'vh' },
 ];
 
 const usesRelativeUnits = computed(() =>
@@ -59,40 +62,40 @@ const convertedValue = computed(() => {
   <div>
     <NForm label-placement="left">
       <n-space justify="center">
-        <NFormItem label="Value to convert:">
+        <NFormItem :label="t('tools.css-units-converter.texts.label-value-to-convert')">
           <NInputNumber v-model:value="inputValue" />
         </NFormItem>
 
-        <NFormItem label="From Unit:">
+        <NFormItem :label="t('tools.css-units-converter.texts.label-from-unit')">
           <NSelect v-model:value="fromUnit" :options="unitOptions" style="width: 200px" />
         </NFormItem>
 
-        <NFormItem label="To Unit:">
+        <NFormItem :label="t('tools.css-units-converter.texts.label-to-unit')">
           <NSelect v-model:value="toUnit" :options="unitOptions" style="width: 200px" />
         </NFormItem>
       </n-space>
 
       <n-space justify="center">
-        <NFormItem v-if="usesRelativeUnits" label="Base Font Size (px)">
+        <NFormItem v-if="usesRelativeUnits" :label="t('tools.css-units-converter.texts.label-base-font-size-px')">
           <NInputNumber v-model:value="baseFontSize" :min="1" />
         </NFormItem>
 
-        <NFormItem v-if="usesViewportUnits" label="Viewport Width (px)">
+        <NFormItem v-if="usesViewportUnits" :label="t('tools.css-units-converter.texts.label-viewport-width-px')">
           <NInputNumber v-model:value="viewportWidth" :min="1" />
         </NFormItem>
 
-        <NFormItem v-if="usesViewportUnits" label="Viewport Height (px)">
+        <NFormItem v-if="usesViewportUnits" :label="t('tools.css-units-converter.texts.label-viewport-height-px')">
           <NInputNumber v-model:value="viewportHeight" :min="1" />
         </NFormItem>
       </n-space>
 
-      <c-card title="Conversion">
+      <c-card :title="t('tools.css-units-converter.texts.title-conversion')">
         <n-p>
           {{ inputValue }}{{ fromUnit }} = {{ convertedValue }}{{ toUnit }}
           <span v-if="usesRelativeUnits">(for base font size of {{ baseFontSize }}px)</span>
           <span v-if="usesViewportUnits">(for viewport of {{ viewportWidth }}x{{ viewportHeight }})</span>
         </n-p>
-        <input-copyable label="Converted value:" label-position="left" :value="convertedValue" />
+        <input-copyable :label="t('tools.css-units-converter.texts.label-converted-value')" label-position="left" :value="convertedValue" />
       </c-card>
     </NForm>
   </div>

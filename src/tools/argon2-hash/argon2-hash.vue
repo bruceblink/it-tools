@@ -1,6 +1,9 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n';
 import { argon2d, argon2i, argon2id } from 'hash-wasm';
 import { useQueryParamOrStorage } from '@/composable/queryParams';
+
+const { t } = useI18n();
 
 // Inputs
 const password = ref('');
@@ -60,55 +63,55 @@ async function generateHash() {
 <template>
   <div>
     <NForm label-width="120" label-placement="left">
-      <NFormItem label="Algorithm:">
+      <NFormItem :label="t('tools.argon2-hash.texts.label-algorithm')">
         <NSelect
           v-model:value="algorithm" :options="[
-            { label: 'Argon2id', value: 'argon2id' },
-            { label: 'Argon2i', value: 'argon2i' },
-            { label: 'Argon2d', value: 'argon2d' },
+            { label: t('tools.argon2-hash.texts.label-argon2id'), value: 'argon2id' },
+            { label: t('tools.argon2-hash.texts.label-argon2i'), value: 'argon2i' },
+            { label: t('tools.argon2-hash.texts.label-argon2d'), value: 'argon2d' },
           ]"
         />
       </NFormItem>
 
-      <NFormItem label="Password:">
-        <NInput v-model:value="password" placeholder="Enter password" />
+      <NFormItem :label="t('tools.argon2-hash.texts.label-password')">
+        <NInput v-model:value="password" :placeholder="t('tools.argon2-hash.texts.placeholder-enter-password')" />
       </NFormItem>
 
-      <NFormItem label="Salt (hex):">
-        <NInput v-model:value="salt" placeholder="Optional hex salt" />
+      <NFormItem :label="t('tools.argon2-hash.texts.label-salt-hex')">
+        <NInput v-model:value="salt" :placeholder="t('tools.argon2-hash.texts.placeholder-optional-hex-salt')" />
       </NFormItem>
 
       <n-space justify="space-evenly">
-        <NFormItem label="Iterations:">
+        <NFormItem :label="t('tools.argon2-hash.texts.label-iterations')">
           <NInputNumber v-model:value="iterations" :min="1" style="width: 100px" />
         </NFormItem>
 
-        <NFormItem label="Memory (KiB):">
+        <NFormItem :label="t('tools.argon2-hash.texts.label-memory-kib')">
           <NInputNumber v-model:value="memorySizeKB" :min="1" style="width: 100px" />
         </NFormItem>
 
-        <NFormItem label="Parallelism:">
+        <NFormItem :label="t('tools.argon2-hash.texts.label-parallelism')">
           <NInputNumber v-model:value="parallelism" :min="1" style="width: 100px" />
         </NFormItem>
 
-        <NFormItem label="Hash length:">
+        <NFormItem :label="t('tools.argon2-hash.texts.label-hash-length')">
           <NInputNumber v-model:value="hashLength" :min="16" style="width: 100px" />
         </NFormItem>
       </n-space>
 
-      <NFormItem label="Output type:">
+      <NFormItem :label="t('tools.argon2-hash.texts.label-output-type')">
         <NSelect
           v-model:value="outputType" :options="[
-            { label: 'Hex', value: 'hex' },
-            { label: 'Encoded', value: 'encoded' },
-            { label: 'Binary', value: 'binary' },
+            { label: t('tools.argon2-hash.texts.label-hex'), value: 'hex' },
+            { label: t('tools.argon2-hash.texts.label-encoded'), value: 'encoded' },
+            { label: t('tools.argon2-hash.texts.label-binary'), value: 'binary' },
           ]"
         />
       </NFormItem>
 
       <n-space justify="center">
         <NButton type="primary" @click="generateHash">
-          Generate
+          {{ t('tools.argon2-hash.texts.tag-generate') }}
         </NButton>
       </n-space>
     </NForm>
@@ -116,7 +119,7 @@ async function generateHash() {
     <c-alert v-if="error" mt-2>
       {{ error }}
     </c-alert>
-    <c-card v-if="result" title="Argon2 Hash" mt-2>
+    <c-card v-if="result" :title="t('tools.argon2-hash.texts.title-argon2-hash')" mt-2>
       <textarea-copyable :value="result" />
     </c-card>
   </div>

@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n();
+
 const availableTemplates = ref<{ label: string; value: string }[]>([]);
 const selectedTemplates = ref<string[]>([]);
 const gitignoreContent = ref('');
@@ -55,8 +59,8 @@ onMounted(fetchTemplates);
 <template>
   <div>
     <n-p>
-      This tool use: <n-a target="_blank" href="https://www.toptal.com/developers/gitignore">
-        https://www.toptal.com/developers/gitignore
+      {{ t('tools.gitignore-generator.texts.tag-this-tool-use') }}<n-a target="_blank" href="https://www.toptal.com/developers/gitignore">
+        {{ t('tools.gitignore-generator.texts.tag-https-www-toptal-com-developers-gitignore') }}
       </n-a>
     </n-p>
 
@@ -65,7 +69,7 @@ onMounted(fetchTemplates);
       :options="availableTemplates"
       multiple
       filterable
-      placeholder="Select templates (e.g. node, python, vue)"
+      :placeholder="t('tools.gitignore-generator.texts.placeholder-select-templates-e-g-node-python-vue')"
       style="width: 100%;"
       :disable="!availableTemplates"
     />
@@ -78,11 +82,11 @@ onMounted(fetchTemplates);
         :disable="!availableTemplates"
         @click="generateGitignore"
       >
-        Generate
+        {{ t('tools.gitignore-generator.texts.tag-generate') }}
       </NButton>
     </n-space>
 
-    <c-card v-if="gitignoreContent" title=".gitignore" mt-2>
+    <c-card v-if="gitignoreContent" :title="t('tools.gitignore-generator.texts.title-gitignore')" mt-2>
       <textarea-copyable :value="gitignoreContent" language="bash" download-file-name=".gitignore" />
     </c-card>
   </div>

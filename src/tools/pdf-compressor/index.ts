@@ -1,10 +1,11 @@
 import { FileZip } from '@vicons/tabler';
 import { defineTool } from '../tool';
+import { translate as t } from '@/plugins/i18n.plugin';
 
 export const tool = defineTool({
-  name: 'PDF Compressor',
+  name: t('tools.pdf-compressor.title'),
   path: '/pdf-compressor',
-  description: 'Optimize and compress PDF using Ghostscript',
+  description: t('tools.pdf-compressor.description'),
   keywords: ['pdf', 'optimize', 'compressor'],
   component: () => import('./pdf-compressor.vue'),
   icon: FileZip,

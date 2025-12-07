@@ -1,10 +1,11 @@
 import { Rainbow } from '@vicons/tabler';
 import { defineTool } from '../tool';
+import { translate as t } from '@/plugins/i18n.plugin';
 
 export const tool = defineTool({
-  name: 'CSS Gradient Generator',
+  name: t('tools.css-gradient-generator.title'),
   path: '/css-gradient-generator',
-  description: 'Generate CSS Gradient css code for a given set of steps and colors',
+  description: t('tools.css-gradient-generator.description'),
   keywords: ['css', 'gradient', 'generator'],
   component: () => import('./css-gradient-generator.vue'),
   icon: Rainbow,

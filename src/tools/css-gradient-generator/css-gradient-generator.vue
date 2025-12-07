@@ -1,6 +1,9 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n';
 import _ from 'lodash';
 import { useITStorage, useQueryParamOrStorage } from '@/composable/queryParams';
+
+const { t } = useI18n();
 
 const gradientType = useQueryParamOrStorage({ name: 'type', storageName: 'css-gradients:t', defaultValue: 'linear' });
 const angle = useQueryParamOrStorage({ name: 'angle', storageName: 'css-gradients:a', defaultValue: 90 });
@@ -32,24 +35,24 @@ function removeStop(index: number) {
   <div>
     <NForm label-placement="left">
       <n-space justify="center">
-        <NFormItem label="Gradient Type:">
+        <NFormItem :label="t('tools.css-gradient-generator.texts.label-gradient-type')">
           <NRadioGroup v-model:value="gradientType">
             <NRadioButton value="linear">
-              Linear
+              {{ t('tools.css-gradient-generator.texts.tag-linear') }}
             </NRadioButton>
             <NRadioButton value="radial">
-              Radial
+              {{ t('tools.css-gradient-generator.texts.tag-radial') }}
             </NRadioButton>
           </NRadioGroup>
         </NFormItem>
 
-        <NFormItem v-if="gradientType === 'linear'" label="Angle (degrees):">
+        <NFormItem v-if="gradientType === 'linear'" :label="t('tools.css-gradient-generator.texts.label-angle-degrees')">
           <NSlider v-model:value="angle" :min="0" :max="360" :step="1" mr-1 />
           <n-input-number :value="angle" />
         </NFormItem>
       </n-space>
 
-      <c-card title="Color Stops">
+      <c-card :title="t('tools.css-gradient-generator.texts.title-color-stops')">
         <div class="color-stop-list" w-full>
           <div
             v-for="(stop, index) in colorStops"
@@ -65,22 +68,22 @@ function removeStop(index: number) {
               style="width: 150px"
             />
             <NButton size="small" type="error" @click="removeStop(index)">
-              Remove
+              {{ t('tools.css-gradient-generator.texts.tag-remove') }}
             </NButton>
           </div>
         </div>
         <n-space justify="center">
           <NButton type="primary" size="small" @click="addStop">
-            Add Color Stop
+            {{ t('tools.css-gradient-generator.texts.tag-add-color-stop') }}
           </NButton>
         </n-space>
       </c-card>
 
-      <c-card title="Preview" mt-1>
+      <c-card :title="t('tools.css-gradient-generator.texts.title-preview')" mt-1>
         <div class="preview" :style="{ background: gradientCSS }" />
       </c-card>
 
-      <c-card title="Generated CSS" mt-1>
+      <c-card :title="t('tools.css-gradient-generator.texts.title-generated-css')" mt-1>
         <textarea-copyable :value="gradientCSS" language="css" />
       </c-card>
     </NForm>

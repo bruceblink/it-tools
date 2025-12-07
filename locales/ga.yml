@@ -344,8 +344,14 @@ tools:
       placeholder-your-string-to-compare: Do shreang le comparáid a dhéanamh...
       label-your-hash: "Do hash: "
       placeholder-your-hash-to-compare: Do chuid smaointe le comparáid a dhéanamh...
-      label-do-they-match: "An bhfuil siad ag teacht le chéile? "
       tag-copy-hash: Cóipeáil hais
+      hashed-string: Teaghrán hasáilte
+      comparison-result: Toradh comparáide
+      matched: Meaitseáilte
+      no-match: Gan aon mheaitseáil
+      timed-out-after-timeout-period: Chuaigh an t-am amach tar éis {timeoutPeriod}
+      hashed-in-elapsed-period: Haisithe i {elapsedPeriod}
+      compared-in-elapsed-period: I gcomparáid i {elapsedPeriod}
   crontab-generator:
     title: Gineadóir Crontab
     description: Bailíochtaigh agus gin crontab agus faigh an cur síos inléite ag an
@@ -911,6 +917,7 @@ tools:
       label-your-url-to-parse: "Do url le parsáil:"
       placeholder-your-url-to-parse: Do url le parsáil...
       url-must-have-http-or-https-prefix: Ní mór réimír http:// nó https:// a bheith sa URL
+      button-open-url: Oscail URL
   iban-validator-and-parser:
     title: Bailíochtóir agus parsálaí IBAN
     description: Bailíochtaigh agus parsáil uimhreacha IBAN. Seiceáil an bhfuil
@@ -1073,6 +1080,7 @@ tools:
       placeholder-your-lorem-ipsum: Do lorem ipsum...
       tag-copy: Cóipeáil
       tag-refresh: Athnuachan
+      tag-print-ie-use-a-pdf-printer-to-get-a-pdf-file: Priontáil (i.e., bain úsáid as printéir PDF chun comhad PDF a fháil)
   qrcode-generator:
     title: Gineadóir cóid QR
     description: Gin agus íoslódáil cód QR le haghaidh URL (nó gnáth-théacs),  agus
@@ -2407,9 +2415,8 @@ tools:
       tag-detach-d: Deighil (-d)
       tag-remove-rm: Bain (--rm)
       tag-long-arguments: Argóintí Fada
-      tag-: "?"
-      tag-arg: argóint
-      tag-value: luach
+      tag-multiline: Illíne
+      tag-equal-sep: --arg=luach
   docker-compose-to-kubernetes:
     title: Docker compose go kubernetes
     description: Manifestations Docker Compose go Kubernetes
@@ -2822,6 +2829,14 @@ tools:
       placeholder-your-html-content: D&#39;ábhar Html...
       label-your-html-to-convert-can-paste-from-clipboard: "Do Html le tiontú (is féidir é a ghreamú ón ngearrthaisce):"
       label-output-markdown: "Laghdú ar aschur:"
+      label-heading-style: "Stíl Ceannteidil:"
+      label-emphasis-style: "Stíl Béime:"
+      label-hash: Hais (#)
+      label-underline: Folíne (=/-)
+      label-surround-heading: Timpeall (= Ceannteideal =)
+      label-asterisk: Réiltín (*)
+      label-underscore: Fo-scór (_)
+      label-tilde: Tilde (~)
   htpasswd-generator:
     title: Gineadóir Htpasswd/htaccess
     description: gineadóir úsáideora/pasfhocal htpasswd/htaccess
@@ -3202,6 +3217,8 @@ tools:
       title-schema-validation-errors: Earráidí Bailíochtaithe Scéime
       title-formatted-version: Leagan formáidithe
       label-indent-size-0-compact: "Méid an línithe (0 = Dlúth):"
+      title-repaired-version: Leagan Deisithe agus Formáidithe go Gluaisteán
+      label-auto-repair-json: "JSON Deisiúcháin Gluaisteán:"
   json-size-analyzer:
     title: Anailíseoir Méid Json
     description: Tomhas meáchain choibhneasta nóid JSON
@@ -3307,6 +3324,17 @@ tools:
       label-public-key-jwk: "Eochair Phoiblí (JWK):"
       label-private-key-jwk: "Eochair Phríobháideach (JWK):"
       title-generated-jwt-token: "Comhartha JWT ginte:"
+      label-secret-encoding: "Ionchódú Rúnda:"
+      label-raw-text: Téacs Amh
+      label-hex-array: Eagar Heicseagánach
+      verify-description: "{0}: {1} (fíoraigh le {2})"
+      token-secret: Rún na Comharthaí
+      token-keys: Eochracha Comhartha
+      cannot-parse-secret-as-encoding: "Ní féidir '{0}' a pharsáil mar '{1}': {2}"
+      invalid-base64-string: Teaghrán Base64 neamhbhailí
+      placeholder-input-token: Greamaigh do chomhartha JWT le heagarthóireacht...
+      click-to-input-a-existing-jwt-token-to-modify: Cliceáil chun comhartha JWT atá ann cheana a ionchur le modhnú
+      label-base64: Bonn64
   jwt-parser:
     title: Parsálaí JWT
     description: Parsáil agus díchódaigh do Chomhartha Gréasáin JSON (jwt) agus
@@ -3319,6 +3347,13 @@ tools:
       label-secret-or-public-key-spki-or-jwk: Eochair Rúnda nó Phoiblí (SPKI nó JWK)
       placeholder-put-your-secret-or-public-key-here: Cuir d’eochair rúnda nó phoiblí anseo...
       tag-signature-verified: Síniú fíoraithe
+      label-jwk: Eochair JWK
+      label-pub-key: Eochair Phoiblí PEM
+      label-secret-raw-text: Rún - Téacs Amh
+      label-secret-hex-array: Rún - Eagar Heicseagánach
+      label-secret-base64: Rúnda - Base64
+      label-secret-encoding: "Códú/Cineál Rúnda:"
+      key-or-secret-or-verification-error-e-tostring: "Eochair nó rún nó earráid fíoraithe: {0}"
     constants:
       text:
         token-introspection-response: Freagairt introspection comharthaí
@@ -3463,6 +3498,8 @@ tools:
       placeholder-select-the-target-unit: Roghnaigh an t-aonad sprice
       title-result: Toradh
       label-best-target-unit: An tAonad Sprioc is Fearr
+      label-selected-target-unit-outputunit: Aonad Sprioc Roghnaithe ({0})
+      title-other-units-conversion-tools: Uirlisí Comhshó Aonad Eile
   markdown-cheatsheet:
     title: Bileog Cheat Markdown
     description: Bileog Cheat Markdown
@@ -7159,5 +7196,335 @@ tools:
       label-converted-to-hex-array: "Tiontaithe go sraith heicsidheachúlach:"
       tag-digit-0-no-grouping: (Digit 0 = Gan grúpáil)
       tag-digit-0-no-row: (Digit 0 = Gan aon ró)
+  toon-to-json:
+    texts:
+      message-provided-json-is-not-valid: Níl an TOON a cuireadh ar fáil bailí
+      output-label-json-version: "Leagan JSON de d’ábhar TOON:"
+      input-placeholder-paste-your-raw-toon-here: Greamaigh d’ábhar TOON amh anseo...
+      input-label-your-raw-toon: "Do chuid ábhar TOON amh:"
+    title: TOON go JSON
+    description: Tiontaigh ionadaíocht TOON go réad JSON le haghaidh úsáide LLM
+  json-to-toon:
+    texts:
+      message-provided-json-is-not-valid: Ar choinníoll nach bhfuil JSON bailí.
+      input-placeholder-paste-your-raw-json-here: Greamaigh do JSON amh anseo...
+      input-label-your-raw-json: "Do JSON amh:"
+      output-label-toon-version-of-your-json: "Leagan TOON de do JSON:"
+    title: JSON go TOON
+    description: Tiontaigh réad JSON go léiriú TOON le haghaidh úsáide LLM/GPT
+  external-link-goto: "Chun an uirlis seo a oscailt, lean an nasc seo:"
+  argon2-hash:
+    title: Argon2 Hasher
+    description: Ríomh haiseanna Argon2 le paraiméadair
+    texts:
+      label-argon2id: Argon2id
+      label-argon2i: Argon2i
+      label-argon2d: Argon2d
+      label-hex: Heicseagán
+      label-encoded: Ionchódaithe
+      label-binary: Dénártha
+      label-algorithm: "Algartam:"
+      label-password: "Pasfhocal:"
+      placeholder-enter-password: Cuir isteach focal faire
+      label-salt-hex: "Salann (heicseagánach):"
+      placeholder-optional-hex-salt: Salann heicsidheachúlach roghnach
+      label-iterations: "Athruithe:"
+      label-memory-kib: "Cuimhne (KiB):"
+      label-parallelism: "Comhthreomhaireacht:"
+      label-hash-length: "Fad haise:"
+      label-output-type: "Cineál aschuir:"
+      title-argon2-hash: Hais Argon2
+      tag-generate: Gin
+  binary-calculator:
+    title: Áireamhán Dénártha
+    description: Ríomh oibríochtaí giotánacha/dénártha (AGUS, NÓ, XOR, NACH,
+      aistrithe) idir dhá uimhir
+    texts:
+      label-decimal: Deicheamhach
+      label-hexadecimal: "Heicseagánach:"
+      label-octal: "Ochtach:"
+      label-binary: "Dénártha:"
+      label-a-and-b: A AGUS B
+      label-a-or-b: A NÓ B
+      label-a-xor-b: A XOR B
+      label-not-a: NÍ A
+      label-a-b-left-shift: A << B (Bogha Clé)
+      label-a-b-right-shift: A >> B (Aistriú ar Dheis)
+      message-number-is-invalid: Tá an uimhir neamhbhailí
+      label-a: A=
+      placeholder-enter-a: Iontráil A
+      label-b: B=
+      placeholder-enter-b: Iontráil B
+      label-operation: "Oibríocht:"
+      placeholder-select-operation: Roghnaigh Oibríocht
+      title-result: Toradh
+      label-decimal-signed: "Deachúil (Sínithe):"
+      label-decimal-unigned: "Deachúil (Gan Shíniú):"
+      title-bitmask: Masc giotán
+  chmod-memo:
+    title: Bileog Cheat Ordú chmod
+    description: Bileoga meabhlaireachta le haghaidh athruithe ceadanna Linux
+  css-gradient-generator:
+    title: Gineadóir Grádáin CSS
+    description: Gin cód Gradient CSS do shraith céimeanna agus dathanna ar leith
+    texts:
+      label-gradient-type: "Cineál Grádáin:"
+      label-angle-degrees: "Uillinn (céimeanna):"
+      title-color-stops: Stadanna Dath
+      title-preview: Réamhamharc
+      title-generated-css: CSS ginte
+      tag-linear: Líneach
+      tag-radial: Gathach
+      tag-remove: Bain
+      tag-add-color-stop: Cuir Stad Dath leis
+  css-units-converter:
+    title: Tiontaire Aonad CSS
+    description: Tiontaigh luachanna ó aonaid CSS coitianta (em, rem, px, vw, vh, %)
+    texts:
+      label-pixels-px: Picteilíní (px)
+      label-ems-em: Ems (em)
+      label-rems-rem: Rems (rem)
+      label-percent: Céatadán (%)
+      label-viewport-width-vw: Leithead Radharcphoirt (vw)
+      label-viewport-height-vh: Airde Radharcphoirt (vh)
+      label-value-to-convert: "Luach le tiontú:"
+      label-from-unit: "Ón Aonad:"
+      label-to-unit: "Go dtí an tAonad:"
+      label-base-font-size-px: Méid Cló Bunúsach (px)
+      label-viewport-width-px: Leithead an Amhaircphoirt (px)
+      label-viewport-height-px: Airde an Amhaircphoirt (px)
+      title-conversion: Comhshó
+      label-converted-value: "Luach tiontaithe:"
+  docker-compose-to-env-file:
+    title: Docker Compose chuig comhad .env
+    description: Bain comhad .env as comhad Docker Compose atá ann cheana féin
+    texts:
+      label-docker-compose-file: "Comhad Docker Compose:"
+      placeholder-paste-your-docker-compose-yaml-here: Greamaigh do YAML docker-compose anseo...
+      title-extract-env: Sliocht .env
+  emv-tlv-decoder:
+    title: Díchódóir EMV TLV
+    description: Díchódaíonn sé sonraí EMV TLV (luach fad clibe) agus a chlibeanna
+      aonair a bhfuil brí leathnaithe acu (amhail TVR (Clib 95), Cumais
+      Chríochfoirt (Clib 9F33), srl.)
+    texts:
+      tag-: —
+      tag-tag: Clib
+      tag-length: Fad
+      tag-value: Luach
+      tag-description: Cur síos
+      tag-bit-level-interpretation: Léirmhíniú ar Leibhéal Giotáin
+      label-tlv-hex-input: Ionchur Heics TLV
+      placeholder-paste-emv-tlv-hex-string-e-g-6f1a8407a0000000031010a50f500b5649534120435245444954:
+        Greamaigh teaghrán heicsidheachúlach EMV TLV (m.sh.
+        6F1A8407A0000000031010A50F500B5649534120435245444954)
+      label-kernel-type: "Cineál Eithne:"
+      title-decoded-emv-tags: Clibeanna EMV Díchódaithe
+      tag-parse-tlv: Parsáil TLV
+  eth-transaction-decoder:
+    title: Díchódóir Idirbhirt ETH
+    description: Díchódóir idirbheart Ethereum le Conradh Cliste ABI
+    texts:
+      label-smart-contract-abi: "Conartha Cliste ABI:"
+      placeholder-paste-abi-json-here: Greamaigh ABI JSON anseo
+      label-raw-transaction-0x-or-json-transaction: "Idirbheart Amh (0x...) nó Idirbheart JSON:"
+      title-decoded-transaction: Idirbheart Díchódaithe
+      label-from: Ó
+      label-to: Chuig
+      label-value: Luach
+      label-gas: Gás
+      label-gas-price: Praghas Gáis
+      label-nonce: Nonce
+      label-method: Modh
+      label-signature: Síniú
+      label-arguments: Argóintí
+      title-structured-output-json: Aschur Struchtúrtha JSON
+  file-splitter:
+    title: Scoilteoir Comhad
+    description: Scoilt comhad JSON, XML nó téacs de réir grúpa nóid nó de réir grúpa línte
+    texts:
+      placeholder-strategy-value: Luach straitéise...
+      title-drag-and-drop-a-txt-json-or-xml-file-here-or-click-to-select-a-file:
+        Tarraing agus scaoil comhad TXT, JSON nó XML anseo, nó cliceáil chun
+        comhad a roghnú
+      tag-split-by-lines: Roinnte de réir Línte
+      tag-split-by-nodes: Scoilt de réir Nóid
+      tag-max-chunk-size-kb: "Uasmhéid an Chutáin (KB):"
+      tag-fixed-count: "Líon Seasta:"
+      tag-chunk-count: "Líon na bpíosaí:"
+      tag-preview-chunks: Réamhamharc ar phíosaí?
+      tag-process-chunks: Píosaí próiseála
+      tag-download-all: Íoslódáil gach rud
+      tag-download: Íoslódáil
+  gitignore-generator:
+    title: Gineadóir GitIgnore
+    description: Gin .gitignore le haghaidh sraith teimpléid choitianta
+    texts:
+      placeholder-select-templates-e-g-node-python-vue: Roghnaigh teimpléid (e.g. node, python, vue)
+      title-gitignore: .gitignore
+      tag-const-availabletemplates-ref: constTeimpléid atá ar Fáil = tag
+      tag-this-tool-use: "Úsáideann an uirlis seo:"
+      tag-https-www-toptal-com-developers-gitignore: https://www.toptal.com/developers/gitignore
+      tag-generate: Gin
+  i-and-l-checker:
+    title: Seiceálaí I agus L
+    description: Seiceáil pasfhocal nó téacs le aibhsiú ar 1, l, I, 0, O
+    texts:
+      label-text-to-check: "Téacs le seiceáil:"
+      placeholder-paste-your-text-here: Greamaigh do théacs anseo...
+      title-legend: Finscéal
+      tag-i: Mise
+      tag-uppercase-letter-i: "- An litir mhór i"
+      tag-l: l
+      tag-lowercase-letter-l: "- Litir bheag L"
+      tag-1: "1"
+      tag-number-1: "- Uimhir 1"
+      tag-0: "0"
+      tag-number-0: "- Uimhir 0"
+      tag-o: AN
+      tag-uppercase-letter-o: "- An litir mhór O"
+  ipv4-subnets-list:
+    title: Liosta Fo-líonra IPv4
+    description: Liostaigh gach fo-líonra féideartha de CIDR ar leith
+    texts:
+      message-we-cannot-parse-this-address-check-the-format: Ní féidir linn an seoladh seo a pharsáil, seiceáil an fhormáid.
+      label-an-ipv4-address-with-or-without-mask-cidr-ip-range-wildcard-ip-ip-mask: Seoladh IPv4 le masc nó gan masc (CIDR/Raon IP/IP Fiáin/Masc IP)
+      placeholder-ipv4-or-cidr: IPv4 nó cidr...
+      tag-network: Líonra
+      tag-first-ip: Céad IP
+      tag-last-ip: IP deireanach
+      tag-broadcast: Craoladh
+  json-to-msgpack:
+    title: JSON go MessagePack
+    description: Tiontaigh JSON go MessagePack
+    texts:
+      message-json-is-invalid: Tá JSON neamhbhailí
+      label-output-filename: "Ainm comhaid aschuir:"
+      placeholder-enter-output-filename: Cuir isteach ainm comhaid aschuir
+      label-json-to-convert: "JSON le tiontú:"
+      placeholder-enter-json-to-convert: Cuir isteach JSON le tiontú...
+      title-msgpack-binary: "Dénártha MsgPack:"
+      tag-convert: Tiontaigh
+      tag-download-msgpack-file: Íoslódáil comhad MsgPack
+  markdown-lorem-ipsum:
+    title: Lorem Ipsum Markdown
+    description: Gin Lorem Ipsum i marc síos
+    texts:
+      label-atx: "ATX (#, ##, ###)"
+      label-setext: Téacs socraithe (====, ----)
+      label-unordered: Gan ord (-, *, +)
+      label-ordered-1-2-3: Ordaithe (1., 2., 3.)
+      label-language: "Teanga:"
+      label-blocks: "Bloic:"
+      label-sentences-per-paragraph: "Abairtí in aghaidh na míre:"
+      title-styles: Stíleanna
+      label-block-types: "Cineálacha bloc:"
+      label-inline-styles: Stíleanna inlíne
+      label-header-style: "Stíl ceanntásca:"
+      label-list-style: "Stíl liosta:"
+      title-block-frequencies: Minicíochtaí bloc
+      label-headers: "Ceanntásca:"
+      label-lists: "Liostaí:"
+      label-code: "Cód:"
+      label-quotes: "Sleachta:"
+      title-generated-markdown: Marcáil anuas ginte
+      tag-headers: Ceanntásca
+      tag-lists: Liostaí
+      tag-code: Cód
+      tag-quotes: Sleachta
+      tag-emphasis: Béim
+      tag-strong: Láidir
+      tag-links: Naisc
+      tag-inline-code: Cód inlíne
+      tag-generate: Gin
+      tag-print-ie-use-a-pdf-printer-to-get-a-pdf-file: Priontáil (i.e., bain úsáid as printéir PDF chun comhad PDF a fháil)
+  msgpack-to-json:
+    title: Pacáiste Teachtaireachta chuig JSON
+    description: Tiontaigh comhad MessagePack go JSON
+    texts:
+      title-input-message-pack-file-or-content: Comhad nó ábhar Pacáiste Teachtaireachta Ionchuir
+      label-file: Comhad
+      label-hex-content: "Ábhar Heics:"
+      title-drag-and-drop-msgpack-file-here-or-click-to-select-a-file:
+        Tarraing agus scaoil comhad MsgPack anseo, nó cliceáil chun comhad a
+        roghnú
+      title-json-content: Ábhar JSON
+  pdf-compressor:
+    title: Comhbhrúiteoir PDF
+    description: PDF a bharrfheabhsú agus a chomhbhrú ag baint úsáide as Ghostscript
+    texts:
+      label-screen-smallest: Scáileán (an ceann is lú)
+      label-ebook-balanced: ríomhleabhar (cothromaithe)
+      label-printer-high-quality: Printéir (ardchaighdeán)
+      label-prepress-best-quality: Réamhphriontáil (an caighdeán is fearr)
+      label-pdf-1-4: PDF 1.4
+      label-pdf-1-5: PDF 1.5
+      label-pdf-1-6: PDF 1.6
+      label-pdf-1-7: PDF 1.7
+      label-compression-quality: "Cáilíocht chomhbhrúite:"
+      placeholder-select-compression-quality: Roghnaigh cáilíocht chomhbhrúite
+      label-compatibility-level: "Leibhéal comhoiriúnachta:"
+      placeholder-select-compatibility-level: Roghnaigh leibhéal comhoiriúnachta
+      title-drag-and-drop-a-pdf-file-here-or-click-to-select-a-file: Tarraing agus scaoil comhad PDF anseo, nó cliceáil chun comhad a roghnú
+      title-logs: Logaí
+      label-ghostscript: Ghostscript
+  serial-console:
+    title: Consól Port Sraitheach
+    description: Ceangail, léigh agus seol teachtaireacht chuig Port Sraitheach
+    texts:
+      label-9600: "9600"
+      label-19200: "19200"
+      label-38400: "38400"
+      label-57600: "57600"
+      label-115200: "115200"
+      label-lf-n: LF (\\n)
+      label-cr-r: CR (\\r)
+      label-crlf-r-n: CRLF (\\r\\n)
+      title-serial-terminal: Teirminéal Sraitheach
+      placeholder-baud-rate: Ráta Baud
+      placeholder-line-ending: Deireadh Líne
+      placeholder-select-port: Roghnaigh Port
+      placeholder-type-a-command: Clóscríobh ordú...
+      tag-connect: Ceangail
+      tag-disconnect: Dícheangail
+      tag-send: Seol
+  shamirs-secret-sharing:
+    title: Roinnt Rúnda Shamirs
+    description: Ceadaigh rún a roinnt agus a athchumadh ag baint úsáide as Shamir\
+    texts:
+      label-text: Téacs
+      label-hexadecimal: Heicseagánach
+      label-base64: Bonn64
+      label-secret-mode: "Mód Rúnda:"
+      title-share-a-secret-split: Roinn rún (scoilt)
+      label-secret: "Rún:"
+      placeholder-enter-secret-text: Cuir isteach téacs rúnda
+      label-threshold-minimum-shares-to-recover: "Tairseach (íosmhéid scaireanna le haisghabháil):"
+      label-number-of-shares: "Líon na scaireanna:"
+      title-generated-shares: Scaireanna Ginithe
+      title-recombine-a-secret: Athcheangail rún
+      label-your-shares: "Do scaireanna:"
+      placeholder-paste-your-shares-here: Greamaigh do scaireanna anseo...
+      title-recombined-secret: Rún athcheangailte
+      tag-split-secret: Rún Scoilte
+      tag-recombine: Athcheangail
+  short-urls-expander:
+    title: Leathnaitheoir URLanna Gearra
+    description: Leathnaigh URLanna gearra chun díriú ar URLanna iomlána
+    texts:
+      label-short-urls-to-expand: "URLanna gearra le leathnú:"
+      placeholder-enter-short-urls-one-per-line: Cuir isteach URLanna gearra (ceann amháin in aghaidh na líne)
+      title-result: Toradh
+      tag-this-tool-make-use-of-https-cors-anywhere-com-to-bypass-cors-this-is-a-community-driven-server:
+        Úsáideann an uirlis seo https://cors-anywhere.com chun CORS a
+        sheachaint. Is freastalaí pobail-thiomáinte é seo.
+      tag-see-here-for-more-information: Féach anseo le haghaidh tuilleadh eolais
+      tag-expand-all: Leathnaigh Uile
+      tag-download-resuls-as-csv: Íoslódáil na torthaí mar CSV
+      tag-short-url: URL Gearr
+      tag-expanded-url: URL Leathnaithe
+      tag-link: Nasc
+      tag-status: Stádas
+      tag-open-url: Oscail URL
 locale-selector:
   select-a-language: Roghnaigh teanga

@@ -253,8 +253,14 @@ tools:
       placeholder-your-string-to-compare: 비교할 문자열...
       label-your-hash: "해시:"
       placeholder-your-hash-to-compare: 비교할 해시...
-      label-do-they-match: 일치합니까?
       tag-copy-hash: 해시 복사
+      hashed-string: 해시된 문자열
+      comparison-result: 비교 결과
+      matched: 매치됨
+      no-match: 매치가 없습니다
+      timed-out-after-timeout-period: "{timeoutPeriod} 이후 시간 초과됨"
+      hashed-in-elapsed-period: "{elapsedPeriod}에 해시됨"
+      compared-in-elapsed-period: "{elapsedPeriod}에 비교됨"
   crontab-generator:
     title: Crontab 생성기
     description: 크론탭을 검증·생성하고 스케줄을 사람이 읽기 쉬운 설명으로 제공합니다.
@@ -681,6 +687,7 @@ tools:
       label-your-url-to-parse: "분석할 URL:"
       placeholder-your-url-to-parse: 파싱할 URL...
       url-must-have-http-or-https-prefix: URL에는 http:// 또는 https:// 접두사가 있어야 합니다.
+      button-open-url: URL 열기
   iban-validator-and-parser:
     title: IBAN 검증·파서
     description: IBAN을 검증하고 국가·BBAN·QR-IBAN 여부 등을 확인합니다.
@@ -825,6 +832,7 @@ tools:
       placeholder-your-lorem-ipsum: 당신의 로렘 입숨...
       tag-copy: 복사
       tag-refresh: 새로 고치다
+      tag-print-ie-use-a-pdf-printer-to-get-a-pdf-file: 인쇄(즉, PDF 프린터를 사용하여 PDF 파일을 얻습니다)
   qrcode-generator:
     title: QR 코드 생성기
     description: URL/텍스트용 QR 코드를 생성·다운로드하고 색상을 지정합니다.
@@ -951,6 +959,13 @@ tools:
       label-secret-or-public-key-spki-or-jwk: 비밀 키 또는 공개 키(SPKI 또는 JWK)
       placeholder-put-your-secret-or-public-key-here: 여기에 비밀번호나 공개 키를 입력하세요...
       tag-signature-verified: 서명 확인됨
+      label-jwk: JWK 키
+      label-pub-key: PEM 공개 키
+      label-secret-raw-text: 비밀 - 원시 텍스트
+      label-secret-hex-array: 비밀 - 16진수 배열
+      label-secret-base64: 비밀 - Base64
+      label-secret-encoding: "비밀 인코딩/유형:"
+      key-or-secret-or-verification-error-e-tostring: "키 또는 비밀번호 또는 확인 오류: {0}"
     constants:
       text:
         token-introspection-response: 토큰 내성 검사 응답
@@ -2104,9 +2119,8 @@ tools:
       tag-detach-d: 분리(-d)
       tag-remove-rm: 제거 (--rm)
       tag-long-arguments: 긴 주장
-      tag-: "?"
-      tag-arg: 인수
-      tag-value: 값
+      tag-multiline: 다중 라인
+      tag-equal-sep: --arg=값
   docker-compose-to-kubernetes:
     title: Docker Compose에서 Kubernetes로
     description: Docker Compose에서 Kubernetes 매니페스트로
@@ -2407,6 +2421,14 @@ tools:
       placeholder-your-html-content: 귀하의 HTML 콘텐츠...
       label-your-html-to-convert-can-paste-from-clipboard: "변환할 HTML(클립보드에서 붙여넣기 가능):"
       label-output-markdown: "출력 마크다운:"
+      label-heading-style: "제목 스타일:"
+      label-emphasis-style: "강조 스타일:"
+      label-hash: 해시(#)
+      label-underline: 밑줄(=/-)
+      label-surround-heading: 서라운드(= 제목 =)
+      label-asterisk: 별표(*)
+      label-underscore: 밑줄(_)
+      label-tilde: 틸드(~)
   ical-parser:
     title: ICAL 파일 파서
     description: ICAL/ICS 파일을 이벤트 표시로 구문 분석
@@ -2701,6 +2723,8 @@ tools:
       title-schema-validation-errors: 스키마 유효성 검사 오류
       title-formatted-version: 포맷된 버전
       label-indent-size-0-compact: "들여쓰기 크기(0 = 압축):"
+      title-repaired-version: 자동 복구 및 포맷 버전
+      label-auto-repair-json: "자동 복구 JSON:"
   json-size-analyzer:
     title: JSON 크기 분석기
     description: JSON 노드의 상대적 가중치 측정
@@ -2806,6 +2830,17 @@ tools:
       label-public-key-jwk: "공개 키(JWK):"
       label-private-key-jwk: "개인 키(JWK):"
       title-generated-jwt-token: "생성된 JWT 토큰:"
+      label-secret-encoding: "비밀 인코딩:"
+      label-raw-text: 원시 텍스트
+      label-hex-array: 16진수 배열
+      verify-description: "{0}: {1} ({2}로 확인)"
+      token-secret: 토큰 비밀
+      token-keys: 토큰 키
+      cannot-parse-secret-as-encoding: "'{0}'을 '{1}'로 구문 분석할 수 없습니다: {2}"
+      invalid-base64-string: 잘못된 Base64 문자열
+      placeholder-input-token: JWT 토큰을 붙여넣어 편집하세요...
+      click-to-input-a-existing-jwt-token-to-modify: 기존 JWT 토큰을 수정하려면 클릭하세요.
+      label-base64: 베이스64
   length-converter:
     title: 길이 단위 변환기
     description: 길이 단위에서 값 변환
@@ -2862,6 +2897,8 @@ tools:
       placeholder-select-the-target-unit: 대상 단위를 선택하세요
       title-result: 결과
       label-best-target-unit: 최고의 타겟 유닛
+      label-selected-target-unit-outputunit: 선택된 대상 단위({0})
+      title-other-units-conversion-tools: 기타 단위 변환 도구
   markdown-cheatsheet:
     title: 마크다운 치트 시트
     description: 마크다운 치트 시트
@@ -6665,6 +6702,328 @@ tools:
       label-converted-to-hex-array: "16진수 배열로 변환:"
       tag-digit-0-no-grouping: (숫자 0 = 그룹화 없음)
       tag-digit-0-no-row: (숫자 0 = 행 없음)
+  toon-to-json:
+    texts:
+      message-provided-json-is-not-valid: 제공된 TOON이 유효하지 않습니다.
+      output-label-json-version: "TOON 콘텐츠의 JSON 버전:"
+      input-placeholder-paste-your-raw-toon-here: 여기에 원본 TOON 콘텐츠를 붙여넣으세요...
+      input-label-your-raw-toon: "원시 TOON 콘텐츠:"
+    title: TOON에서 JSON으로
+    description: LLM 사용을 위해 TOON 표현을 JSON 객체로 변환
+  json-to-toon:
+    texts:
+      message-provided-json-is-not-valid: 제공된 JSON이 유효하지 않습니다.
+      input-placeholder-paste-your-raw-json-here: 원시 JSON을 여기에 붙여넣으세요...
+      input-label-your-raw-json: "원시 JSON:"
+      output-label-toon-version-of-your-json: "JSON의 TOON 버전:"
+    title: JSON에서 TOON으로
+    description: LLM/GPT 사용을 위해 JSON 객체를 TOON 표현으로 변환
+  external-link-goto: 이 도구를 열려면 다음 링크를 따르세요.
+  argon2-hash:
+    title: 아르곤2 해셔
+    description: 매개변수를 사용하여 Argon2 해시 계산
+    texts:
+      label-argon2id: 아르곤2아이디
+      label-argon2i: 아르곤2i
+      label-argon2d: 아르곤2d
+      label-hex: 마녀
+      label-encoded: 인코딩됨
+      label-binary: 이진법
+      label-algorithm: "연산:"
+      label-password: "비밀번호:"
+      placeholder-enter-password: 비밀번호를 입력하세요
+      label-salt-hex: "소금(헥스):"
+      placeholder-optional-hex-salt: "선택 사항: 헥사소금"
+      label-iterations: "반복:"
+      label-memory-kib: "메모리(KiB):"
+      label-parallelism: "병행:"
+      label-hash-length: "해시 길이:"
+      label-output-type: "출력 유형:"
+      title-argon2-hash: Argon2 해시
+      tag-generate: 생성하다
+  binary-calculator:
+    title: 이진 계산기
+    description: 두 숫자 사이의 비트/이진 연산(AND, OR, XOR, NOT, shift)을 계산합니다.
+    texts:
+      label-decimal: 소수
+      label-hexadecimal: "16진법:"
+      label-octal: "8진법:"
+      label-binary: "이진법:"
+      label-a-and-b: A와 B
+      label-a-or-b: A 또는 B
+      label-a-xor-b: A XOR B
+      label-not-a: 아닙니다
+      label-a-b-left-shift: A << B (왼쪽 쉬프트)
+      label-a-b-right-shift: A >> B (오른쪽 이동)
+      message-number-is-invalid: 숫자가 잘못되었습니다
+      label-a: 아=
+      placeholder-enter-a: A를 입력하세요
+      label-b: 비=
+      placeholder-enter-b: B를 입력하세요
+      label-operation: "작업:"
+      placeholder-select-operation: 작업 선택
+      title-result: 결과
+      label-decimal-signed: "10진수(부호 있음):"
+      label-decimal-unigned: "10진수(부호 없음):"
+      title-bitmask: 비트마스크
+  chmod-memo:
+    title: chmod 명령어 요약
+    description: Linux 권한 변경을 위한 치트시트
+  css-gradient-generator:
+    title: CSS 그래디언트 생성기
+    description: 주어진 단계 및 색상 세트에 대한 CSS 그래디언트 CSS 코드 생성
+    texts:
+      label-gradient-type: "그라데이션 유형:"
+      label-angle-degrees: "각도(도):"
+      title-color-stops: 컬러 스톱
+      title-preview: 시사
+      title-generated-css: 생성된 CSS
+      tag-linear: 선의
+      tag-radial: 방사형
+      tag-remove: 제거하다
+      tag-add-color-stop: 색상 정지 추가
+  css-units-converter:
+    title: CSS 단위 변환기
+    description: 일반적인 CSS 단위(em, rem, px, vw, vh, %)에서 값을 변환합니다.
+    texts:
+      label-pixels-px: 픽셀(px)
+      label-ems-em: 엠스(em)
+      label-rems-rem: 렘(rem)
+      label-percent: 퍼센트(%)
+      label-viewport-width-vw: 뷰포트 너비(vw)
+      label-viewport-height-vh: 뷰포트 높이(vh)
+      label-value-to-convert: "변환할 값:"
+      label-from-unit: "단위에서:"
+      label-to-unit: "단위로:"
+      label-base-font-size-px: 기본 글꼴 크기(px)
+      label-viewport-width-px: 뷰포트 너비(픽셀)
+      label-viewport-height-px: 뷰포트 높이(px)
+      title-conversion: 변환
+      label-converted-value: "변환된 값:"
+  docker-compose-to-env-file:
+    title: Docker Compose를 .env 파일로
+    description: 기존 Docker Compose 파일에서 .env 파일 추출
+    texts:
+      label-docker-compose-file: "Docker Compose 파일:"
+      placeholder-paste-your-docker-compose-yaml-here: 여기에 docker-compose YAML을 붙여넣으세요...
+      title-extract-env: .env 추출
+  emv-tlv-decoder:
+    title: EMV TLV 디코더
+    description: "EMV TLV(태그 길이 값) 데이터와 확장된 의미를 갖는 개별 태그(예: TVR(태그 95), 터미널 기능(태그
+      9F33) 등)를 디코딩합니다."
+    texts:
+      tag-: —
+      tag-tag: 꼬리표
+      tag-length: 길이
+      tag-value: 값
+      tag-description: 설명
+      tag-bit-level-interpretation: 비트 수준 해석
+      label-tlv-hex-input: TLV 16진수 입력
+      placeholder-paste-emv-tlv-hex-string-e-g-6f1a8407a0000000031010a50f500b5649534120435245444954:
+        "EMV TLV 16진수 문자열을 붙여넣습니다(예:
+        6F1A8407A0000000031010A50F500B5649534120435245444954)"
+      label-kernel-type: "커널 유형:"
+      title-decoded-emv-tags: 디코딩된 EMV 태그
+      tag-parse-tlv: TLV 구문 분석
+  eth-transaction-decoder:
+    title: ETH 거래 디코더
+    description: 스마트 계약 ABI를 갖춘 이더리움 거래 디코더
+    texts:
+      label-smart-contract-abi: "스마트 계약 ABI:"
+      placeholder-paste-abi-json-here: 여기에 ABI JSON을 붙여넣으세요
+      label-raw-transaction-0x-or-json-transaction: "원시 트랜잭션(0x...) 또는 JSON 트랜잭션:"
+      title-decoded-transaction: 디코딩된 거래
+      label-from: 에서
+      label-to: 에게
+      label-value: 값
+      label-gas: 가스
+      label-gas-price: 가스 가격
+      label-nonce: 목하
+      label-method: 방법
+      label-signature: 서명
+      label-arguments: 인수
+      title-structured-output-json: 구조화된 출력 JSON
+  file-splitter:
+    title: 파일 분할기
+    description: 노드 그룹 또는 줄 그룹별로 JSON, XML 또는 텍스트 파일을 분할합니다.
+    texts:
+      placeholder-strategy-value: 전략적 가치...
+      title-drag-and-drop-a-txt-json-or-xml-file-here-or-click-to-select-a-file: TXT, JSON 또는 XML 파일을 여기에 끌어다 놓거나 클릭하여 파일을 선택하세요.
+      tag-split-by-lines: 줄별로 분할
+      tag-split-by-nodes: 노드별로 분할
+      tag-max-chunk-size-kb: "최대 청크 크기(KB):"
+      tag-fixed-count: "고정 개수:"
+      tag-chunk-count: "청크 수:"
+      tag-preview-chunks: 청크를 미리 보시겠습니까?
+      tag-process-chunks: 청크 처리
+      tag-download-all: 모두 다운로드
+      tag-download: 다운로드
+  gitignore-generator:
+    title: GitIgnore 생성기
+    description: 공통 템플릿 세트에 대한 .gitignore 생성
+    texts:
+      placeholder-select-templates-e-g-node-python-vue: "템플릿 선택(예: node, python, vue)"
+      title-gitignore: .gitignore
+      tag-const-availabletemplates-ref: const 사용 가능한 템플릿 = 참조
+      tag-this-tool-use: 이 도구는 다음을 사용합니다.
+      tag-https-www-toptal-com-developers-gitignore: https://www.toptal.com/developers/gitignore
+      tag-generate: 생성하다
+  i-and-l-checker:
+    title: I 및 L 체커
+    description: 1, l, I, 0, O를 강조하여 비밀번호 또는 텍스트를 확인하세요.
+    texts:
+      label-text-to-check: "확인할 텍스트:"
+      placeholder-paste-your-text-here: 여기에 텍스트를 붙여넣으세요...
+      title-legend: 전설
+      tag-i: 나
+      tag-uppercase-letter-i: "- 대문자 i"
+      tag-l: 엘
+      tag-lowercase-letter-l: "- 소문자 L"
+      tag-1: "1"
+      tag-number-1: "- 번호 1"
+      tag-0: "0"
+      tag-number-0: "- 숫자 0"
+      tag-o: 그만큼
+      tag-uppercase-letter-o: "- 대문자 O"
+  ipv4-subnets-list:
+    title: IPv4 서브넷 리스터
+    description: 주어진 CIDR의 모든 가능한 서브넷을 나열합니다.
+    texts:
+      message-we-cannot-parse-this-address-check-the-format: 이 주소를 구문 분석할 수 없습니다. 형식을 확인하세요.
+      label-an-ipv4-address-with-or-without-mask-cidr-ip-range-wildcard-ip-ip-mask: 마스크(CIDR/IP 범위/와일드카드 IP/IP 마스크)가 있거나 없는 IPv4 주소
+      placeholder-ipv4-or-cidr: IPv4 또는 CIDR...
+      tag-network: 회로망
+      tag-first-ip: 첫 번째 IP
+      tag-last-ip: 마지막 IP
+      tag-broadcast: 방송
+  json-to-msgpack:
+    title: JSON을 MessagePack으로
+    description: JSON을 MessagePack으로 변환
+    texts:
+      message-json-is-invalid: JSON이 유효하지 않습니다
+      label-output-filename: "출력 파일 이름:"
+      placeholder-enter-output-filename: 출력 파일 이름을 입력하세요
+      label-json-to-convert: "변환할 JSON:"
+      placeholder-enter-json-to-convert: JSON을 입력하여 변환합니다...
+      title-msgpack-binary: "MsgPack 바이너리:"
+      tag-convert: 전환하다
+      tag-download-msgpack-file: MsgPack 파일 다운로드
+  markdown-lorem-ipsum:
+    title: 마크다운 로렘 입숨
+    description: 마크다운에서 Lorem Ipsum 생성
+    texts:
+      label-atx: "ATX (#, ##, ###)"
+      label-setext: Settext (====, ----)
+      label-unordered: 순서 없음 (-, *, +)
+      label-ordered-1-2-3: 순서 (1., 2., 3.)
+      label-language: "언어:"
+      label-blocks: "블록:"
+      label-sentences-per-paragraph: "문단당 문장 수:"
+      title-styles: 스타일
+      label-block-types: "블록 유형:"
+      label-inline-styles: 인라인 스타일
+      label-header-style: "헤더 스타일:"
+      label-list-style: "목록 스타일:"
+      title-block-frequencies: 블록 주파수
+      label-headers: "헤더:"
+      label-lists: "기울기:"
+      label-code: "암호:"
+      label-quotes: "인용 부호:"
+      title-generated-markdown: 생성된 마크다운
+      tag-headers: 헤더
+      tag-lists: 기울기
+      tag-code: 암호
+      tag-quotes: 인용 부호
+      tag-emphasis: 중요성
+      tag-strong: 강한
+      tag-links: 모래밭
+      tag-inline-code: 인라인 코드
+      tag-generate: 생성하다
+      tag-print-ie-use-a-pdf-printer-to-get-a-pdf-file: 인쇄(즉, PDF 프린터를 사용하여 PDF 파일을 얻습니다)
+  msgpack-to-json:
+    title: JSON으로 메시지 팩
+    description: MessagePack 파일을 JSON으로 변환
+    texts:
+      title-input-message-pack-file-or-content: 입력 메시지 팩 파일 또는 콘텐츠
+      label-file: 파일
+      label-hex-content: "16진수 콘텐츠:"
+      title-drag-and-drop-msgpack-file-here-or-click-to-select-a-file: 여기에 MsgPack 파일을 끌어다 놓거나 클릭하여 파일을 선택하세요.
+      title-json-content: JSON 콘텐츠
+  pdf-compressor:
+    title: PDF 압축기
+    description: Ghostscript를 사용하여 PDF 최적화 및 압축
+    texts:
+      label-screen-smallest: 화면(가장 작은)
+      label-ebook-balanced: 전자책(균형)
+      label-printer-high-quality: 프린터(고품질)
+      label-prepress-best-quality: 인쇄 전(최상의 품질)
+      label-pdf-1-4: PDF 1.4
+      label-pdf-1-5: PDF 1.5
+      label-pdf-1-6: PDF 1.6
+      label-pdf-1-7: PDF 1.7
+      label-compression-quality: "압축 품질:"
+      placeholder-select-compression-quality: 압축 품질 선택
+      label-compatibility-level: "호환성 수준:"
+      placeholder-select-compatibility-level: 호환성 수준을 선택하세요
+      title-drag-and-drop-a-pdf-file-here-or-click-to-select-a-file: PDF 파일을 여기에 끌어다 놓거나 클릭하여 파일을 선택하세요.
+      title-logs: 로그
+      label-ghostscript: 고스트스크립트
+  serial-console:
+    title: 직렬 포트 콘솔
+    description: 직렬 포트에 메시지를 연결하고 읽고 보냅니다.
+    texts:
+      label-9600: "9600"
+      label-19200: "19200"
+      label-38400: "38400"
+      label-57600: "57600"
+      label-115200: "115200"
+      label-lf-n: LF (\\n)
+      label-cr-r: CR (\\r)
+      label-crlf-r-n: CRLF(\\r\\n)
+      title-serial-terminal: 직렬 터미널
+      placeholder-baud-rate: 전송 속도
+      placeholder-line-ending: 줄 끝
+      placeholder-select-port: 포트 선택
+      placeholder-type-a-command: 명령을 입력하세요...
+      tag-connect: 연결하다
+      tag-disconnect: 연결 해제
+      tag-send: 보내다
+  shamirs-secret-sharing:
+    title: 샤미르의 비밀 공유
+    description: Shamir를 사용하여 비밀을 공유하고 재구성할 수 있습니다.
+    texts:
+      label-text: 텍스트
+      label-hexadecimal: 16진수
+      label-base64: 베이스64
+      label-secret-mode: "비밀 모드:"
+      title-share-a-secret-split: 비밀을 공유하다(분할)
+      label-secret: "비밀:"
+      placeholder-enter-secret-text: 비밀 텍스트를 입력하세요
+      label-threshold-minimum-shares-to-recover: "임계값(회수해야 할 최소 주식):"
+      label-number-of-shares: "주식 수:"
+      title-generated-shares: 생성된 주식
+      title-recombine-a-secret: 비밀을 다시 결합하다
+      label-your-shares: "귀하의 주식:"
+      placeholder-paste-your-shares-here: 여기에 귀하의 공유 내용을 붙여 넣으세요...
+      title-recombined-secret: 재조합된 비밀
+      tag-split-secret: 분할 비밀
+      tag-recombine: 재결합하다
+  short-urls-expander:
+    title: 짧은 URL 확장기
+    description: 짧은 URL을 확장하여 전체 URL을 타겟팅합니다.
+    texts:
+      label-short-urls-to-expand: "확장할 수 있는 짧은 URL:"
+      placeholder-enter-short-urls-one-per-line: 짧은 URL을 입력하세요(한 줄에 하나씩)
+      title-result: 결과
+      tag-this-tool-make-use-of-https-cors-anywhere-com-to-bypass-cors-this-is-a-community-driven-server: 이 도구는 https://cors-anywhere.com을 활용하여 CORS를 우회합니다. 이는 커뮤니티 기반 서버입니다.
+      tag-see-here-for-more-information: 자세한 내용은 여기를 참조하세요
+      tag-expand-all: 모두 확장
+      tag-download-resuls-as-csv: 결과를 CSV로 다운로드
+      tag-short-url: 짧은 URL
+      tag-expanded-url: 확장된 URL
+      tag-link: 링크
+      tag-status: 상태
+      tag-open-url: URL 열기
 about:
   alltools-title: 모든 {toolsCount}개 도구
   tools:

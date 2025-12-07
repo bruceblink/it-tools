@@ -311,8 +311,14 @@ tools:
       placeholder-your-string-to-compare: Ваш рядок для порівняння...
       label-your-hash: "Ваш хеш: "
       placeholder-your-hash-to-compare: Ваш хеш для порівняння...
-      label-do-they-match: "Вони співпадають? "
       tag-copy-hash: Копіювати хеш
+      hashed-string: Хешований рядок
+      comparison-result: Результат порівняння
+      matched: Зіставлено
+      no-match: Немає збігу
+      timed-out-after-timeout-period: Час очікування минув після {timeoutPeriod}
+      hashed-in-elapsed-period: Хешовано за {elapsedPeriod}
+      compared-in-elapsed-period: Порівняно за {elapsedPeriod}
   crontab-generator:
     title: Генератор Crontab
     description: Перевіряйте та генеруйте crontab і отримуйте опис розкладу cron у
@@ -824,6 +830,7 @@ tools:
       label-your-url-to-parse: "Ваша URL-адреса для розбору:"
       placeholder-your-url-to-parse: Ваша URL-адреса для розбору...
       url-must-have-http-or-https-prefix: URL-адреса повинна мати префікс http:// або https://
+      button-open-url: Відкрити URL-адресу
   iban-validator-and-parser:
     title: Валідатор та парсер IBAN
     description: Перевіряйте та розбирайте номери IBAN. Перевіряйте, чи є IBAN
@@ -975,6 +982,7 @@ tools:
       placeholder-your-lorem-ipsum: Ваш lorem ipsum...
       tag-copy: Копіювати
       tag-refresh: Оновити
+      tag-print-ie-use-a-pdf-printer-to-get-a-pdf-file: Друк (тобто використання PDF-принтера для отримання PDF-файлу)
   qrcode-generator:
     title: Генератор QR-кодів
     description: Генеруйте та завантажуйте QR-код для URL (або простого тексту) та
@@ -1110,6 +1118,13 @@ tools:
       label-secret-or-public-key-spki-or-jwk: Секретний або відкритий ключ (SPKI або JWK)
       placeholder-put-your-secret-or-public-key-here: Введіть тут свій секретний або відкритий ключ...
       tag-signature-verified: Підпис перевірено
+      label-jwk: Ключ JWK
+      label-pub-key: Відкритий ключ PEM
+      label-secret-raw-text: Секрет - Сирий текст
+      label-secret-hex-array: Секрет - шістнадцятковий масив
+      label-secret-base64: Секрет - Base64
+      label-secret-encoding: "Секретне кодування/тип:"
+      key-or-secret-or-verification-error-e-tostring: "Помилка ключа, секрету або перевірки: {0}"
     constants:
       text:
         token-introspection-response: Відповідь на інтроспекцію токена
@@ -2443,9 +2458,8 @@ tools:
       tag-detach-d: Від&#39;єднати (-d)
       tag-remove-rm: Видалити (--rm)
       tag-long-arguments: Довгі суперечки
-      tag-: "?"
-      tag-arg: аргумент
-      tag-value: значення
+      tag-multiline: Багаторядковий
+      tag-equal-sep: --arg=значення
   docker-compose-to-kubernetes:
     title: Docker Compose у Kubernetes
     description: Перетворюйте Docker Compose у маніфести Kubernetes
@@ -2865,6 +2879,14 @@ tools:
       placeholder-your-html-content: Ваш HTML-контент...
       label-your-html-to-convert-can-paste-from-clipboard: "Ваш HTML-код для конвертації (можна вставити з буфера обміну):"
       label-output-markdown: "Вихідна уцінка:"
+      label-heading-style: "Стиль заголовків:"
+      label-emphasis-style: "Стиль акценту:"
+      label-hash: Хеш (#)
+      label-underline: Підкреслення (=/-)
+      label-surround-heading: Оточуючий (= Заголовок =)
+      label-asterisk: Зірочка (*)
+      label-underscore: Підкреслення (_)
+      label-tilde: Тильда (~)
   htpasswd-generator:
     title: Генератор Htpasswd/Htaccess
     description: Генеруйте користувача/пароль для htpasswd/htaccess
@@ -3239,6 +3261,8 @@ tools:
       title-schema-validation-errors: Помилки перевірки схеми
       title-formatted-version: Відформатована версія
       label-indent-size-0-compact: "Розмір відступу (0 = Компактний):"
+      title-repaired-version: Автоматично відремонтована та відформатована версія
+      label-auto-repair-json: "JSON для авторемонту:"
   json-size-analyzer:
     title: Аналізатор розміру JSON
     description: Вимірюйте відносну вагу вузлів JSON
@@ -3351,6 +3375,17 @@ tools:
       label-public-key-jwk: "Відкритий ключ (JWK):"
       label-private-key-jwk: "Закритий ключ (JWK):"
       title-generated-jwt-token: "Згенерований токен JWT:"
+      label-secret-encoding: "Секретне кодування:"
+      label-raw-text: Необроблений текст
+      label-hex-array: Шістнадцятковий масив
+      verify-description: "{0}: {1} (підтвердити за допомогою {2})"
+      token-secret: Секрет токена
+      token-keys: Ключі токенів
+      cannot-parse-secret-as-encoding: "Неможливо розібрати '{0}' як '{1}': {2}"
+      invalid-base64-string: Недійсний рядок Base64
+      placeholder-input-token: Вставте свій JWT-токен для редагування...
+      click-to-input-a-existing-jwt-token-to-modify: Натисніть, щоб ввести існуючий токен JWT для зміни
+      label-base64: Base64
   length-converter:
     title: Конвертер одиниць довжини
     description: Конвертуйте значення між одиницями довжини
@@ -3409,6 +3444,8 @@ tools:
       placeholder-select-the-target-unit: Виберіть цільовий блок
       title-result: Результат
       label-best-target-unit: Найкращий цільовий підрозділ
+      label-selected-target-unit-outputunit: Вибраний цільовий блок ({0})
+      title-other-units-conversion-tools: Інші інструменти для перетворення одиниць вимірювання
   markdown-cheatsheet:
     title: Шпаргалка Markdown
     description: Шпаргалка Markdown
@@ -7067,6 +7104,335 @@ tools:
       label-converted-to-hex-array: "Перетворено на шістнадцятковий масив:"
       tag-digit-0-no-grouping: (Цифра 0 = Без групування)
       tag-digit-0-no-row: (Цифра 0 = Без рядка)
+  toon-to-json:
+    texts:
+      message-provided-json-is-not-valid: За умови, що TOON недійсний
+      output-label-json-version: "JSON-версія вашого TOON-контенту:"
+      input-placeholder-paste-your-raw-toon-here: Вставте сюди свій необроблений контент TOON...
+      input-label-your-raw-toon: "Ваш необроблений контент TOON:"
+    title: TOON у JSON
+    description: Конвертувати TOON-представлення в JSON-об'єкт для використання в LLM
+  json-to-toon:
+    texts:
+      message-provided-json-is-not-valid: Наданий JSON недійсний.
+      input-placeholder-paste-your-raw-json-here: Вставте сюди свій необроблений JSON...
+      input-label-your-raw-json: "Ваш необроблений JSON:"
+      output-label-toon-version-of-your-json: "TOON-версія вашого JSON:"
+    title: JSON до TOON
+    description: Конвертувати об'єкт JSON у представлення TOON для використання LLM/GPT
+  external-link-goto: "Щоб відкрити цей інструмент, перейдіть за цим посиланням:"
+  argon2-hash:
+    title: Argon2 Хешер
+    description: Обчисліть хеші Argon2 з параметрами
+    texts:
+      label-argon2id: Argon2id
+      label-argon2i: Аргон2і
+      label-argon2d: Аргон2д
+      label-hex: Шістнадцятковий
+      label-encoded: Закодовано
+      label-binary: Бінарний
+      label-algorithm: "Алгоритм:"
+      label-password: "Пароль:"
+      placeholder-enter-password: Введіть пароль
+      label-salt-hex: "Сіль (шестигранна):"
+      placeholder-optional-hex-salt: Додаткова шестигранна сіль
+      label-iterations: "Ітерації:"
+      label-memory-kib: "Пам'ять (КіБ):"
+      label-parallelism: "Паралелізм:"
+      label-hash-length: "Довжина хешу:"
+      label-output-type: "Тип виходу:"
+      title-argon2-hash: Хеш Argon2
+      tag-generate: Згенерувати
+  binary-calculator:
+    title: Бінарний калькулятор
+    description: Обчислення побітових/двійкових операцій (І, АБО, XOR, НЕ, зсуви)
+      між двома числами
+    texts:
+      label-decimal: Десятковий
+      label-hexadecimal: "Шістнадцяткове:"
+      label-octal: "Вісімкове:"
+      label-binary: "Бінарний файл:"
+      label-a-and-b: А ТА Б
+      label-a-or-b: А АБО Б
+      label-a-xor-b: A Виключаюче АБО B
+      label-not-a: НЕ А
+      label-a-b-left-shift: A << B (зсув ліворуч)
+      label-a-b-right-shift: A >> B (зсув праворуч)
+      message-number-is-invalid: Номер недійсний
+      label-a: А=
+      placeholder-enter-a: Введіть А
+      label-b: Б=
+      placeholder-enter-b: Введіть Б
+      label-operation: "Операція:"
+      placeholder-select-operation: Виберіть операцію
+      title-result: Результат
+      label-decimal-signed: "Десятковий (зі знаком):"
+      label-decimal-unigned: "Десятковий (без знаку):"
+      title-bitmask: Бітова маска
+  chmod-memo:
+    title: Шпаргалка по команді chmod
+    description: Шпаргалки для змін дозволів Linux
+  css-gradient-generator:
+    title: Генератор градієнтів CSS
+    description: Генерація CSS-коду градієнта для заданого набору кроків та кольорів
+    texts:
+      label-gradient-type: "Тип градієнта:"
+      label-angle-degrees: "Кут (градуси):"
+      title-color-stops: Кольорові зупинки
+      title-preview: Попередній перегляд
+      title-generated-css: Згенерований CSS
+      tag-linear: Лінійний
+      tag-radial: Радіальний
+      tag-remove: Видалити
+      tag-add-color-stop: Додати кольоровий стоп
+  css-units-converter:
+    title: Конвертер одиниць CSS
+    description: Конвертувати значення з поширених одиниць CSS (em, rem, px, vw, vh, %)
+    texts:
+      label-pixels-px: Пікселі (px)
+      label-ems-em: Емс (ем)
+      label-rems-rem: Ремс (рем)
+      label-percent: Відсоток (%)
+      label-viewport-width-vw: Ширина області перегляду (vw)
+      label-viewport-height-vh: Висота вікна перегляду (vh)
+      label-value-to-convert: "Значення для конвертації:"
+      label-from-unit: "З підрозділу:"
+      label-to-unit: "До підрозділу:"
+      label-base-font-size-px: Базовий розмір шрифту (пікселі)
+      label-viewport-width-px: Ширина області перегляду (пікселі)
+      label-viewport-height-px: Висота області перегляду (пікселі)
+      title-conversion: Конверсія
+      label-converted-value: "Конвертована вартість:"
+  docker-compose-to-env-file:
+    title: Docker Compose у файл .env
+    description: Вилучити файл .env з існуючого файлу Docker Compose
+    texts:
+      label-docker-compose-file: "Файл Docker Compose:"
+      placeholder-paste-your-docker-compose-yaml-here: Вставте сюди ваш YAML-файл docker-compose...
+      title-extract-env: Витяг .env
+  emv-tlv-decoder:
+    title: Декодер EMV TLV
+    description: Декодує дані EMV TLV (tag-length-value) та їхні окремі теги з
+      розширеним значенням (такі як TVR (Tag 95), Terminal Capabilities (Tag
+      9F33) тощо).
+    texts:
+      tag-: —
+      tag-tag: Тег
+      tag-length: Довжина
+      tag-value: Значення
+      tag-description: Опис
+      tag-bit-level-interpretation: Інтерпретація на бітовому рівні
+      label-tlv-hex-input: Шістнадцятковий вхід TLV
+      placeholder-paste-emv-tlv-hex-string-e-g-6f1a8407a0000000031010a50f500b5649534120435245444954:
+        Вставте шістнадцятковий рядок EMV TLV (наприклад,
+        6F1A8407A0000000031010A50F500B5649534120435245444954)
+      label-kernel-type: "Тип ядра:"
+      title-decoded-emv-tags: Декодовані теги EMV
+      tag-parse-tlv: Розбір TLV
+  eth-transaction-decoder:
+    title: Декодер транзакцій ETH
+    description: Декодер транзакцій Ethereum з ABI смарт-контрактів
+    texts:
+      label-smart-contract-abi: "ABI смарт-контракту:"
+      placeholder-paste-abi-json-here: Вставте сюди ABI JSON
+      label-raw-transaction-0x-or-json-transaction: "Необроблена транзакція (0x...) або транзакція JSON:"
+      title-decoded-transaction: Розшифрована транзакція
+      label-from: Від
+      label-to: До
+      label-value: Значення
+      label-gas: Газ
+      label-gas-price: Ціна на газ
+      label-nonce: Одноразовий номер
+      label-method: Метод
+      label-signature: Підпис
+      label-arguments: Аргументи
+      title-structured-output-json: Структурований вихідний JSON
+  file-splitter:
+    title: Роздільник файлів
+    description: Розділити JSON, XML або текстовий файл або за групою вузлів, або за
+      групою рядків
+    texts:
+      placeholder-strategy-value: Стратегічне значення...
+      title-drag-and-drop-a-txt-json-or-xml-file-here-or-click-to-select-a-file: Перетягніть сюди файл TXT, JSON або XML або клацніть, щоб вибрати файл
+      tag-split-by-lines: Розділити за лініями
+      tag-split-by-nodes: Розділити за вузлами
+      tag-max-chunk-size-kb: "Максимальний розмір фрагмента (КБ):"
+      tag-fixed-count: "Фіксована кількість:"
+      tag-chunk-count: "Кількість шматків:"
+      tag-preview-chunks: Попередній перегляд фрагментів?
+      tag-process-chunks: Частини процесу
+      tag-download-all: Завантажити все
+      tag-download: Завантажити
+  gitignore-generator:
+    title: Генератор GitIgnore
+    description: Згенерувати .gitignore для набору поширених шаблонів
+    texts:
+      placeholder-select-templates-e-g-node-python-vue: Виберіть шаблони (наприклад, node, python, vue)
+      title-gitignore: .gitignore
+      tag-const-availabletemplates-ref: const availableTemplates = ref
+      tag-this-tool-use: "Цей інструмент використовується:"
+      tag-https-www-toptal-com-developers-gitignore: https://www.toptal.com/developers/gitignore
+      tag-generate: Згенерувати
+  i-and-l-checker:
+    title: Перевірка I та L
+    description: Перевірка пароля або тексту з підсвічуванням 1, l, I, 0, O
+    texts:
+      label-text-to-check: "Текст для перевірки:"
+      placeholder-paste-your-text-here: Вставте сюди свій текст...
+      title-legend: Легенда
+      tag-i: Я
+      tag-uppercase-letter-i: "- Велика літера i"
+      tag-l: л
+      tag-lowercase-letter-l: "- Мала літера Л"
+      tag-1: "1"
+      tag-number-1: "- Номер 1"
+      tag-0: "0"
+      tag-number-0: "- Номер 0"
+      tag-o: THE
+      tag-uppercase-letter-o: "- Велика літера О"
+  ipv4-subnets-list:
+    title: Лістер підмереж IPv4
+    description: Перелічіть усі можливі підмережі заданого CIDR
+    texts:
+      message-we-cannot-parse-this-address-check-the-format: Ми не можемо проаналізувати цю адресу, перевірте формат
+      label-an-ipv4-address-with-or-without-mask-cidr-ip-range-wildcard-ip-ip-mask:
+        IPv4-адреса з маскою або без неї (CIDR/діапазон
+        IP-адрес/підстановлювальна IP-адреса/маска IP-адреси)
+      placeholder-ipv4-or-cidr: IPv4 або cidr...
+      tag-network: Мережа
+      tag-first-ip: Перша IP-адреса
+      tag-last-ip: Остання IP-адреса
+      tag-broadcast: Трансляція
+  json-to-msgpack:
+    title: JSON до MessagePack
+    description: Конвертувати JSON у MessagePack
+    texts:
+      message-json-is-invalid: JSON недійсний
+      label-output-filename: "Ім'я вихідного файлу:"
+      placeholder-enter-output-filename: Введіть ім'я вихідного файлу
+      label-json-to-convert: "JSON для конвертації:"
+      placeholder-enter-json-to-convert: Введіть JSON для конвертації...
+      title-msgpack-binary: "Бінарний файл MsgPack:"
+      tag-convert: Конвертувати
+      tag-download-msgpack-file: Завантажити файл MsgPack
+  markdown-lorem-ipsum:
+    title: Знижка Lorem Ipsum
+    description: Створіть Lorem Ipsum у розмітці
+    texts:
+      label-atx: "ATX (#, ##, ###)"
+      label-setext: Набір тексту (====, ----)
+      label-unordered: Невпорядковані (-, *, +)
+      label-ordered-1-2-3: Замовлено (1., 2., 3.)
+      label-language: "Мова:"
+      label-blocks: "Блоки:"
+      label-sentences-per-paragraph: "Речень в абзаці:"
+      title-styles: Стилі
+      label-block-types: "Типи блоків:"
+      label-inline-styles: Вбудовані стилі
+      label-header-style: "Стиль заголовка:"
+      label-list-style: "Стиль списку:"
+      title-block-frequencies: Блокові частоти
+      label-headers: "Заголовки:"
+      label-lists: "Списки:"
+      label-code: "Код:"
+      label-quotes: "Цитати:"
+      title-generated-markdown: Згенерована уцінка
+      tag-headers: Заголовки
+      tag-lists: Списки
+      tag-code: Код
+      tag-quotes: Цитати
+      tag-emphasis: Акцент
+      tag-strong: Сильний
+      tag-links: Посилання
+      tag-inline-code: Вбудований код
+      tag-generate: Згенерувати
+      tag-print-ie-use-a-pdf-printer-to-get-a-pdf-file: Друк (тобто використання PDF-принтера для отримання PDF-файлу)
+  msgpack-to-json:
+    title: Пакування повідомлень у JSON
+    description: Конвертувати файл MessagePack у JSON
+    texts:
+      title-input-message-pack-file-or-content: Файл або вміст пакета вхідних повідомлень
+      label-file: Файл
+      label-hex-content: "Шістнадцятковий вміст:"
+      title-drag-and-drop-msgpack-file-here-or-click-to-select-a-file: Перетягніть файл MsgPack сюди або клацніть, щоб вибрати файл
+      title-json-content: JSON-контент
+  pdf-compressor:
+    title: PDF-компресор
+    description: Оптимізація та стиснення PDF-файлів за допомогою Ghostscript
+    texts:
+      label-screen-smallest: Екран (найменший)
+      label-ebook-balanced: Електронна книга (збалансована)
+      label-printer-high-quality: Принтер (високої якості)
+      label-prepress-best-quality: Додрукарська підготовка (найкраща якість)
+      label-pdf-1-4: PDF 1.4
+      label-pdf-1-5: PDF 1.5
+      label-pdf-1-6: PDF 1.6
+      label-pdf-1-7: PDF 1.7
+      label-compression-quality: "Якість стиснення:"
+      placeholder-select-compression-quality: Виберіть якість стиснення
+      label-compatibility-level: "Рівень сумісності:"
+      placeholder-select-compatibility-level: Виберіть рівень сумісності
+      title-drag-and-drop-a-pdf-file-here-or-click-to-select-a-file: Перетягніть PDF-файл сюди або клацніть, щоб вибрати файл
+      title-logs: Журнали
+      label-ghostscript: Госкрипт
+  serial-console:
+    title: Консоль послідовного порту
+    description: Підключення, читання та надсилання повідомлень до послідовного порту
+    texts:
+      label-9600: "9600"
+      label-19200: "19200"
+      label-38400: "38400"
+      label-57600: "57600"
+      label-115200: "115200"
+      label-lf-n: НЧ (\\n)
+      label-cr-r: CR (\\r)
+      label-crlf-r-n: CRLF (\\r\\n)
+      title-serial-terminal: Послідовний термінал
+      placeholder-baud-rate: Швидкість передачі даних
+      placeholder-line-ending: Кінець рядка
+      placeholder-select-port: Виберіть порт
+      placeholder-type-a-command: Введіть команду...
+      tag-connect: Підключитися
+      tag-disconnect: Відключитися
+      tag-send: Надіслати
+  shamirs-secret-sharing:
+    title: Таємний обмін Шамірами
+    description: Дозволити обмін та переформатування секрету за допомогою Shamir\
+    texts:
+      label-text: Текст
+      label-hexadecimal: Шістнадцяткове
+      label-base64: Base64
+      label-secret-mode: "Секретний режим:"
+      title-share-a-secret-split: Поділитися секретом (розділити)
+      label-secret: "Секрет:"
+      placeholder-enter-secret-text: Введіть секретний текст
+      label-threshold-minimum-shares-to-recover: "Поріг (мінімальна кількість акцій для повернення):"
+      label-number-of-shares: "Кількість акцій:"
+      title-generated-shares: Згенеровані акції
+      title-recombine-a-secret: Рекомбінуйте секрет
+      label-your-shares: "Ваші акції:"
+      placeholder-paste-your-shares-here: Вставте сюди свої акції...
+      title-recombined-secret: Рекомбінований секрет
+      tag-split-secret: Розділити секрет
+      tag-recombine: Рекомбінувати
+  short-urls-expander:
+    title: Розширювач коротких URL-адрес
+    description: Розгорнути короткі URL-адреси для цільового відображення повних URL-адрес
+    texts:
+      label-short-urls-to-expand: "Короткі URL-адреси для розгортання:"
+      placeholder-enter-short-urls-one-per-line: Введіть короткі URL-адреси (по одній на рядок)
+      title-result: Результат
+      tag-this-tool-make-use-of-https-cors-anywhere-com-to-bypass-cors-this-is-a-community-driven-server:
+        Цей інструмент використовує https://cors-anywhere.com для обходу CORS.
+        Це сервер, керований спільнотою.
+      tag-see-here-for-more-information: Дивіться тут для отримання додаткової інформації
+      tag-expand-all: Розгорнути все
+      tag-download-resuls-as-csv: Завантажити результати у форматі CSV
+      tag-short-url: Коротка URL-адреса
+      tag-expanded-url: Розгорнута URL-адреса
+      tag-link: Посилання
+      tag-status: Статус
+      tag-open-url: Відкрити URL-адресу
 spanCopyable:
   copy: Копіювати в буфер обміну
   copied: Скопійовано!

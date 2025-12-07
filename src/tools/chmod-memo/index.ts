@@ -1,10 +1,11 @@
 import { FileInvoice } from '@vicons/tabler';
 import { defineTool } from '../tool';
+import { translate as t } from '@/plugins/i18n.plugin';
 
 export const tool = defineTool({
-  name: 'chmod Command Cheatsheet',
+  name: t('tools.chmod-memo.title'),
   path: '/chmod-memo',
-  description: 'Cheatsheets for Linux permissions changes',
+  description: t('tools.chmod-memo.description'),
   keywords: ['chmod', 'permissions', 'memo', 'cheatsheet'],
   component: () => import('./chmod-memo.vue'),
   icon: FileInvoice,

@@ -1,10 +1,11 @@
 import { Dimensions } from '@vicons/tabler';
 import { defineTool } from '../tool';
+import { translate as t } from '@/plugins/i18n.plugin';
 
 export const tool = defineTool({
-  name: 'CSS Units Converter',
+  name: t('tools.css-units-converter.title'),
   path: '/css-units-converter',
-  description: 'Convert values from common CSS units (em, rem, px, vw, vh, %)',
+  description: t('tools.css-units-converter.description'),
   keywords: ['css', 'units', 'converter'],
   component: () => import('./css-units-converter.vue'),
   icon: Dimensions,

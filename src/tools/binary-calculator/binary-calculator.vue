@@ -1,6 +1,9 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n';
 import { useQueryParamOrStorage } from '@/composable/queryParams';
 import { useValidation } from '@/composable/validation';
+
+const { t } = useI18n();
 
 type NumberFormat = 'dec' | 'hex' | 'oct' | 'bin';
 
@@ -11,19 +14,19 @@ const inputA = ref('');
 const inputB = ref('');
 
 const formatOptions = [
-  { label: 'Decimal', value: 'dec' },
-  { label: 'Hexadecimal', value: 'hex' },
-  { label: 'Octal', value: 'oct' },
-  { label: 'Binary', value: 'bin' },
+  { label: t('tools.binary-calculator.texts.label-decimal'), value: 'dec' },
+  { label: t('tools.binary-calculator.texts.label-hexadecimal'), value: 'hex' },
+  { label: t('tools.binary-calculator.texts.label-octal'), value: 'oct' },
+  { label: t('tools.binary-calculator.texts.label-binary'), value: 'bin' },
 ];
 
 const operations = [
-  { label: 'A AND B', value: 'AND' },
-  { label: 'A OR B', value: 'OR' },
-  { label: 'A XOR B', value: 'XOR' },
-  { label: 'NOT A', value: 'NOT' },
-  { label: 'A << B (Left Shift)', value: 'LSHIFT' },
-  { label: 'A >> B (Right Shift)', value: 'RSHIFT' },
+  { label: t('tools.binary-calculator.texts.label-a-and-b'), value: 'AND' },
+  { label: t('tools.binary-calculator.texts.label-a-or-b'), value: 'OR' },
+  { label: t('tools.binary-calculator.texts.label-a-xor-b'), value: 'XOR' },
+  { label: t('tools.binary-calculator.texts.label-not-a'), value: 'NOT' },
+  { label: t('tools.binary-calculator.texts.label-a-b-left-shift'), value: 'LSHIFT' },
+  { label: t('tools.binary-calculator.texts.label-a-b-right-shift'), value: 'RSHIFT' },
 ];
 
 const inputAValidation = useValidation({
@@ -32,7 +35,7 @@ const inputAValidation = useValidation({
   rules: [
     {
       validator: v => parseInputA(v) !== null,
-      message: 'Number is invalid',
+      message: t('tools.binary-calculator.texts.message-number-is-invalid'),
     },
   ],
 });
@@ -42,7 +45,7 @@ const inputBValidation = useValidation({
   rules: [
     {
       validator: v => parseInputB(v) !== null,
-      message: 'Number is invalid',
+      message: t('tools.binary-calculator.texts.message-number-is-invalid'),
     },
   ],
 });
@@ -125,29 +128,29 @@ const bitmask = computed(() =>
   <div style="min-height: 50vh; max-width: 800px;">
     <n-space justify="space-evenly" mb-2>
       <NSelect v-model:value="inputFormatA" :options="formatOptions" style="width: 130px" />
-      <c-input-text v-model:value="inputA" style="width: 150px" :validation="inputAValidation" label-position="left" label="A=" placeholder="Enter A" />
+      <c-input-text v-model:value="inputA" style="width: 150px" :validation="inputAValidation" label-position="left" :label="t('tools.binary-calculator.texts.label-a')" :placeholder="t('tools.binary-calculator.texts.placeholder-enter-a')" />
       <NSelect v-model:value="inputFormatB" :options="formatOptions" style="width: 130px" />
-      <c-input-text v-model:value="inputB" style="width: 150px" :validation="inputBValidation" label-position="left" label="B=" placeholder="Enter B" :disabled="isUnary" />
+      <c-input-text v-model:value="inputB" style="width: 150px" :validation="inputBValidation" label-position="left" :label="t('tools.binary-calculator.texts.label-b')" :placeholder="t('tools.binary-calculator.texts.placeholder-enter-b')" :disabled="isUnary" />
     </n-space>
 
     <c-select
       v-model:value="operation"
-      label="Operation:"
+      :label="t('tools.binary-calculator.texts.label-operation')"
       label-position="left"
       :options="operations"
-      placeholder="Select Operation"
+      :placeholder="t('tools.binary-calculator.texts.placeholder-select-operation')"
       mb-2
     />
 
-    <c-card v-if="result !== null" title="Result" mb-1>
-      <input-copyable label-width="130px" mb-1 label="Decimal (Signed):" label-position="left" :value="signedResult" />
-      <input-copyable label-width="130px" mb-1 label="Decimal (Unigned):" label-position="left" :value="unsignedResult" />
-      <input-copyable label-width="130px" mb-1 label="Binary:" label-position="left" :value="`0b${result.toString(2).padStart(32, '0')}`" />
-      <input-copyable label-width="130px" mb-1 label="Hexadecimal:" label-position="left" :value="`0x${result.toString(16).toUpperCase()}`" />
-      <input-copyable label-width="130px" mb-1 label="Octal:" label-position="left" :value="`0o${result.toString(8)}`" />
+    <c-card v-if="result !== null" :title="t('tools.binary-calculator.texts.title-result')" mb-1>
+      <input-copyable label-width="130px" mb-1 :label="t('tools.binary-calculator.texts.label-decimal-signed')" label-position="left" :value="signedResult" />
+      <input-copyable label-width="130px" mb-1 :label="t('tools.binary-calculator.texts.label-decimal-unigned')" label-position="left" :value="unsignedResult" />
+      <input-copyable label-width="130px" mb-1 :label="t('tools.binary-calculator.texts.label-binary')" label-position="left" :value="`0b${result.toString(2).padStart(32, '0')}`" />
+      <input-copyable label-width="130px" mb-1 :label="t('tools.binary-calculator.texts.label-hexadecimal')" label-position="left" :value="`0x${result.toString(16).toUpperCase()}`" />
+      <input-copyable label-width="130px" mb-1 :label="t('tools.binary-calculator.texts.label-octal')" label-position="left" :value="`0o${result.toString(8)}`" />
     </c-card>
 
-    <c-card v-if="result !== null" title="Bitmask">
+    <c-card v-if="result !== null" :title="t('tools.binary-calculator.texts.title-bitmask')">
       <NSpace justify="center" wrap>
         <NTag
           v-for="(bit, index) in bitmask"

@@ -1,7 +1,10 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n';
 import { nextTick, onMounted, ref } from 'vue';
 import { NButton, NCard, NInput, NInputGroup, NSelect, NSpace } from 'naive-ui';
 import { useSerialPort } from './useSerialPort';
+
+const { t } = useI18n();
 
 const input = ref('');
 const outputRef = ref<HTMLElement | null>(null);
@@ -20,17 +23,17 @@ const {
 } = useSerialPort();
 
 const baudOptions = [
-  { label: '9600', value: 9600 },
-  { label: '19200', value: 19200 },
-  { label: '38400', value: 38400 },
-  { label: '57600', value: 57600 },
-  { label: '115200', value: 115200 },
+  { label: t('tools.serial-console.texts.label-9600'), value: 9600 },
+  { label: t('tools.serial-console.texts.label-19200'), value: 19200 },
+  { label: t('tools.serial-console.texts.label-38400'), value: 38400 },
+  { label: t('tools.serial-console.texts.label-57600'), value: 57600 },
+  { label: t('tools.serial-console.texts.label-115200'), value: 115200 },
 ];
 
 const lineEndingOptions = [
-  { label: 'LF (\\n)', value: 'LF' },
-  { label: 'CR (\\r)', value: 'CR' },
-  { label: 'CRLF (\\r\\n)', value: 'CRLF' },
+  { label: t('tools.serial-console.texts.label-lf-n'), value: 'LF' },
+  { label: t('tools.serial-console.texts.label-cr-r'), value: 'CR' },
+  { label: t('tools.serial-console.texts.label-crlf-r-n'), value: 'CRLF' },
 ];
 
 const portOptions = computed(() =>
@@ -67,18 +70,18 @@ function isWindowSecureContext() {
     </n-a>{{ $t('tools.pgp-encryption.texts.tag-this-tool-may-not-work-correctly-and-require-https-to-work-fully') }}
   </c-alert>
 
-  <NCard title="Serial Terminal">
+  <NCard :title="t('tools.serial-console.texts.title-serial-terminal')">
     <NSpace>
       <NSelect
         v-model:value="baudRate"
         :options="baudOptions"
-        placeholder="Baud Rate"
+        :placeholder="t('tools.serial-console.texts.placeholder-baud-rate')"
         style="width: 150px"
       />
       <NSelect
         v-model:value="lineEnding"
         :options="lineEndingOptions"
-        placeholder="Line Ending"
+        :placeholder="t('tools.serial-console.texts.placeholder-line-ending')"
         style="width: 120px"
       />
       <NSelect
@@ -86,14 +89,14 @@ function isWindowSecureContext() {
         :options="portOptions"
         label-field="label"
         value-field="value"
-        placeholder="Select Port"
+        :placeholder="t('tools.serial-console.texts.placeholder-select-port')"
         style="width: 200px"
       />
       <NButton type="primary" :disabled="isConnected" @click="connect(selectedPort)">
-        Connect
+        {{ t('tools.serial-console.texts.tag-connect') }}
       </NButton>
       <NButton type="error" :disabled="!isConnected" @click="disconnect">
-        Disconnect
+        {{ t('tools.serial-console.texts.tag-disconnect') }}
       </NButton>
     </NSpace>
 
@@ -106,12 +109,12 @@ function isWindowSecureContext() {
     <NInputGroup>
       <NInput
         v-model:value="input"
-        placeholder="Type a command..."
+        :placeholder="t('tools.serial-console.texts.placeholder-type-a-command')"
         :disabled="!isConnected"
         @keydown.enter.prevent="sendCommand"
       />
       <NButton type="primary" :disabled="!isConnected" @click="sendCommand">
-        Send
+        {{ t('tools.serial-console.texts.tag-send') }}
       </NButton>
     </NInputGroup>
   </NCard>

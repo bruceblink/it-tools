@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n';
 import { Netmask } from 'netmask';
 import { withDefaultOnError } from '@/utils/defaults';
 import { isNotThrowing } from '@/utils/boolean';
@@ -6,6 +7,8 @@ import SpanCopyable from '@/components/SpanCopyable.vue';
 import type { SubnetInfo } from '@/utils/ip';
 import { getSubnetsInfos, parseAsCIDR } from '@/utils/ip';
 import { useITStorage } from '@/composable/queryParams';
+
+const { t } = useI18n();
 
 const ip = useITStorage('ipv4-subnets-list:ip', '192.168.0.0/24');
 
@@ -30,7 +33,7 @@ const allSubnetsInfos = computed(() => withDefaultOnError(() => {
 
 const ipValidationRules = [
   {
-    message: 'We cannot parse this address, check the format',
+    message: t('tools.ipv4-subnets-list.texts.message-we-cannot-parse-this-address-check-the-format'),
     validator: (value: string) => isNotThrowing(() => getNetworkInfo(value)),
   },
 ];
@@ -40,8 +43,8 @@ const ipValidationRules = [
   <div>
     <c-input-text
       v-model:value="ip"
-      label="An IPv4 address with or without mask (CIDR/IP Range/Wildcard IP/IP Mask)"
-      placeholder="IPv4 or cidr..."
+      :label="t('tools.ipv4-subnets-list.texts.label-an-ipv4-address-with-or-without-mask-cidr-ip-range-wildcard-ip-ip-mask')"
+      :placeholder="t('tools.ipv4-subnets-list.texts.placeholder-ipv4-or-cidr')"
       :validation-rules="ipValidationRules"
       mb-4
     />
@@ -51,10 +54,10 @@ const ipValidationRules = [
         <n-table>
           <thead>
             <tr>
-              <th>Network</th>
-              <th>First IP</th>
-              <th>Last IP</th>
-              <th>Broadcast</th>
+              <th>{{ t('tools.ipv4-subnets-list.texts.tag-network') }}</th>
+              <th>{{ t('tools.ipv4-subnets-list.texts.tag-first-ip') }}</th>
+              <th>{{ t('tools.ipv4-subnets-list.texts.tag-last-ip') }}</th>
+              <th>{{ t('tools.ipv4-subnets-list.texts.tag-broadcast') }}</th>
             </tr>
           </thead>
           <tbody>

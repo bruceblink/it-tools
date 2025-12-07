@@ -1,10 +1,11 @@
 import { Share } from '@vicons/tabler';
 import { defineTool } from '../tool';
+import { translate as t } from '@/plugins/i18n.plugin';
 
 export const tool = defineTool({
-  name: 'Shamirs Secret Sharing',
+  name: t('tools.shamirs-secret-sharing.title'),
   path: '/shamirs-secret-sharing',
-  description: 'Allow to share and recompose a secret using Shamir\'s Secret Sharing algorythm',
+  description: t('tools.shamirs-secret-sharing.description'),
   keywords: ['shamirs', 'secret', 'sharing'],
   component: () => import('./shamirs-secret-sharing.vue'),
   icon: Share,

@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n();
 const inputUrls = ref('');
 const results = ref<{ short: string; expanded: string | null; ok: boolean; status: string }[]>([]);
 const error = ref('');
@@ -88,47 +91,43 @@ function downloadCsv() {
   <div>
     <NSpace vertical>
       <n-p mb-1>
-        <strong>This tool make use of https://cors-anywhere.com to bypass CORS. This is a community driven server.</strong>
+        <strong>{{ t('tools.short-urls-expander.texts.tag-this-tool-make-use-of-https-cors-anywhere-com-to-bypass-cors-this-is-a-community-driven-server') }}</strong>
         <n-a href="https://cors-anywhere.com" target="_blank">
-          See here for more information
+          {{ t('tools.short-urls-expander.texts.tag-see-here-for-more-information') }}
         </n-a>
       </n-p>
       <c-input-text
         v-model:value="inputUrls"
-        label="Short URLs to expand:"
+        :label="t('tools.short-urls-expander.texts.label-short-urls-to-expand')"
         multiline
         rows="5"
-        placeholder="Enter short URLs (one per line)"
+        :placeholder="t('tools.short-urls-expander.texts.placeholder-enter-short-urls-one-per-line')"
         clearable
         mb-1
       />
       <n-space justify="center" mb-2>
         <NButton type="primary" :loading="loading" @click="expandUrls">
-          Expand All
+          {{ t('tools.short-urls-expander.texts.tag-expand-all') }}
         </NButton>
       </n-space>
 
-      <c-card v-if="results.length" title="Result">
+      <c-card v-if="results.length" :title="t('tools.short-urls-expander.texts.title-result')">
         <n-space justify="center" mb-2>
           <NButton type="primary" @click="downloadCsv">
-            Download resuls as CSV
+            {{ t('tools.short-urls-expander.texts.tag-download-resuls-as-csv') }}
           </NButton>
         </n-space>
         <n-table>
           <thead>
             <tr>
               <th width="30%">
-                Short Url
+                {{ t('tools.short-urls-expander.texts.tag-short-url') }}
               </th>
               <th width="45%">
-                Expanded Url
+                {{ t('tools.short-urls-expander.texts.tag-expanded-url') }}
               </th>
-              <th>
-                Link
-              </th>
-              <th>
-                Status
-              </th>
+              <th>{{ t('tools.short-urls-expander.texts.tag-link') }}</th>
+              <th>{{ t('tools.short-urls-expander.texts.tag-status') }}</th>
             </tr>
           </thead>
           <tbody>
@@ -139,7 +138,7 @@ function downloadCsv() {
               </td>
               <td>
                 <n-a v-if="url.expanded" :href="url.expanded" target="_blank">
-                  Open Url
+                  {{ t('tools.short-urls-expander.texts.tag-open-url') }}
                 </n-a>
               </td>
               <td :style="{ color: url.ok ? 'green' : 'red' }">

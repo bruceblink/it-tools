@@ -1,10 +1,11 @@
 import { Cut } from '@vicons/tabler';
 import { defineTool } from '../tool';
+import { translate as t } from '@/plugins/i18n.plugin';
 
 export const tool = defineTool({
-  name: 'File Splitter',
+  name: t('tools.file-splitter.title'),
   path: '/file-splitter',
-  description: 'Split JSON, XML or text file either by group of nodes or by group of lines',
+  description: t('tools.file-splitter.description'),
   keywords: ['file', 'json', 'xml', 'text', 'splitter'],
   component: () => import('./file-splitter.vue'),
   icon: Cut,

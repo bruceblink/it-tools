@@ -1,10 +1,11 @@
 import { DeviceAnalytics } from '@vicons/tabler';
 import { defineTool } from '../tool';
+import { translate as t } from '@/plugins/i18n.plugin';
 
 export const tool = defineTool({
-  name: 'Serial Port Console',
+  name: t('tools.serial-console.title'),
   path: '/serial-console',
-  description: 'Connect, read and send message to Serial Port',
+  description: t('tools.serial-console.description'),
   keywords: ['serial', 'port', 'console'],
   component: () => import('./serial-console.vue'),
   icon: DeviceAnalytics,

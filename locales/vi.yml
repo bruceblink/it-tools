@@ -312,8 +312,14 @@ tools:
       placeholder-your-string-to-compare: Chuỗi của bạn để so sánh...
       label-your-hash: "Băm của bạn: "
       placeholder-your-hash-to-compare: Mã băm của bạn để so sánh...
-      label-do-they-match: "Chúng có khớp nhau không? "
       tag-copy-hash: Sao chép băm
+      hashed-string: Chuỗi băm
+      comparison-result: Kết quả so sánh
+      matched: Đã khớp
+      no-match: Không có trận đấu
+      timed-out-after-timeout-period: Hết thời gian sau {timeoutPeriod}
+      hashed-in-elapsed-period: Đã băm trong {elapsedPeriod}
+      compared-in-elapsed-period: So sánh trong {elapsedPeriod}
   crontab-generator:
     title: Trình tạo Crontab
     description: Xác thực và tạo crontab và lấy mô tả đọc được của lịch trình cron.
@@ -833,6 +839,7 @@ tools:
       label-your-url-to-parse: "URL của bạn để phân tích cú pháp:"
       placeholder-your-url-to-parse: URL của bạn để phân tích...
       url-must-have-http-or-https-prefix: Url phải có tiền tố http:// hoặc https://
+      button-open-url: Mở URL
   iban-validator-and-parser:
     title: Kiểm tra và phân tích số IBAN
     description: Xác thực và phân tích số IBAN. Kiểm tra tính hợp lệ của IBAN và lấy
@@ -1000,6 +1007,7 @@ tools:
       placeholder-your-lorem-ipsum: Lorem ipsum của bạn...
       tag-copy: Sao chép
       tag-refresh: Làm cho khỏe lại
+      tag-print-ie-use-a-pdf-printer-to-get-a-pdf-file: In (tức là sử dụng Máy in PDF để lấy tệp PDF)
   qrcode-generator:
     title: Tạo mã QR
     description: Tạo và tải xuống mã QR cho một URL hoặc chỉ một đoạn văn bản và tùy
@@ -1131,6 +1139,13 @@ tools:
       label-secret-or-public-key-spki-or-jwk: Khóa bí mật hoặc khóa công khai (SPKI hoặc JWK)
       placeholder-put-your-secret-or-public-key-here: Nhập khóa bí mật hoặc khóa công khai của bạn vào đây...
       tag-signature-verified: Chữ ký đã được xác minh
+      label-jwk: Phím JWK
+      label-pub-key: Khóa công khai PEM
+      label-secret-raw-text: Bí mật - Văn bản thô
+      label-secret-hex-array: Bí mật - Mảng Hex
+      label-secret-base64: Bí mật - Base64
+      label-secret-encoding: "Mã hóa/Loại bí mật:"
+      key-or-secret-or-verification-error-e-tostring: "Lỗi khóa hoặc bí mật hoặc xác minh: {0}"
     constants:
       text:
         token-introspection-response: Phản ứng nội quan mang tính biểu tượng
@@ -2318,9 +2333,8 @@ tools:
       tag-detach-d: Tách ra (-d)
       tag-remove-rm: Xóa (--rm)
       tag-long-arguments: Những lập luận dài
-      tag-: "?"
-      tag-arg: tranh luận
-      tag-value: giá trị
+      tag-multiline: Đa dòng
+      tag-equal-sep: --arg=giá trị
   docker-compose-to-kubernetes:
     title: Docker compose thành Kubernetes
     description: Docker Compose cho Kubernetes manifests
@@ -2631,6 +2645,14 @@ tools:
       placeholder-your-html-content: Nội dung HTML của bạn...
       label-your-html-to-convert-can-paste-from-clipboard: "HTML của bạn cần chuyển đổi (có thể dán từ bảng tạm):"
       label-output-markdown: "Đầu ra markdown:"
+      label-heading-style: "Kiểu tiêu đề:"
+      label-emphasis-style: "Phong cách nhấn mạnh:"
+      label-hash: Dấu thăng (#)
+      label-underline: Gạch chân (=/-)
+      label-surround-heading: Vòm (= Tiêu đề =)
+      label-asterisk: Dấu hoa thị (*)
+      label-underscore: Dấu gạch dưới (_)
+      label-tilde: Dấu ngã (~)
   ical-parser:
     title: Trình phân tích tệp ICAL
     description: Phân tích tệp ICAL/ICS để hiển thị sự kiện
@@ -2932,6 +2954,8 @@ tools:
       title-schema-validation-errors: Lỗi xác thực lược đồ
       title-formatted-version: Phiên bản đã định dạng
       label-indent-size-0-compact: "Kích thước thụt lề (0 = Nhỏ gọn):"
+      title-repaired-version: Phiên bản tự động sửa chữa và định dạng
+      label-auto-repair-json: "Tự động sửa chữa JSON:"
   json-size-analyzer:
     title: Trình phân tích kích thước JSON
     description: Đo trọng số tương đối của các nút JSON
@@ -3037,6 +3061,17 @@ tools:
       label-public-key-jwk: "Khóa công khai (JWK):"
       label-private-key-jwk: "Khóa riêng tư (JWK):"
       title-generated-jwt-token: "Mã thông báo JWT đã tạo:"
+      label-secret-encoding: "Mã hóa bí mật:"
+      label-raw-text: Văn bản thô
+      label-hex-array: Mảng Hex
+      verify-description: "{0}: {1} (xác minh bằng {2})"
+      token-secret: Bí mật mã thông báo
+      token-keys: Khóa mã thông báo
+      cannot-parse-secret-as-encoding: "Không thể phân tích cú pháp '{0}' thành '{1}': {2}"
+      invalid-base64-string: Chuỗi Base64 không hợp lệ
+      placeholder-input-token: Dán mã thông báo JWT của bạn để chỉnh sửa...
+      click-to-input-a-existing-jwt-token-to-modify: Nhấp để nhập mã thông báo JWT hiện có để sửa đổi
+      label-base64: Cơ sở 64
   length-converter:
     title: Bộ chuyển đổi đơn vị chiều dài
     description: Chuyển đổi giá trị từ đơn vị độ dài
@@ -3094,6 +3129,8 @@ tools:
       placeholder-select-the-target-unit: Chọn đơn vị mục tiêu
       title-result: Kết quả
       label-best-target-unit: Đơn vị mục tiêu tốt nhất
+      label-selected-target-unit-outputunit: Đơn vị mục tiêu đã chọn ({0})
+      title-other-units-conversion-tools: Các công cụ chuyển đổi đơn vị khác
   markdown-cheatsheet:
     title: Bảng hướng dẫn Markdown
     description: Bảng hướng dẫn Markdown
@@ -7033,6 +7070,333 @@ tools:
       label-converted-to-hex-array: "Chuyển đổi sang mảng Hex:"
       tag-digit-0-no-grouping: (Chữ số 0 = Không nhóm)
       tag-digit-0-no-row: (Chữ số 0 = Không có hàng)
+  toon-to-json:
+    texts:
+      message-provided-json-is-not-valid: Cung cấp TOON không hợp lệ
+      output-label-json-version: "Phiên bản JSON của nội dung TOON của bạn:"
+      input-placeholder-paste-your-raw-toon-here: Dán nội dung TOON thô của bạn vào đây...
+      input-label-your-raw-toon: "Nội dung TOON thô của bạn:"
+    title: TOON sang JSON
+    description: Chuyển đổi biểu diễn TOON thành đối tượng JSON để sử dụng LLM
+  json-to-toon:
+    texts:
+      message-provided-json-is-not-valid: JSON được cung cấp không hợp lệ.
+      input-placeholder-paste-your-raw-json-here: Dán JSON thô của bạn vào đây...
+      input-label-your-raw-json: "JSON thô của bạn:"
+      output-label-toon-version-of-your-json: "Phiên bản TOON của JSON của bạn:"
+    title: JSON sang TOON
+    description: Chuyển đổi đối tượng JSON sang biểu diễn TOON để sử dụng LLM/GPT
+  external-link-goto: "Để mở công cụ này, hãy nhấp vào liên kết này:"
+  argon2-hash:
+    title: Argon2 Hasher
+    description: Tính toán băm Argon2 với các tham số
+    texts:
+      label-argon2id: Argon2id
+      label-argon2i: Argon2i
+      label-argon2d: Argon2d
+      label-hex: Lục giác
+      label-encoded: Đã mã hóa
+      label-binary: Nhị phân
+      label-algorithm: "Thuật toán:"
+      label-password: "Mật khẩu:"
+      placeholder-enter-password: Nhập mật khẩu
+      label-salt-hex: "Muối (lục giác):"
+      placeholder-optional-hex-salt: Muối lục giác tùy chọn
+      label-iterations: "Lặp lại:"
+      label-memory-kib: "Bộ nhớ (KiB):"
+      label-parallelism: "Sự song song:"
+      label-hash-length: "Độ dài băm:"
+      label-output-type: "Kiểu đầu ra:"
+      title-argon2-hash: Băm Argon2
+      tag-generate: Phát ra
+  binary-calculator:
+    title: Máy tính nhị phân
+    description: Tính toán các phép toán bitwise/nhị phân (AND, OR, XOR, NOT, dịch
+      chuyển) giữa hai số
+    texts:
+      label-decimal: Số thập phân
+      label-hexadecimal: "Hệ thập lục phân:"
+      label-octal: "Hệ bát phân:"
+      label-binary: "Nhị phân:"
+      label-a-and-b: A VÀ B
+      label-a-or-b: A HOẶC B
+      label-a-xor-b: A XOR B
+      label-not-a: KHÔNG PHẢI LÀ
+      label-a-b-left-shift: A << B (Chuyển trái)
+      label-a-b-right-shift: A >> B (Chuyển sang phải)
+      message-number-is-invalid: Số không hợp lệ
+      label-a: A=
+      placeholder-enter-a: Nhập A
+      label-b: B=
+      placeholder-enter-b: Nhập B
+      label-operation: "Hoạt động:"
+      placeholder-select-operation: Chọn thao tác
+      title-result: Kết quả
+      label-decimal-signed: "Thập phân (có dấu):"
+      label-decimal-unigned: "Thập phân (Không dấu):"
+      title-bitmask: Mặt nạ bit
+  chmod-memo:
+    title: Bảng hướng dẫn lệnh chmod
+    description: Tài liệu hướng dẫn thay đổi quyền trên Linux
+  css-gradient-generator:
+    title: Trình tạo Gradient CSS
+    description: Tạo mã CSS Gradient cho một tập hợp các bước và màu nhất định
+    texts:
+      label-gradient-type: "Loại Gradient:"
+      label-angle-degrees: "Góc (độ):"
+      title-color-stops: Màu sắc dừng lại
+      title-preview: Xem trước
+      title-generated-css: CSS được tạo
+      tag-linear: Tuyến tính
+      tag-radial: Xuyên tâm
+      tag-remove: Di dời
+      tag-add-color-stop: Thêm màu dừng
+  css-units-converter:
+    title: Bộ chuyển đổi đơn vị CSS
+    description: Chuyển đổi giá trị từ các đơn vị CSS phổ biến (em, rem, px, vw, vh, %)
+    texts:
+      label-pixels-px: Điểm ảnh (px)
+      label-ems-em: Ems (em)
+      label-rems-rem: Rems (rem)
+      label-percent: Phần trăm (%)
+      label-viewport-width-vw: Chiều rộng khung nhìn (vw)
+      label-viewport-height-vh: Chiều cao khung nhìn (vh)
+      label-value-to-convert: "Giá trị để chuyển đổi:"
+      label-from-unit: "Từ Đơn vị:"
+      label-to-unit: "Đến Đơn vị:"
+      label-base-font-size-px: Kích thước phông chữ cơ sở (px)
+      label-viewport-width-px: Chiều rộng khung nhìn (px)
+      label-viewport-height-px: Chiều cao khung nhìn (px)
+      title-conversion: Chuyển đổi
+      label-converted-value: "Giá trị chuyển đổi:"
+  docker-compose-to-env-file:
+    title: Docker Compose thành tệp .env
+    description: Trích xuất tệp .env từ tệp Docker Compose hiện có
+    texts:
+      label-docker-compose-file: "Tệp Docker Compose:"
+      placeholder-paste-your-docker-compose-yaml-here: Dán mã YAML docker-compose của bạn vào đây...
+      title-extract-env: Trích xuất .env
+  emv-tlv-decoder:
+    title: Bộ giải mã EMV TLV
+    description: Giải mã dữ liệu EMV TLV (chiều dài thẻ-giá trị) và các thẻ riêng lẻ
+      có ý nghĩa mở rộng (như TVR (Thẻ 95), Khả năng đầu cuối (Thẻ 9F33), v.v.)
+    texts:
+      tag-: —
+      tag-tag: Nhãn
+      tag-length: Chiều dài
+      tag-value: Giá trị
+      tag-description: Sự miêu tả
+      tag-bit-level-interpretation: Giải thích cấp độ bit
+      label-tlv-hex-input: Đầu vào TLV Hex
+      placeholder-paste-emv-tlv-hex-string-e-g-6f1a8407a0000000031010a50f500b5649534120435245444954:
+        "Dán chuỗi hex EMV TLV (ví dụ:
+        6F1A8407A0000000031010A50F500B5649534120435245444954)"
+      label-kernel-type: "Loại hạt nhân:"
+      title-decoded-emv-tags: Thẻ EMV được giải mã
+      tag-parse-tlv: Phân tích TLV
+  eth-transaction-decoder:
+    title: Bộ giải mã giao dịch ETH
+    description: Bộ giải mã giao dịch Ethereum với Hợp đồng thông minh ABI
+    texts:
+      label-smart-contract-abi: "Hợp đồng thông minh ABI:"
+      placeholder-paste-abi-json-here: Dán ABI JSON vào đây
+      label-raw-transaction-0x-or-json-transaction: "Giao dịch thô (0x...) hoặc Giao dịch JSON:"
+      title-decoded-transaction: Giao dịch được giải mã
+      label-from: Từ
+      label-to: ĐẾN
+      label-value: Giá trị
+      label-gas: Khí
+      label-gas-price: Giá xăng
+      label-nonce: Nonce
+      label-method: Phương pháp
+      label-signature: Chữ ký
+      label-arguments: Các đối số
+      title-structured-output-json: JSON đầu ra có cấu trúc
+  file-splitter:
+    title: Bộ chia tệp
+    description: Chia tách tệp JSON, XML hoặc văn bản theo nhóm nút hoặc theo nhóm dòng
+    texts:
+      placeholder-strategy-value: Giá trị chiến lược...
+      title-drag-and-drop-a-txt-json-or-xml-file-here-or-click-to-select-a-file: Kéo và thả tệp TXT, JSON hoặc XML vào đây hoặc nhấp để chọn tệp
+      tag-split-by-lines: Chia theo dòng
+      tag-split-by-nodes: Chia theo nút
+      tag-max-chunk-size-kb: "Kích thước khối tối đa (KB):"
+      tag-fixed-count: "Số lượng cố định:"
+      tag-chunk-count: "Số lượng khối:"
+      tag-preview-chunks: Xem trước từng phần?
+      tag-process-chunks: Các khối xử lý
+      tag-download-all: Tải xuống tất cả
+      tag-download: Tải xuống
+  gitignore-generator:
+    title: Trình tạo GitIgnore
+    description: Tạo .gitignore cho một tập hợp các mẫu chung
+    texts:
+      placeholder-select-templates-e-g-node-python-vue: "Chọn mẫu (ví dụ: node, python, vue)"
+      title-gitignore: .gitignore
+      tag-const-availabletemplates-ref: const availableTemplates = ref
+      tag-this-tool-use: "Công cụ này sử dụng:"
+      tag-https-www-toptal-com-developers-gitignore: https://www.toptal.com/developers/gitignore
+      tag-generate: Phát ra
+  i-and-l-checker:
+    title: Kiểm tra I và L
+    description: Kiểm tra mật khẩu hoặc văn bản bằng cách tô sáng 1, l, I, 0, O
+    texts:
+      label-text-to-check: "Văn bản cần kiểm tra:"
+      placeholder-paste-your-text-here: Dán văn bản của bạn vào đây...
+      title-legend: Huyền thoại
+      tag-i: TÔI
+      tag-uppercase-letter-i: "- Chữ i viết hoa"
+      tag-l: tôi
+      tag-lowercase-letter-l: "- Chữ L viết thường"
+      tag-1: "1"
+      tag-number-1: "- Số 1"
+      tag-0: "0"
+      tag-number-0: "- Số 0"
+      tag-o: CÁC
+      tag-uppercase-letter-o: "- Chữ O viết hoa"
+  ipv4-subnets-list:
+    title: Trình liệt kê mạng con IPv4
+    description: Liệt kê tất cả các mạng con có thể có của một CIDR nhất định
+    texts:
+      message-we-cannot-parse-this-address-check-the-format: Chúng tôi không thể phân tích địa chỉ này, hãy kiểm tra định dạng
+      label-an-ipv4-address-with-or-without-mask-cidr-ip-range-wildcard-ip-ip-mask:
+        Địa chỉ IPv4 có hoặc không có mặt nạ (CIDR/Phạm vi IP/IP đại diện/Mặt nạ
+        IP)
+      placeholder-ipv4-or-cidr: IPv4 hoặc cidr...
+      tag-network: Mạng
+      tag-first-ip: IP đầu tiên
+      tag-last-ip: IP cuối cùng
+      tag-broadcast: Phát tin
+  json-to-msgpack:
+    title: JSON sang MessagePack
+    description: Chuyển đổi JSON sang MessagePack
+    texts:
+      message-json-is-invalid: JSON không hợp lệ
+      label-output-filename: "Tên tệp đầu ra:"
+      placeholder-enter-output-filename: Nhập tên tệp đầu ra
+      label-json-to-convert: "JSON để chuyển đổi:"
+      placeholder-enter-json-to-convert: Nhập JSON để chuyển đổi...
+      title-msgpack-binary: "MsgPack nhị phân:"
+      tag-convert: Chuyển thành
+      tag-download-msgpack-file: Tải xuống tệp MsgPack
+  markdown-lorem-ipsum:
+    title: Markdown Lorem Ipsum
+    description: Tạo Lorem Ipsum trong markdown
+    texts:
+      label-atx: "ATX (#, ##, ###)"
+      label-setext: Settext (====, ----)
+      label-unordered: Không có thứ tự (-, *, +)
+      label-ordered-1-2-3: Đã sắp xếp (1., 2., 3.)
+      label-language: "Ngôn ngữ:"
+      label-blocks: "Khối:"
+      label-sentences-per-paragraph: "Số câu trong mỗi đoạn văn:"
+      title-styles: Phong cách
+      label-block-types: "Các loại khối:"
+      label-inline-styles: Kiểu nội tuyến
+      label-header-style: "Kiểu tiêu đề:"
+      label-list-style: "Kiểu danh sách:"
+      title-block-frequencies: Tần số khối
+      label-headers: "Tiêu đề:"
+      label-lists: "Danh sách:"
+      label-code: "Mã số:"
+      label-quotes: "Trích dẫn:"
+      title-generated-markdown: Markdown được tạo ra
+      tag-headers: Tiêu đề
+      tag-lists: Danh sách
+      tag-code: Mã số
+      tag-quotes: Trích dẫn
+      tag-emphasis: Nhấn mạnh
+      tag-strong: Mạnh
+      tag-links: Liên kết
+      tag-inline-code: Mã nội tuyến
+      tag-generate: Phát ra
+      tag-print-ie-use-a-pdf-printer-to-get-a-pdf-file: In (tức là sử dụng Máy in PDF để lấy tệp PDF)
+  msgpack-to-json:
+    title: Gói tin nhắn thành JSON
+    description: Chuyển đổi tệp MessagePack sang JSON
+    texts:
+      title-input-message-pack-file-or-content: Tệp tin nhắn đầu vào hoặc nội dung
+      label-file: Tài liệu
+      label-hex-content: "Nội dung Hex:"
+      title-drag-and-drop-msgpack-file-here-or-click-to-select-a-file: Kéo và thả tệp MsgPack vào đây hoặc nhấp để chọn tệp
+      title-json-content: Nội dung JSON
+  pdf-compressor:
+    title: Trình nén PDF
+    description: Tối ưu hóa và nén PDF bằng Ghostscript
+    texts:
+      label-screen-smallest: Màn hình (nhỏ nhất)
+      label-ebook-balanced: Sách điện tử (cân bằng)
+      label-printer-high-quality: Máy in (chất lượng cao)
+      label-prepress-best-quality: Tiền in (chất lượng tốt nhất)
+      label-pdf-1-4: PDF1.4
+      label-pdf-1-5: PDF1.5
+      label-pdf-1-6: PDF1.6
+      label-pdf-1-7: PDF1.7
+      label-compression-quality: "Chất lượng nén:"
+      placeholder-select-compression-quality: Chọn chất lượng nén
+      label-compatibility-level: "Mức độ tương thích:"
+      placeholder-select-compatibility-level: Chọn mức độ tương thích
+      title-drag-and-drop-a-pdf-file-here-or-click-to-select-a-file: Kéo và thả tệp PDF vào đây hoặc nhấp để chọn tệp
+      title-logs: Nhật ký
+      label-ghostscript: Ghostscript
+  serial-console:
+    title: Bảng điều khiển cổng nối tiếp
+    description: Kết nối, đọc và gửi tin nhắn đến Cổng nối tiếp
+    texts:
+      label-9600: "9600"
+      label-19200: "19200"
+      label-38400: "38400"
+      label-57600: "57600"
+      label-115200: "115200"
+      label-lf-n: LF (\\n)
+      label-cr-r: CR (\\r)
+      label-crlf-r-n: CRLF (\\r\\n)
+      title-serial-terminal: Thiết bị đầu cuối nối tiếp
+      placeholder-baud-rate: Tốc độ truyền
+      placeholder-line-ending: Kết thúc dòng
+      placeholder-select-port: Chọn cổng
+      placeholder-type-a-command: Nhập lệnh...
+      tag-connect: Kết nối
+      tag-disconnect: Ngắt kết nối
+      tag-send: Gửi
+  shamirs-secret-sharing:
+    title: Chia sẻ bí mật của Shamir
+    description: Cho phép chia sẻ và biên soạn lại bí mật bằng Shamir\
+    texts:
+      label-text: Chữ
+      label-hexadecimal: Hệ thập lục phân
+      label-base64: Cơ sở 64
+      label-secret-mode: "Chế độ bí mật:"
+      title-share-a-secret-split: Chia sẻ bí mật (chia tách)
+      label-secret: "Bí mật:"
+      placeholder-enter-secret-text: Nhập văn bản bí mật
+      label-threshold-minimum-shares-to-recover: "Ngưỡng (số lượng cổ phiếu tối thiểu để phục hồi):"
+      label-number-of-shares: "Số lượng cổ phiếu:"
+      title-generated-shares: Cổ phiếu được tạo ra
+      title-recombine-a-secret: Kết hợp lại một bí mật
+      label-your-shares: "Cổ phần của bạn:"
+      placeholder-paste-your-shares-here: Dán chia sẻ của bạn vào đây...
+      title-recombined-secret: Bí mật được kết hợp lại
+      tag-split-secret: Bí mật chia tách
+      tag-recombine: Kết hợp lại
+  short-urls-expander:
+    title: Mở rộng URL ngắn
+    description: Mở rộng các url ngắn để nhắm mục tiêu đến các url đầy đủ
+    texts:
+      label-short-urls-to-expand: "URL ngắn để mở rộng:"
+      placeholder-enter-short-urls-one-per-line: Nhập URL ngắn (mỗi dòng một URL)
+      title-result: Kết quả
+      tag-this-tool-make-use-of-https-cors-anywhere-com-to-bypass-cors-this-is-a-community-driven-server:
+        Công cụ này sử dụng https://cors-anywhere.com để vượt qua CORS. Đây là
+        một máy chủ do cộng đồng điều hành.
+      tag-see-here-for-more-information: Xem tại đây để biết thêm thông tin
+      tag-expand-all: Mở rộng tất cả
+      tag-download-resuls-as-csv: Tải xuống kết quả dưới dạng CSV
+      tag-short-url: URL ngắn
+      tag-expanded-url: Url mở rộng
+      tag-link: Liên kết
+      tag-status: Trạng thái
+      tag-open-url: Mở URL
 spanCopyable:
   copy: Sao chép vào bảng tạm
   copied: Đã sao chép!

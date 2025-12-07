@@ -1,10 +1,11 @@
 import { LettersCase } from '@vicons/tabler';
 import { defineTool } from '../tool';
+import { translate as t } from '@/plugins/i18n.plugin';
 
 export const tool = defineTool({
-  name: 'I and L Checker',
+  name: t('tools.i-and-l-checker.title'),
   path: '/i-and-l-checker',
-  description: 'Check a password or text with highlighting of 1, l, I, 0, O',
+  description: t('tools.i-and-l-checker.description'),
   keywords: ['ambiguous', 'text', 'letters', 'password', 'checker'],
   component: () => import('./i-and-l-checker.vue'),
   icon: LettersCase,

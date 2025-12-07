@@ -318,8 +318,14 @@ tools:
       placeholder-your-string-to-compare: سلسلتك للمقارنة...
       label-your-hash: "التجزئة الخاصة بك: "
       placeholder-your-hash-to-compare: التجزئة الخاصة بك للمقارنة ...
-      label-do-they-match: "هل هم متطابقين؟ "
       tag-copy-hash: نسخ التجزئة
+      hashed-string: سلسلة مجزأة
+      comparison-result: نتيجة المقارنة
+      matched: متطابق
+      no-match: لا يوجد تطابق
+      timed-out-after-timeout-period: انتهت المهلة بعد {timeoutPeriod}
+      hashed-in-elapsed-period: تم التجزئة في {elapsedPeriod}
+      compared-in-elapsed-period: مقارنة في {elapsedPeriod}
   crontab-generator:
     title: مولد Crontab
     description: توليد تعبيرات crontab والتحقق منها والحصول على وصف سهل القراءة
@@ -819,6 +825,7 @@ tools:
       label-your-url-to-parse: "عنوان URL الخاص بك للتحليل:"
       placeholder-your-url-to-parse: عنوان URL الخاص بك للتحليل...
       url-must-have-http-or-https-prefix: يجب أن يحتوي عنوان URL على بادئة http:// أو https://
+      button-open-url: فتح الرابط
   iban-validator-and-parser:
     title: محلل ومدقق رقم الحساب المصرفي الدولي (IBAN)
     description: تحليل أرقام IBAN والتحقق من صحتها. تحقق مما إذا كان رقم الحساب
@@ -980,6 +987,7 @@ tools:
       placeholder-your-lorem-ipsum: نصك المفضل...
       tag-copy: ينسخ
       tag-refresh: ينعش
+      tag-print-ie-use-a-pdf-printer-to-get-a-pdf-file: الطباعة (على سبيل المثال، استخدام طابعة PDF للحصول على ملف PDF)
   qrcode-generator:
     title: مولد رمز الاستجابة السريعة (QR Code)
     description: إنشاء وتنزيل رمز الاستجابة السريعة (QR Code) لعنوان URL (أو لمجرد
@@ -1135,6 +1143,13 @@ tools:
       label-secret-or-public-key-spki-or-jwk: المفتاح السري أو العام (SPKI أو JWK)
       placeholder-put-your-secret-or-public-key-here: ضع مفتاحك السري أو العام هنا...
       tag-signature-verified: تم التحقق من التوقيع
+      label-jwk: مفتاح JWK
+      label-pub-key: مفتاح PEM العام
+      label-secret-raw-text: سر - نص خام
+      label-secret-hex-array: سر - مصفوفة سداسية
+      label-secret-base64: سر - Base64
+      label-secret-encoding: "التشفير السري/النوع:"
+      key-or-secret-or-verification-error-e-tostring: "خطأ في المفتاح أو السر أو التحقق: {0}"
     constants:
       text:
         token-introspection-response: استجابة الاستبطان الرمزية
@@ -2316,9 +2331,8 @@ tools:
       tag-detach-d: فصل (-د)
       tag-remove-rm: إزالة (--rm)
       tag-long-arguments: الحجج الطويلة
-      tag-: ؟
-      tag-arg: أرج
-      tag-value: قيمة
+      tag-multiline: متعدد الخطوط
+      tag-equal-sep: --arg=القيمة
   docker-compose-to-kubernetes:
     title: Docker compose إلى kubernetes
     description: بيانات Docker Compose إلى Kubernetes
@@ -2625,6 +2639,14 @@ tools:
       placeholder-your-html-content: محتوى HTML الخاص بك...
       label-your-html-to-convert-can-paste-from-clipboard: "ملف HTML الذي تريد تحويله (يمكنك لصقه من الحافظة):"
       label-output-markdown: "تخفيض الناتج:"
+      label-heading-style: "نمط العناوين:"
+      label-emphasis-style: "أسلوب التأكيد:"
+      label-hash: هاش (#)
+      label-underline: تسطير (=/-)
+      label-surround-heading: محيط (= العنوان =)
+      label-asterisk: علامة النجمة (*)
+      label-underscore: الشرطة السفلية (_)
+      label-tilde: تيلدا (~)
   ical-parser:
     title: محلل ملفات ICAL
     description: تحليل ملف ICAL/ICS لعرض الحدث
@@ -2925,6 +2947,8 @@ tools:
       title-schema-validation-errors: أخطاء التحقق من صحة المخطط
       title-formatted-version: النسخة المنسقة
       label-indent-size-0-compact: "حجم المسافة البادئة (0 = مضغوط):"
+      title-repaired-version: نسخة تم إصلاحها وتنسيقها تلقائيًا
+      label-auto-repair-json: "إصلاح السيارات JSON:"
   json-size-analyzer:
     title: محلل حجم JSON
     description: قياس الأوزان النسبية لعقد JSON
@@ -3030,6 +3054,17 @@ tools:
       label-public-key-jwk: "المفتاح العام (JWK):"
       label-private-key-jwk: "المفتاح الخاص (JWK):"
       title-generated-jwt-token: "رمز JWT المُولَّد:"
+      label-secret-encoding: "التشفير السري:"
+      label-raw-text: النص الخام
+      label-hex-array: مصفوفة سداسية
+      verify-description: "{0}: {1} (تحقق باستخدام {2})"
+      token-secret: سر الرمز
+      token-keys: مفاتيح الرمز
+      cannot-parse-secret-as-encoding: "لا يمكن تحليل '{0}' كـ '{1}': {2}"
+      invalid-base64-string: سلسلة Base64 غير صالحة
+      placeholder-input-token: قم بلصق رمز JWT الخاص بك لتحريره...
+      click-to-input-a-existing-jwt-token-to-modify: انقر هنا لإدخال رمز JWT الحالي لتعديله
+      label-base64: قاعدة 64
   length-converter:
     title: محول وحدات الطول
     description: تحويل القيم من وحدات الطول
@@ -3088,6 +3123,8 @@ tools:
       placeholder-select-the-target-unit: حدد الوحدة المستهدفة
       title-result: نتيجة
       label-best-target-unit: أفضل وحدة مستهدفة
+      label-selected-target-unit-outputunit: الوحدة المستهدفة المحددة ({0})
+      title-other-units-conversion-tools: أدوات تحويل الوحدات الأخرى
   markdown-cheatsheet:
     title: ورقة الغش Markdown
     description: ورقة الغش Markdown
@@ -6929,6 +6966,331 @@ tools:
       label-converted-to-hex-array: "تم تحويله إلى مصفوفة سداسية عشرية:"
       tag-digit-0-no-grouping: (الرقم 0 = لا يوجد تجميع)
       tag-digit-0-no-row: (الرقم 0 = لا يوجد صف)
+  toon-to-json:
+    texts:
+      message-provided-json-is-not-valid: بشرط أن يكون TOON غير صالح
+      output-label-json-version: "إصدار JSON لمحتوى TOON الخاص بك:"
+      input-placeholder-paste-your-raw-toon-here: قم بلصق محتوى TOON الخام الخاص بك هنا...
+      input-label-your-raw-toon: "محتوى TOON الخام الخاص بك:"
+    title: تحويل TOON إلى JSON
+    description: تحويل تمثيل TOON إلى كائن JSON لاستخدام LLM
+  json-to-toon:
+    texts:
+      message-provided-json-is-not-valid: بشرط أن يكون JSON غير صالح.
+      input-placeholder-paste-your-raw-json-here: قم بلصق ملف JSON الخام الخاص بك هنا...
+      input-label-your-raw-json: "ملف JSON الخام الخاص بك:"
+      output-label-toon-version-of-your-json: "إصدار TOON من JSON الخاص بك:"
+    title: JSON إلى TOON
+    description: تحويل كائن JSON إلى تمثيل TOON لاستخدام LLM/GPT
+  external-link-goto: "لفتح هذه الأداة، اتبع هذا الرابط:"
+  argon2-hash:
+    title: هاشر Argon2
+    description: حساب تجزئات Argon2 باستخدام المعلمات
+    texts:
+      label-argon2id: Argon2id
+      label-argon2i: أرجون 2اي
+      label-argon2d: أرجون 2د
+      label-hex: عرافة
+      label-encoded: مُرمَّز
+      label-binary: ثنائي
+      label-algorithm: "الخوارزمية:"
+      label-password: "كلمة المرور:"
+      placeholder-enter-password: أدخل كلمة المرور
+      label-salt-hex: "الملح (سداسي):"
+      placeholder-optional-hex-salt: ملح سداسي اختياري
+      label-iterations: "التكرارات:"
+      label-memory-kib: "الذاكرة (كيلوبايت):"
+      label-parallelism: "التوازي:"
+      label-hash-length: "طول التجزئة:"
+      label-output-type: "نوع الإخراج:"
+      title-argon2-hash: هاش Argon2
+      tag-generate: يولد
+  binary-calculator:
+    title: حاسبة ثنائية
+    description: حساب العمليات الثنائية (AND، OR، XOR، NOT، التحولات) بين رقمين
+    texts:
+      label-decimal: عشري
+      label-hexadecimal: "سداسي عشري:"
+      label-octal: "ثماني:"
+      label-binary: "ثنائي:"
+      label-a-and-b: أ و ب
+      label-a-or-b: أ أو ب
+      label-a-xor-b: أ XOR ب
+      label-not-a: ليس أ
+      label-a-b-left-shift: أ << ب (تحويل إلى اليسار)
+      label-a-b-right-shift: أ >> ب (تحويل إلى اليمين)
+      message-number-is-invalid: الرقم غير صالح
+      label-a: أ=
+      placeholder-enter-a: أدخل أ
+      label-b: ب=
+      placeholder-enter-b: أدخل ب
+      label-operation: "عملية:"
+      placeholder-select-operation: حدد العملية
+      title-result: نتيجة
+      label-decimal-signed: "عشري (توقيع):"
+      label-decimal-unigned: "عدد عشري (غير محاذي):"
+      title-bitmask: قناع البت
+  chmod-memo:
+    title: ورقة غش لأمر chmod
+    description: أوراق الغش لتغييرات أذونات Linux
+  css-gradient-generator:
+    title: مولد تدرج CSS
+    description: إنشاء كود CSS Gradient css لمجموعة معينة من الخطوات والألوان
+    texts:
+      label-gradient-type: "نوع التدرج:"
+      label-angle-degrees: "الزاوية (درجات):"
+      title-color-stops: توقفات الألوان
+      title-preview: معاينة
+      title-generated-css: CSS المُولَّد
+      tag-linear: خطي
+      tag-radial: شعاعي
+      tag-remove: يزيل
+      tag-add-color-stop: إضافة توقف اللون
+  css-units-converter:
+    title: محول وحدات CSS
+    description: تحويل القيم من وحدات CSS الشائعة (em، rem، px، vw، vh، %)
+    texts:
+      label-pixels-px: بكسل (بكسل)
+      label-ems-em: إمس (إم)
+      label-rems-rem: ريمس (ريم)
+      label-percent: النسبة المئوية (%)
+      label-viewport-width-vw: عرض منفذ العرض (vw)
+      label-viewport-height-vh: ارتفاع منفذ العرض (vh)
+      label-value-to-convert: "القيمة المراد تحويلها:"
+      label-from-unit: "من الوحدة:"
+      label-to-unit: "إلى الوحدة:"
+      label-base-font-size-px: حجم الخط الأساسي (بكسل)
+      label-viewport-width-px: عرض المنفذ (بكسل)
+      label-viewport-height-px: ارتفاع منفذ العرض (بكسل)
+      title-conversion: تحويل
+      label-converted-value: "القيمة المحولة:"
+  docker-compose-to-env-file:
+    title: Docker Compose إلى ملف .env
+    description: استخراج ملف .env من ملف Docker Compose الحالي
+    texts:
+      label-docker-compose-file: "ملف Docker Compose:"
+      placeholder-paste-your-docker-compose-yaml-here: قم بلصق ملف YAML الخاص بـ docker-compose هنا...
+      title-extract-env: استخراج .env
+  emv-tlv-decoder:
+    title: فك تشفير EMV TLV
+    description: يقوم بفك تشفير بيانات EMV TLV (طول العلامة والقيمة) وعلاماتها
+      الفردية ذات المعنى الموسع (مثل TVR (العلامة 95)، والقدرات الطرفية (العلامة
+      9F33)، وما إلى ذلك).
+    texts:
+      tag-: —
+      tag-tag: العلامة
+      tag-length: طول
+      tag-value: قيمة
+      tag-description: وصف
+      tag-bit-level-interpretation: تفسير مستوى البت
+      label-tlv-hex-input: مدخل TLV سداسي
+      placeholder-paste-emv-tlv-hex-string-e-g-6f1a8407a0000000031010a50f500b5649534120435245444954:
+        الصق سلسلة سداسية EMV TLV (على سبيل المثال
+        6F1A8407A0000000031010A50F500B5649534120435245444954)
+      label-kernel-type: "نوع النواة:"
+      title-decoded-emv-tags: فك تشفير علامات EMV
+      tag-parse-tlv: تحليل TLV
+  eth-transaction-decoder:
+    title: فك تشفير معاملات ETH
+    description: فك تشفير معاملات الإيثريوم مع واجهة برمجة التطبيقات للعقود الذكية
+    texts:
+      label-smart-contract-abi: "واجهة برمجة التطبيقات للعقود الذكية:"
+      placeholder-paste-abi-json-here: الصق ABI JSON هنا
+      label-raw-transaction-0x-or-json-transaction: "المعاملة الخام (0x...) أو معاملة JSON:"
+      title-decoded-transaction: معاملة مفككة
+      label-from: من
+      label-to: ل
+      label-value: قيمة
+      label-gas: الغاز
+      label-gas-price: سعر الغاز
+      label-nonce: رقم نونس
+      label-method: طريقة
+      label-signature: إمضاء
+      label-arguments: الحجج
+      title-structured-output-json: إخراج JSON منظم
+  file-splitter:
+    title: مقسم الملفات
+    description: تقسيم ملف JSON أو XML أو النص إما حسب مجموعة العقد أو حسب مجموعة الأسطر
+    texts:
+      placeholder-strategy-value: قيمة الاستراتيجية...
+      title-drag-and-drop-a-txt-json-or-xml-file-here-or-click-to-select-a-file: اسحب وأفلِت ملف TXT أو JSON أو XML هنا، أو انقر لتحديد ملف
+      tag-split-by-lines: تقسيم حسب الخطوط
+      tag-split-by-nodes: تقسيم حسب العقد
+      tag-max-chunk-size-kb: "الحد الأقصى لحجم القطعة (كيلوبايت):"
+      tag-fixed-count: "عدد ثابت:"
+      tag-chunk-count: "عدد القطع:"
+      tag-preview-chunks: معاينة القطع؟
+      tag-process-chunks: قطع العملية
+      tag-download-all: تنزيل الكل
+      tag-download: تحميل
+  gitignore-generator:
+    title: مولد تجاهل Git
+    description: إنشاء .gitignore لمجموعة من القوالب الشائعة
+    texts:
+      placeholder-select-templates-e-g-node-python-vue: حدد القوالب (على سبيل المثال، node، python، vue)
+      title-gitignore: .gitignore
+      tag-const-availabletemplates-ref: ثابت القوالب المتاحة = ref
+      tag-this-tool-use: "تستخدم هذه الأداة:"
+      tag-https-www-toptal-com-developers-gitignore: https://www.toptal.com/developers/gitignore
+      tag-generate: يولد
+  i-and-l-checker:
+    title: أنا و ل تشيكر
+    description: التحقق من كلمة المرور أو النص من خلال تمييز 1، l، I، 0، O
+    texts:
+      label-text-to-check: "النص للتحقق:"
+      placeholder-paste-your-text-here: ألصق النص الخاص بك هنا...
+      title-legend: أسطورة
+      tag-i: أنا
+      tag-uppercase-letter-i: "- الحرف الكبير i"
+      tag-l: ل
+      tag-lowercase-letter-l: "- الحرف الصغير L"
+      tag-1: "1"
+      tag-number-1: "- رقم 1"
+      tag-0: "0"
+      tag-number-0: "- رقم 0"
+      tag-o: ال
+      tag-uppercase-letter-o: "- الحرف الكبير O"
+  ipv4-subnets-list:
+    title: قائمة الشبكات الفرعية IPv4
+    description: قم بإدراج جميع الشبكات الفرعية الممكنة لـ CIDR معين
+    texts:
+      message-we-cannot-parse-this-address-check-the-format: لا يمكننا تحليل هذا العنوان، تحقق من التنسيق
+      label-an-ipv4-address-with-or-without-mask-cidr-ip-range-wildcard-ip-ip-mask: عنوان IPv4 مع أو بدون قناع (CIDR/نطاق IP/Wildcard IP/قناع IP)
+      placeholder-ipv4-or-cidr: IPv4 أو cidr...
+      tag-network: شبكة
+      tag-first-ip: عنوان IP الأول
+      tag-last-ip: آخر عنوان IP
+      tag-broadcast: إذاعة
+  json-to-msgpack:
+    title: JSON إلى MessagePack
+    description: تحويل JSON إلى MessagePack
+    texts:
+      message-json-is-invalid: JSON غير صالح
+      label-output-filename: "اسم ملف الإخراج:"
+      placeholder-enter-output-filename: أدخل اسم ملف الإخراج
+      label-json-to-convert: "JSON للتحويل:"
+      placeholder-enter-json-to-convert: أدخل JSON للتحويل...
+      title-msgpack-binary: "MsgPack الثنائي:"
+      tag-convert: يتحول
+      tag-download-msgpack-file: تنزيل ملف MsgPack
+  markdown-lorem-ipsum:
+    title: Markdown Lorem Ipsum
+    description: توليد لوريم إيبسوم في تخفيض السعر
+    texts:
+      label-atx: "ATX (#، ##، ###)"
+      label-setext: Settext (====, ----)
+      label-unordered: غير مرتبة (-، *، +)
+      label-ordered-1-2-3: مرتبة (1.، 2.، 3.)
+      label-language: "لغة:"
+      label-blocks: "الكتل:"
+      label-sentences-per-paragraph: "الجمل لكل فقرة:"
+      title-styles: الأنماط
+      label-block-types: "أنواع الكتل:"
+      label-inline-styles: الأنماط المضمنة
+      label-header-style: "نمط الرأس:"
+      label-list-style: "نمط القائمة:"
+      title-block-frequencies: ترددات الكتلة
+      label-headers: "العناوين:"
+      label-lists: "القوائم:"
+      label-code: "شفرة:"
+      label-quotes: "يقتبس:"
+      title-generated-markdown: تم إنشاء Markdown
+      tag-headers: العناوين
+      tag-lists: القوائم
+      tag-code: شفرة
+      tag-quotes: يقتبس
+      tag-emphasis: توكيد
+      tag-strong: قوي
+      tag-links: الروابط
+      tag-inline-code: الكود المضمن
+      tag-generate: يولد
+      tag-print-ie-use-a-pdf-printer-to-get-a-pdf-file: الطباعة (على سبيل المثال، استخدام طابعة PDF للحصول على ملف PDF)
+  msgpack-to-json:
+    title: حزمة الرسائل إلى JSON
+    description: تحويل ملف MessagePack إلى JSON
+    texts:
+      title-input-message-pack-file-or-content: ملف أو محتوى حزمة رسائل الإدخال
+      label-file: ملف
+      label-hex-content: "المحتوى السداسي:"
+      title-drag-and-drop-msgpack-file-here-or-click-to-select-a-file: اسحب وأفلِت ملف MsgPack هنا، أو انقر لتحديد ملف
+      title-json-content: محتوى JSON
+  pdf-compressor:
+    title: ضاغط PDF
+    description: تحسين وضغط ملفات PDF باستخدام Ghostscript
+    texts:
+      label-screen-smallest: الشاشة (الأصغر)
+      label-ebook-balanced: كتاب إلكتروني (متوازن)
+      label-printer-high-quality: طابعة (جودة عالية)
+      label-prepress-best-quality: ما قبل الطباعة (أفضل جودة)
+      label-pdf-1-4: PDF 1.4
+      label-pdf-1-5: PDF 1.5
+      label-pdf-1-6: PDF 1.6
+      label-pdf-1-7: PDF 1.7
+      label-compression-quality: "جودة الضغط:"
+      placeholder-select-compression-quality: حدد جودة الضغط
+      label-compatibility-level: "مستوى التوافق:"
+      placeholder-select-compatibility-level: حدد مستوى التوافق
+      title-drag-and-drop-a-pdf-file-here-or-click-to-select-a-file: اسحب وأفلِت ملف PDF هنا، أو انقر لتحديد ملف
+      title-logs: السجلات
+      label-ghostscript: غوست سكريبت
+  serial-console:
+    title: وحدة التحكم بالمنفذ التسلسلي
+    description: الاتصال وقراءة وإرسال الرسالة إلى المنفذ التسلسلي
+    texts:
+      label-9600: "9600"
+      label-19200: "19200"
+      label-38400: "38400"
+      label-57600: "57600"
+      label-115200: "115200"
+      label-lf-n: LF (\\n)
+      label-cr-r: CR (\\r)
+      label-crlf-r-n: CRLF (\\r\\n)
+      title-serial-terminal: المحطة التسلسلية
+      placeholder-baud-rate: معدل البود
+      placeholder-line-ending: نهاية السطر
+      placeholder-select-port: حدد المنفذ
+      placeholder-type-a-command: اكتب الأمر...
+      tag-connect: يتصل
+      tag-disconnect: قطع الاتصال
+      tag-send: يرسل
+  shamirs-secret-sharing:
+    title: مشاركة أسرار شامير
+    description: السماح بمشاركة وإعادة تكوين سر باستخدام Shamir\
+    texts:
+      label-text: نص
+      label-hexadecimal: سداسي عشري
+      label-base64: قاعدة 64
+      label-secret-mode: "الوضع السري:"
+      title-share-a-secret-split: مشاركة سر (تقسيم)
+      label-secret: "سر:"
+      placeholder-enter-secret-text: أدخل النص السري
+      label-threshold-minimum-shares-to-recover: "الحد الأدنى (الحد الأدنى للأسهم المراد استردادها):"
+      label-number-of-shares: "عدد الأسهم:"
+      title-generated-shares: الأسهم المُولّدة
+      title-recombine-a-secret: إعادة تجميع سر
+      label-your-shares: "أسهمك:"
+      placeholder-paste-your-shares-here: ألصق أسهمك هنا...
+      title-recombined-secret: سر مُعاد تجميعه
+      tag-split-secret: سر الانقسام
+      tag-recombine: إعادة التجميع
+  short-urls-expander:
+    title: مُوسِّع عناوين URL القصيرة
+    description: توسيع عناوين URL القصيرة لاستهداف عناوين URL الكاملة
+    texts:
+      label-short-urls-to-expand: "عناوين URL القصيرة للتوسيع:"
+      placeholder-enter-short-urls-one-per-line: أدخل عناوين URL القصيرة (واحدة لكل سطر)
+      title-result: نتيجة
+      tag-this-tool-make-use-of-https-cors-anywhere-com-to-bypass-cors-this-is-a-community-driven-server:
+        تستخدم هذه الأداة https://cors-anywhere.com لتجاوز بروتوكول CORS. هذا
+        خادم مُدار من قِبل المجتمع.
+      tag-see-here-for-more-information: انظر هنا لمزيد من المعلومات
+      tag-expand-all: توسيع الكل
+      tag-download-resuls-as-csv: تنزيل النتائج بصيغة CSV
+      tag-short-url: رابط قصير
+      tag-expanded-url: عنوان URL الموسع
+      tag-link: وصلة
+      tag-status: حالة
+      tag-open-url: فتح الرابط
 spanCopyable:
   copy: نسخ إلى الحافظة
   copied: تم النسخ!

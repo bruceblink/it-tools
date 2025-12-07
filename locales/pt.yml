@@ -261,8 +261,14 @@ tools:
       placeholder-your-string-to-compare: Sua string para comparar...
       label-your-hash: "Seu hash: "
       placeholder-your-hash-to-compare: Seu hash para comparar...
-      label-do-they-match: "Eles combinam? "
       tag-copy-hash: Copiar hash
+      hashed-string: String hash
+      comparison-result: Resultado da comparação
+      matched: Combinado
+      no-match: Nenhuma correspondência
+      timed-out-after-timeout-period: Tempo limite excedido após {timeoutPeriod}
+      hashed-in-elapsed-period: Hashed in {elapsedPeriod}
+      compared-in-elapsed-period: Comparado em {elapsedPeriod}
   crontab-generator:
     title: Gerador Crontab
     description: Valide e gere o crontab e obtenha a descrição legível do
@@ -695,6 +701,7 @@ tools:
       placeholder-your-lorem-ipsum: Seu lorem ipsum...
       tag-copy: Cópia
       tag-refresh: Atualizar
+      tag-print-ie-use-a-pdf-printer-to-get-a-pdf-file: Imprimir (ou seja, usar uma impressora PDF para obter um arquivo PDF)
   qrcode-generator:
     title: Gerador de código QR
     description: Gere e baixe um código QR para uma URL (ou apenas texto simples) e
@@ -1780,9 +1787,8 @@ tools:
       tag-detach-d: Desanexar (-d)
       tag-remove-rm: Remover (--rm)
       tag-long-arguments: Argumentos longos
-      tag-: "?"
-      tag-arg: argumento
-      tag-value: valor
+      tag-multiline: Multilinhas
+      tag-equal-sep: --arg=valor
   docker-compose-to-kubernetes:
     title: Docker Compose para Kubernetes
     description: Manifestos do Docker Compose para Kubernetes
@@ -2093,6 +2099,14 @@ tools:
       placeholder-your-html-content: Seu conteúdo HTML...
       label-your-html-to-convert-can-paste-from-clipboard: "Seu HTML para converter (pode colar da área de transferência):"
       label-output-markdown: "Markdown de saída:"
+      label-heading-style: "Estilo dos títulos:"
+      label-emphasis-style: "Estilo de ênfase:"
+      label-hash: Cerquilha (#)
+      label-underline: Sublinhar (=/-)
+      label-surround-heading: Cercar (= Título =)
+      label-asterisk: Asterisco (*)
+      label-underscore: Sublinhado (_)
+      label-tilde: Til (~)
   ical-parser:
     title: Analisador de arquivos ICAL
     description: Analisar arquivo ICAL/ICS para exibição de eventos
@@ -2403,6 +2417,8 @@ tools:
       title-schema-validation-errors: Erros de validação de esquema
       title-formatted-version: Versão formatada
       label-indent-size-0-compact: "Tamanho do recuo (0 = Compacto):"
+      title-repaired-version: Versão reparada e formatada automaticamente
+      label-auto-repair-json: "JSON de reparo automático:"
   json-size-analyzer:
     title: Analisador de tamanho JSON
     description: Medir pesos relativos de nós JSON
@@ -2508,6 +2524,17 @@ tools:
       label-public-key-jwk: "Chave Pública (JWK):"
       label-private-key-jwk: "Chave privada (JWK):"
       title-generated-jwt-token: "Token JWT gerado:"
+      label-secret-encoding: "Codificação Secreta:"
+      label-raw-text: Texto bruto
+      label-hex-array: Matriz Hexadecimal
+      verify-description: "{0}: {1} (verificar com {2})"
+      token-secret: Segredo do Token
+      token-keys: Chaves de token
+      cannot-parse-secret-as-encoding: "Não é possível analisar '{0}' como '{1}': {2}"
+      invalid-base64-string: String Base64 inválida
+      placeholder-input-token: Cole seu token JWT para editar...
+      click-to-input-a-existing-jwt-token-to-modify: Clique para inserir um token JWT existente para modificar.
+      label-base64: Base64
   length-converter:
     title: Conversor de unidades de comprimento
     description: Converter valores de unidades de comprimento
@@ -2565,6 +2592,8 @@ tools:
       placeholder-select-the-target-unit: Selecione a unidade de destino
       title-result: Resultado
       label-best-target-unit: Melhor Unidade Alvo
+      label-selected-target-unit-outputunit: Unidade alvo selecionada ({0})
+      title-other-units-conversion-tools: Outras ferramentas de conversão de unidades
   markdown-cheatsheet:
     title: Folha de dicas de Markdown
     description: Folha de dicas de Markdown
@@ -4477,6 +4506,7 @@ tools:
       label-your-url-to-parse: "Sua URL para analisar:"
       placeholder-your-url-to-parse: Sua URL para analisar...
       url-must-have-http-or-https-prefix: A URL deve ter o prefixo http:// ou https://
+      button-open-url: Abrir URL
   text-to-binary:
     title: Texto para binário UTF-8
     description: Converta texto para sua representação binária UTF-8 e vice-versa.
@@ -5296,6 +5326,13 @@ tools:
       label-secret-or-public-key-spki-or-jwk: Chave secreta ou pública (SPKI ou JWK)
       placeholder-put-your-secret-or-public-key-here: Coloque sua chave secreta ou pública aqui...
       tag-signature-verified: Assinatura verificada
+      label-jwk: Chave JWK
+      label-pub-key: Chave pública PEM
+      label-secret-raw-text: Segredo - Texto Bruto
+      label-secret-hex-array: Segredo - Matriz Hexadecimal
+      label-secret-base64: Segredo - Base64
+      label-secret-encoding: "Codificação/Tipo Secreto:"
+      key-or-secret-or-verification-error-e-tostring: "Erro de chave, segredo ou verificação: {0}"
     constants:
       text:
         token-introspection-response: Resposta de introspecção simbólica
@@ -7112,6 +7149,340 @@ tools:
       label-converted-to-hex-array: "Convertido para matriz Hex:"
       tag-digit-0-no-grouping: (Dígito 0 = Sem agrupamento)
       tag-digit-0-no-row: (Dígito 0 = Nenhuma linha)
+  toon-to-json:
+    texts:
+      message-provided-json-is-not-valid: Desde que TOON não seja válido
+      output-label-json-version: "Versão JSON do seu conteúdo TOON:"
+      input-placeholder-paste-your-raw-toon-here: Cole aqui o seu conteúdo TOON original...
+      input-label-your-raw-toon: "Seu conteúdo TOON original:"
+    title: TOON para JSON
+    description: Converter a representação TOON em um objeto JSON para uso no LLM.
+  json-to-toon:
+    texts:
+      message-provided-json-is-not-valid: O JSON fornecido não é válido.
+      input-placeholder-paste-your-raw-json-here: Cole seu JSON bruto aqui...
+      input-label-your-raw-json: "Seu JSON bruto:"
+      output-label-toon-version-of-your-json: "Versão TOON do seu JSON:"
+    title: JSON para TOON
+    description: Converter objeto JSON em representação TOON para uso em LLM/GPT
+  external-link-goto: "Para abrir esta ferramenta, siga este link:"
+  argon2-hash:
+    title: Argon2 Hasher
+    description: Calcular hashes Argon2 com parâmetros
+    texts:
+      label-argon2id: Argon2id
+      label-argon2i: Argon2i
+      label-argon2d: Argon2d
+      label-hex: Hex
+      label-encoded: Codificado
+      label-binary: Binário
+      label-algorithm: "Algoritmo:"
+      label-password: "Senha:"
+      placeholder-enter-password: Digite a senha
+      label-salt-hex: "Sal (hex):"
+      placeholder-optional-hex-salt: Sal hexadecimal opcional
+      label-iterations: "Iterações:"
+      label-memory-kib: "Memória (KiB):"
+      label-parallelism: "Paralelismo:"
+      label-hash-length: "Comprimento do hash:"
+      label-output-type: "Tipo de saída:"
+      title-argon2-hash: Hash de Argon2
+      tag-generate: Gerar
+  binary-calculator:
+    title: Calculadora Binária
+    description: Calcular operações bit a bit/binárias (AND, OR, XOR, NOT,
+      deslocamentos) entre dois números.
+    texts:
+      label-decimal: Decimal
+      label-hexadecimal: "Hexadecimal:"
+      label-octal: "Octal:"
+      label-binary: "Binário:"
+      label-a-and-b: A e B
+      label-a-or-b: A OU B
+      label-a-xor-b: Um XOR B
+      label-not-a: NÃO
+      label-a-b-left-shift: A << B (Deslocamento para a esquerda)
+      label-a-b-right-shift: A >> B (Deslocamento para a direita)
+      message-number-is-invalid: O número é inválido.
+      label-a: A=
+      placeholder-enter-a: Digite um
+      label-b: B=
+      placeholder-enter-b: Digite B
+      label-operation: "Operação:"
+      placeholder-select-operation: Selecione a operação
+      title-result: Resultado
+      label-decimal-signed: "Decimal (com sinal):"
+      label-decimal-unigned: "Decimal (sem alinhamento):"
+      title-bitmask: Máscara de bits
+  chmod-memo:
+    title: Guia de consulta rápida do comando chmod
+    description: Guias de consulta rápida para alterações de permissões no Linux
+  css-gradient-generator:
+    title: Gerador de gradiente CSS
+    description: Gere código CSS para gradientes a partir de um conjunto específico
+      de etapas e cores.
+    texts:
+      label-gradient-type: "Tipo de gradiente:"
+      label-angle-degrees: "Ângulo (graus):"
+      title-color-stops: Paradas de cor
+      title-preview: Pré-visualização
+      title-generated-css: CSS gerado
+      tag-linear: Linear
+      tag-radial: Radial
+      tag-remove: Remover
+      tag-add-color-stop: Adicionar parada de cor
+  css-units-converter:
+    title: Conversor de Unidades CSS
+    description: Converter valores de unidades CSS comuns (em, rem, px, vw, vh, %)
+    texts:
+      label-pixels-px: Pixels (px)
+      label-ems-em: Ems (em)
+      label-rems-rem: Rems (rem)
+      label-percent: Percentagem (%)
+      label-viewport-width-vw: Largura da janela de visualização (vw)
+      label-viewport-height-vh: Altura da janela de visualização (vh)
+      label-value-to-convert: "Valor a ser convertido:"
+      label-from-unit: "Da Unidade:"
+      label-to-unit: "Para a Unidade:"
+      label-base-font-size-px: Tamanho base da fonte (px)
+      label-viewport-width-px: Largura da janela de visualização (px)
+      label-viewport-height-px: Altura da janela de visualização (px)
+      title-conversion: Conversão
+      label-converted-value: "Valor convertido:"
+  docker-compose-to-env-file:
+    title: Docker Compose para arquivo .env
+    description: Extrair o arquivo .env de um arquivo Docker Compose existente.
+    texts:
+      label-docker-compose-file: "Arquivo Docker Compose:"
+      placeholder-paste-your-docker-compose-yaml-here: Cole aqui o seu arquivo YAML do Docker Compose...
+      title-extract-env: Extraia o arquivo .env
+  emv-tlv-decoder:
+    title: decodificador EMV TLV
+    description: Decodifica os dados EMV TLV (tag-length-value) e suas tags
+      individuais com significado estendido (como TVR (Tag 95), Terminal
+      Capabilities (Tag 9F33), etc.)
+    texts:
+      tag-: —
+      tag-tag: Marcação
+      tag-length: Comprimento
+      tag-value: Valor
+      tag-description: Descrição
+      tag-bit-level-interpretation: Interpretação em nível de bit
+      label-tlv-hex-input: Entrada TLV Hex
+      placeholder-paste-emv-tlv-hex-string-e-g-6f1a8407a0000000031010a50f500b5649534120435245444954:
+        "Cole a string hexadecimal EMV TLV (ex:
+        6F1A8407A0000000031010A50F500B5649534120435245444954)"
+      label-kernel-type: "Tipo de kernel:"
+      title-decoded-emv-tags: Etiquetas EMV decodificadas
+      tag-parse-tlv: Analisar TLV
+  eth-transaction-decoder:
+    title: Decodificador de transações ETH
+    description: Decodificador de transações Ethereum com ABI de Contrato Inteligente
+    texts:
+      label-smart-contract-abi: "ABI de contrato inteligente:"
+      placeholder-paste-abi-json-here: Cole o JSON da ABI aqui.
+      label-raw-transaction-0x-or-json-transaction: "Transação bruta (0x...) ou transação JSON:"
+      title-decoded-transaction: Transação decodificada
+      label-from: De
+      label-to: Para
+      label-value: Valor
+      label-gas: Gás
+      label-gas-price: Preço da gasolina
+      label-nonce: Nonce
+      label-method: Método
+      label-signature: Assinatura
+      label-arguments: Argumentos
+      title-structured-output-json: JSON de saída estruturada
+  file-splitter:
+    title: Divisor de Arquivos
+    description: Dividir arquivos JSON, XML ou de texto por grupo de nós ou por
+      grupo de linhas.
+    texts:
+      placeholder-strategy-value: Valor da estratégia...
+      title-drag-and-drop-a-txt-json-or-xml-file-here-or-click-to-select-a-file:
+        Arraste e solte um arquivo TXT, JSON ou XML aqui, ou clique para
+        selecionar um arquivo.
+      tag-split-by-lines: Dividido por linhas
+      tag-split-by-nodes: Dividido por nós
+      tag-max-chunk-size-kb: "Tamanho máximo do bloco (KB):"
+      tag-fixed-count: "Contagem fixa:"
+      tag-chunk-count: "Contagem de blocos:"
+      tag-preview-chunks: Pré-visualizar partes?
+      tag-process-chunks: Processar partes
+      tag-download-all: Baixar tudo
+      tag-download: Download
+  gitignore-generator:
+    title: Gerador de GitIgnore
+    description: Gere um arquivo .gitignore para um conjunto de modelos comuns.
+    texts:
+      placeholder-select-templates-e-g-node-python-vue: Selecione modelos (por exemplo, node, python, vue)
+      title-gitignore: .gitignore
+      tag-const-availabletemplates-ref: const availableTemplates = ref
+      tag-this-tool-use: "Esta ferramenta utiliza:"
+      tag-https-www-toptal-com-developers-gitignore: https://www.toptal.com/developers/gitignore
+      tag-generate: Gerar
+  i-and-l-checker:
+    title: Verificador I e L
+    description: Confira uma senha ou texto destacando os caracteres 1, l, I, 0 e O.
+    texts:
+      label-text-to-check: "Texto a verificar:"
+      placeholder-paste-your-text-here: Cole seu texto aqui...
+      title-legend: Lenda
+      tag-i: EU
+      tag-uppercase-letter-i: "- Letra maiúscula i"
+      tag-l: l
+      tag-lowercase-letter-l: "- Letra minúscula L"
+      tag-1: "1"
+      tag-number-1: "- Número 1"
+      tag-0: "0"
+      tag-number-0: "- Número 0"
+      tag-o: O
+      tag-uppercase-letter-o: "- Letra maiúscula O"
+  ipv4-subnets-list:
+    title: Listador de sub-redes IPv4
+    description: Liste todas as sub-redes possíveis de um determinado CIDR.
+    texts:
+      message-we-cannot-parse-this-address-check-the-format: Não foi possível analisar este endereço. Verifique o formato.
+      label-an-ipv4-address-with-or-without-mask-cidr-ip-range-wildcard-ip-ip-mask:
+        Um endereço IPv4 com ou sem máscara (CIDR/Intervalo de IP/IP
+        curinga/Máscara de IP)
+      placeholder-ipv4-or-cidr: IPv4 ou CIDR...
+      tag-network: Rede
+      tag-first-ip: Primeiro IP
+      tag-last-ip: Último IP
+      tag-broadcast: Transmissão
+  json-to-msgpack:
+    title: JSON para MessagePack
+    description: Converter JSON para MessagePack
+    texts:
+      message-json-is-invalid: O JSON é inválido.
+      label-output-filename: "Nome do arquivo de saída:"
+      placeholder-enter-output-filename: Insira o nome do arquivo de saída
+      label-json-to-convert: "JSON para converter:"
+      placeholder-enter-json-to-convert: Insira o JSON para converter...
+      title-msgpack-binary: "Pacote de mensagens binário:"
+      tag-convert: Converter
+      tag-download-msgpack-file: Baixar arquivo MsgPack
+  markdown-lorem-ipsum:
+    title: Markdown Lorem Ipsum
+    description: Gerar Lorem Ipsum em remarcação
+    texts:
+      label-atx: "ATX (#, ##, ###)"
+      label-setext: Setext (====, ----)
+      label-unordered: Não ordenado (-, *, +)
+      label-ordered-1-2-3: Ordenado (1., 2., 3.)
+      label-language: "Linguagem:"
+      label-blocks: "Blocos:"
+      label-sentences-per-paragraph: "Número de frases por parágrafo:"
+      title-styles: Estilos
+      label-block-types: "Tipos de bloco:"
+      label-inline-styles: Estilos embutidos
+      label-header-style: "Estilo do cabeçalho:"
+      label-list-style: "Estilo de lista:"
+      title-block-frequencies: Frequências de bloco
+      label-headers: "Cabeçalhos:"
+      label-lists: "Listas:"
+      label-code: "Código:"
+      label-quotes: "Citações:"
+      title-generated-markdown: Markdown gerado
+      tag-headers: Cabeçalhos
+      tag-lists: Listas
+      tag-code: Código
+      tag-quotes: Citações
+      tag-emphasis: Ênfase
+      tag-strong: Forte
+      tag-links: Links
+      tag-inline-code: Código embutido
+      tag-generate: Gerar
+      tag-print-ie-use-a-pdf-printer-to-get-a-pdf-file: Imprimir (ou seja, usar uma impressora PDF para obter um arquivo PDF)
+  msgpack-to-json:
+    title: Pacote de mensagens para JSON
+    description: Converter arquivo MessagePack para JSON
+    texts:
+      title-input-message-pack-file-or-content: Arquivo ou conteúdo do pacote de mensagens de entrada
+      label-file: Arquivo
+      label-hex-content: "Conteúdo hexadecimal:"
+      title-drag-and-drop-msgpack-file-here-or-click-to-select-a-file:
+        Arraste e solte o arquivo MsgPack aqui ou clique para selecionar um
+        arquivo.
+      title-json-content: Conteúdo JSON
+  pdf-compressor:
+    title: Compressor de PDF
+    description: Otimize e comprima PDFs usando o Ghostscript.
+    texts:
+      label-screen-smallest: Tela (menor)
+      label-ebook-balanced: Livro eletrônico (equilibrado)
+      label-printer-high-quality: Impressora (alta qualidade)
+      label-prepress-best-quality: Pré-impressão (melhor qualidade)
+      label-pdf-1-4: PDF 1.4
+      label-pdf-1-5: PDF 1.5
+      label-pdf-1-6: PDF 1.6
+      label-pdf-1-7: PDF 1.7
+      label-compression-quality: "Qualidade da compressão:"
+      placeholder-select-compression-quality: Selecione a qualidade da compressão
+      label-compatibility-level: "Nível de compatibilidade:"
+      placeholder-select-compatibility-level: Selecione o nível de compatibilidade
+      title-drag-and-drop-a-pdf-file-here-or-click-to-select-a-file: Arraste e solte um arquivo PDF aqui ou clique para selecionar um arquivo.
+      title-logs: Registros
+      label-ghostscript: Script fantasma
+  serial-console:
+    title: Console de porta serial
+    description: Conectar, ler e enviar mensagens para a porta serial
+    texts:
+      label-9600: "9600"
+      label-19200: "19200"
+      label-38400: "38400"
+      label-57600: "57600"
+      label-115200: "115200"
+      label-lf-n: LF (\\n)
+      label-cr-r: CR (\\r)
+      label-crlf-r-n: CRLF (\\r\\n)
+      title-serial-terminal: Terminal serial
+      placeholder-baud-rate: Taxa de transmissão (Baud rate)
+      placeholder-line-ending: Fim de linha
+      placeholder-select-port: Selecione a porta
+      placeholder-type-a-command: Digite um comando...
+      tag-connect: Conectar
+      tag-disconnect: Desconectar
+      tag-send: Enviar
+  shamirs-secret-sharing:
+    title: Compartilhamento secreto de Shamir
+    description: Permitir o compartilhamento e a recomposição de um segredo usando Shamir.
+    texts:
+      label-text: Texto
+      label-hexadecimal: Hexadecimal
+      label-base64: Base64
+      label-secret-mode: "Modo Secreto:"
+      title-share-a-secret-split: Compartilhe um segredo (dividido)
+      label-secret: "Segredo:"
+      placeholder-enter-secret-text: Digite o texto secreto
+      label-threshold-minimum-shares-to-recover: "Limiar (número mínimo de ações para recuperação):"
+      label-number-of-shares: "Número de ações:"
+      title-generated-shares: Ações geradas
+      title-recombine-a-secret: Recombine um segredo
+      label-your-shares: "Suas ações:"
+      placeholder-paste-your-shares-here: Cole suas ações aqui...
+      title-recombined-secret: Segredo recombinado
+      tag-split-secret: Segredo Dividido
+      tag-recombine: Recombinar
+  short-urls-expander:
+    title: Expansor de URLs curtas
+    description: Expandir URLs curtas para exibir URLs completas
+    texts:
+      label-short-urls-to-expand: "URLs curtas para expandir:"
+      placeholder-enter-short-urls-one-per-line: Insira URLs curtas (uma por linha)
+      title-result: Resultado
+      tag-this-tool-make-use-of-https-cors-anywhere-com-to-bypass-cors-this-is-a-community-driven-server:
+        Esta ferramenta utiliza o https://cors-anywhere.com para contornar o
+        CORS. Este é um servidor mantido pela comunidade.
+      tag-see-here-for-more-information: Veja aqui para mais informações.
+      tag-expand-all: Expandir tudo
+      tag-download-resuls-as-csv: Baixar resultados em formato CSV
+      tag-short-url: URL curta
+      tag-expanded-url: URL expandida
+      tag-link: Link
+      tag-status: Status
+      tag-open-url: Abrir URL
 spanCopyable:
   copy: Copiar para a área de transferência
   copied: Copiado!

@@ -1,10 +1,11 @@
 import { ReportMoney } from '@vicons/tabler';
 import { defineTool } from '../tool';
+import { translate as t } from '@/plugins/i18n.plugin';
 
 export const tool = defineTool({
-  name: 'ETH Transaction Decoder',
+  name: t('tools.eth-transaction-decoder.title'),
   path: '/eth-transaction-decoder',
-  description: 'Ethereum transaction decoder with Smart Contract ABI',
+  description: t('tools.eth-transaction-decoder.description'),
   keywords: ['eth', 'ethereum', 'transaction', 'decoder'],
   component: () => import('./eth-transaction-decoder.vue'),
   icon: ReportMoney,

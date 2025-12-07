@@ -1,10 +1,11 @@
 import { Braces } from '@vicons/tabler';
 import { defineTool } from '../tool';
+import { translate as t } from '@/plugins/i18n.plugin';
 
 export const tool = defineTool({
-  name: 'JSON to TOON',
+  name: t('tools.json-to-toon.title'),
   path: '/json-to-toon',
-  description: 'Convert JSON object to TOON representation for LLM/GPT usage',
+  description: t('tools.json-to-toon.description'),
   keywords: ['json', 'llm', 'gpt', 'toon'],
   component: () => import('./json-to-toon.vue'),
   icon: Braces,

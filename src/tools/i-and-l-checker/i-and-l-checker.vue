@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n();
 const inputText = ref('');
 const ambiguousChars = ['I', 'l', '1', '0', 'O'];
 
@@ -22,8 +25,8 @@ const highlightedChars = computed(() => inputText.value.split(''));
       v-model:value="inputText"
       multiline
       mb-2
-      label="Text to check:"
-      placeholder="Paste your text here..."
+      :label="t('tools.i-and-l-checker.texts.label-text-to-check')"
+      :placeholder="t('tools.i-and-l-checker.texts.placeholder-paste-your-text-here')"
     />
 
     <c-card v-if="inputText" mb-1>
@@ -40,22 +43,22 @@ const highlightedChars = computed(() => inputText.value.split(''));
       </div>
     </c-card>
 
-    <c-card title="Legend">
+    <c-card :title="t('tools.i-and-l-checker.texts.title-legend')">
       <n-space class="legend" justify="center">
         <n-p>
-          <span class="letter" :style="{ backgroundColor: getColor('I') }">I</span> - Uppercase letter i
+          <span class="letter" :style="{ backgroundColor: getColor('I') }">{{ t('tools.i-and-l-checker.texts.tag-i') }}</span>{{ t('tools.i-and-l-checker.texts.tag-uppercase-letter-i') }}
         </n-p>
         <n-p>
-          <span class="letter" :style="{ backgroundColor: getColor('l') }">l</span> - Lowercase letter L
+          <span class="letter" :style="{ backgroundColor: getColor('l') }">{{ t('tools.i-and-l-checker.texts.tag-l') }}</span>{{ t('tools.i-and-l-checker.texts.tag-lowercase-letter-l') }}
         </n-p>
         <n-p>
-          <span class="letter" :style="{ backgroundColor: getColor('1') }">1</span> - Number 1
+          <span class="letter" :style="{ backgroundColor: getColor('1') }">{{ t('tools.i-and-l-checker.texts.tag-1') }}</span>{{ t('tools.i-and-l-checker.texts.tag-number-1') }}
         </n-p>
         <n-p>
-          <span class="letter" :style="{ backgroundColor: getColor('0') }">0</span> - Number 0
+          <span class="letter" :style="{ backgroundColor: getColor('0') }">{{ t('tools.i-and-l-checker.texts.tag-0') }}</span>{{ t('tools.i-and-l-checker.texts.tag-number-0') }}
         </n-p>
         <n-p>
-          <span class="letter" :style="{ backgroundColor: getColor('O') }">O</span> - Uppercase letter O
+          <span class="letter" :style="{ backgroundColor: getColor('O') }">{{ t('tools.i-and-l-checker.texts.tag-o') }}</span>{{ t('tools.i-and-l-checker.texts.tag-uppercase-letter-o') }}
         </n-p>
       </n-space>
     </c-card>

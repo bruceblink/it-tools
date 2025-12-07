@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { Buffer } from 'node:buffer';
+import { useI18n } from 'vue-i18n';
 import sss from 'shamirs-secret-sharing';
+
+const { t } = useI18n();
 
 const secret = ref('');
 const secretMode = ref<'hex' | 'utf8' | 'base64'>('utf8');
@@ -13,9 +16,9 @@ const recombinedSecret = ref('');
 const recombineError = ref('');
 
 const secretModes = [
-  { value: 'utf8', label: 'Text' },
-  { value: 'hex', label: 'Hexadecimal' },
-  { value: 'base64', label: 'Base64' },
+  { value: 'utf8', label: t('tools.shamirs-secret-sharing.texts.label-text') },
+  { value: 'hex', label: t('tools.shamirs-secret-sharing.texts.label-hexadecimal') },
+  { value: 'base64', label: t('tools.shamirs-secret-sharing.texts.label-base64') },
 ];
 
 function splitSecret() {
@@ -61,30 +64,30 @@ function recombineSecret() {
   <div>
     <c-select
       v-model:value="secretMode"
-      label="Secret Mode:"
+      :label="t('tools.shamirs-secret-sharing.texts.label-secret-mode')"
       label-position="left"
       :options="secretModes"
       mb-2
     />
-    <c-card title="Share a secret (split)">
+    <c-card :title="t('tools.shamirs-secret-sharing.texts.title-share-a-secret-split')">
       <NForm label-placement="left">
-        <NFormItem label="Secret:">
-          <NInput v-model:value="secret" placeholder="Enter secret text" />
+        <NFormItem :label="t('tools.shamirs-secret-sharing.texts.label-secret')">
+          <NInput v-model:value="secret" :placeholder="t('tools.shamirs-secret-sharing.texts.placeholder-enter-secret-text')" />
         </NFormItem>
 
         <n-space justify="center">
-          <NFormItem label="Threshold (minimum shares to recover):">
+          <NFormItem :label="t('tools.shamirs-secret-sharing.texts.label-threshold-minimum-shares-to-recover')">
             <NInputNumber v-model:value="threshold" :min="2" />
           </NFormItem>
 
-          <NFormItem label="Number of shares:">
+          <NFormItem :label="t('tools.shamirs-secret-sharing.texts.label-number-of-shares')">
             <NInputNumber v-model:value="shareCount" :min="2" />
           </NFormItem>
         </n-space>
 
         <n-space justify="center">
           <NButton type="primary" @click="splitSecret">
-            Split Secret
+            {{ t('tools.shamirs-secret-sharing.texts.tag-split-secret') }}
           </NButton>
         </n-space>
       </NForm>
@@ -92,28 +95,28 @@ function recombineSecret() {
       <c-alert v-if="sharesError">
         {{ sharesError }}
       </c-alert>
-      <c-card v-if="!sharesError && shares.length" title="Generated Shares">
+      <c-card v-if="!sharesError && shares.length" :title="t('tools.shamirs-secret-sharing.texts.title-generated-shares')">
         <template v-for="(share, idx) in shares" :key="idx">
           <input-copyable v-model:value="shares[idx]" readonly mb-1 />
         </template>
       </c-card>
     </c-card>
 
-    <c-card title="Recombine a secret">
+    <c-card :title="t('tools.shamirs-secret-sharing.texts.title-recombine-a-secret')">
       <c-input-text
         v-model:value="recombineInput"
-        label="Your shares:"
-        placeholder="Paste your shares here..."
+        :label="t('tools.shamirs-secret-sharing.texts.label-your-shares')"
+        :placeholder="t('tools.shamirs-secret-sharing.texts.placeholder-paste-your-shares-here')"
         rows="5"
         multiline
         mb-2
       />
       <n-space justify="center">
         <NButton type="success" @click="recombineSecret">
-          Recombine
+          {{ t('tools.shamirs-secret-sharing.texts.tag-recombine') }}
         </NButton>
       </n-space>
-      <c-card v-if="!recombineError" title="Recombined secret">
+      <c-card v-if="!recombineError" :title="t('tools.shamirs-secret-sharing.texts.title-recombined-secret')">
         <input-copyable :value="recombinedSecret" readonly />
       </c-card>
       <c-alert v-else>
