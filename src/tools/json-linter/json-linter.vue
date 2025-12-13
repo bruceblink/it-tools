@@ -37,7 +37,7 @@ const schemaUrl = useQueryParamOrStorage<string>({ name: 'schema', storageName: 
 const { schemas, errors: validationErrors } = useJsonSchemaValidation({ json: jsonContent, schemaUrl, schemaData });
 
 const indentSize = useITStorage('json-linter:indent-size', 3);
-const autoRepair = useITStorage('json-linter:repair', false);
+const autoRepair = useITStorage('json-linter:repair', true);
 const cleanJson = computed(() => {
   try {
     let jsonContentValue = jsonContent.value;

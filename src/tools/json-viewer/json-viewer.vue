@@ -21,7 +21,7 @@ const schemaData = useITStorage('json-prettify:schema-data', '');
 const indentSize = useITStorage('json-prettify:indent-size', 3);
 const sortKeys = useITStorage('json-prettify:sort-keys', true);
 const unescapeUnicode = useITStorage('json-prettify:unescape-unicode', false);
-const repairJson = useITStorage('json-prettify:repair-json', false);
+const repairJson = useITStorage('json-prettify:repair-json', true);
 const cleanJson = computed(() => withDefaultOnError(() => formatJson({ rawJson, indentSize, sortKeys, unescapeUnicode, repairJson }), ''));
 
 const rawJsonValidation = useValidation({
