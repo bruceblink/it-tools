@@ -235,6 +235,13 @@ Assuming you're already hosting it-tools behind a reverse proxy, you can configu
 
 (thanks @jogerj)
 
+## Deploy as LXC container
+
+In Proxmox VE, you can use docker image directly:
+```bash
+sudo lxc-create -n sharevb-it-tools -t oci -- --url docker://ghcr.io/sharevb/it-tools:latest
+```
+
 ## Contribute
 
 ### Recommended IDE Setup
