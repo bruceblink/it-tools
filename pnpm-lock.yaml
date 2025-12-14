@@ -219,6 +219,12 @@ importers:
       chardet:
         specifier: ^2.1.0
         version: 2.1.0
+      chart.js:
+        specifier: ^4.5.1
+        version: 4.5.1
+      chartjs-plugin-zoom:
+        specifier: ^2.2.0
+        version: 2.2.0(chart.js@4.5.1)
       chatgpt-prompt-splitter:
         specifier: ^1.0.5
         version: 1.0.5
@@ -3052,6 +3058,9 @@ packages:
     resolution: {integrity: sha512-uhImwxvKLSxER8+ikuKpI2mnX7viL+POSnKAgDCFx+sVuRTD9/KkHFH1Gaw7EegVbCtDNKBTnECIK+GWxkpZRA==}
     engines: {node: '>= 10'}
 
+  '@kurkle/color@0.3.4':
+    resolution: {integrity: sha512-M5UknZPHRu3DEDWoipU6sE8PdkZ6Z/S+v4dD+Ke8IaNlpdSQah50lz1KtcFBa2vsdOnwbbnxJwVM4wty6udA5w==}
+
   '@langfreak/convert-layout@0.11.2':
     resolution: {integrity: sha512-O0k7+cnb5uMPbaBYJ42aLilOdi/d4c8e2MVxjXb+zTBdbR/3tJpaeXN8xOu3qMNoJKyyT9979EDF6bY/gFKAmw==}
 
@@ -4065,6 +4074,9 @@ packages:
 
   '@types/geojson@7946.0.16':
     resolution: {integrity: sha512-6C8nqWur3j98U6+lXDfTUWIfgvZU+EumvpHKcYjujKH7woYyLj2sUmff0tRhrqM7BohUw7Pz3ZB1jj2gW9Fvmg==}
+
+  '@types/hammerjs@2.0.46':
+    resolution: {integrity: sha512-ynRvcq6wvqexJ9brDMS4BnBLzmr0e14d6ZJTEShTBWKymQiHwlAyGu0ZPEFI2Fh1U53F7tN9ufClWM5KvqkKOw==}
 
   '@types/har-format@1.2.16':
     resolution: {integrity: sha512-fluxdy7ryD3MV6h8pTfTYpy/xQzCFC7m89nOH9y94cNqJ1mDIDPut7MnRHI3F6qRmh/cT2fUjG1MLdCNb4hE9A==}
@@ -5328,6 +5340,15 @@ packages:
 
   chardet@2.1.0:
     resolution: {integrity: sha512-bNFETTG/pM5ryzQ9Ad0lJOTa6HWD/YsScAR3EnCPZRPlQh77JocYktSHOUHelyhm8IARL+o4c4F1bP5KVOjiRA==}
+
+  chart.js@4.5.1:
+    resolution: {integrity: sha512-GIjfiT9dbmHRiYi6Nl2yFCq7kkwdkp1W/lp2J99rX0yo9tgJGn3lKQATztIjb5tVtevcBtIdICNWqlq5+E8/Pw==}
+    engines: {pnpm: '>=8'}
+
+  chartjs-plugin-zoom@2.2.0:
+    resolution: {integrity: sha512-in6kcdiTlP6npIVLMd4zXZ08PDUXC52gZ4FAy5oyjk1zX3gKarXMAof7B9eFiisf9WOC3bh2saHg+J5WtLXZeA==}
+    peerDependencies:
+      chart.js: '>=3.2.0'
 
   chatgpt-prompt-splitter@1.0.5:
     resolution: {integrity: sha512-8buXXnxZ5Y5BloPTMEhGTVld9vrVB8WVrUFrjgOpIJ4/VsT+rTnLszbaS1L1KAB0SDSCqj8GU472S2gMyhH8EA==}
@@ -7136,6 +7157,10 @@ packages:
 
   hachure-fill@0.5.2:
     resolution: {integrity: sha512-3GKBOn+m2LX9iq+JC1064cSFprJY4jL1jCXTcpnfER5HYE2l/4EfWSGzkPa/ZDBmYI0ZOEj5VHV/eKnPGkHuOg==}
+
+  hammerjs@2.0.8:
+    resolution: {integrity: sha512-tSQXBXS/MWQOn/RKckawJ61vvsDpCom87JgxiYdGwHdOa0ht0vzUWDlfioofFCRU0L+6NGDt6XzbgoJvZkMeRQ==}
+    engines: {node: '>=0.8.0'}
 
   has-bigints@1.0.2:
     resolution: {integrity: sha512-tSvCKtBr9lkF0Ex0aQiP9N+OpV4zi2r/Nee5VkRDbaqv35RLYMzbwQfFSZZH0kR+Rd6302UJZ2p/bJCEoR3VoQ==}
@@ -13995,6 +14020,8 @@ snapshots:
       '@kenjiuno/decompressrtf': 0.1.4
       iconv-lite: 0.6.3
 
+  '@kurkle/color@0.3.4': {}
+
   '@langfreak/convert-layout@0.11.2':
     dependencies:
       fs-extra: 11.3.2
@@ -15032,6 +15059,8 @@ snapshots:
   '@types/gensync@1.0.4': {}
 
   '@types/geojson@7946.0.16': {}
+
+  '@types/hammerjs@2.0.46': {}
 
   '@types/har-format@1.2.16': {}
 
@@ -16571,6 +16600,16 @@ snapshots:
   character-reference-invalid@1.1.4: {}
 
   chardet@2.1.0: {}
+
+  chart.js@4.5.1:
+    dependencies:
+      '@kurkle/color': 0.3.4
+
+  chartjs-plugin-zoom@2.2.0(chart.js@4.5.1):
+    dependencies:
+      '@types/hammerjs': 2.0.46
+      chart.js: 4.5.1
+      hammerjs: 2.0.8
 
   chatgpt-prompt-splitter@1.0.5: {}
 
@@ -18650,6 +18689,8 @@ snapshots:
       duplexer: 0.1.2
 
   hachure-fill@0.5.2: {}
+
+  hammerjs@2.0.8: {}
 
   has-bigints@1.0.2: {}
 
