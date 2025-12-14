@@ -801,6 +801,9 @@ importers:
       spdx-satisfies:
         specifier: ^6.0.0
         version: 6.0.0
+      sponge-case:
+        specifier: ^2.0.3
+        version: 2.0.3
       sql-formatter:
         specifier: ^15.6.6
         version: 15.6.6
@@ -822,6 +825,9 @@ importers:
       swagger-ui-dist:
         specifier: ^5.27.0
         version: 5.27.0
+      swap-case:
+        specifier: ^3.0.3
+        version: 3.0.3
       tesseract.js:
         specifier: ^5.1.1
         version: 5.1.1
@@ -834,6 +840,9 @@ importers:
       tidy-url:
         specifier: ^1.18.3
         version: 1.18.3
+      title-case:
+        specifier: ^4.3.2
+        version: 4.3.2
       to-double-quotes:
         specifier: ^4.0.0
         version: 4.0.0
@@ -9967,6 +9976,9 @@ packages:
   split@0.3.3:
     resolution: {integrity: sha512-wD2AeVmxXRBoX44wAycgjVpMhvbwdI2aZjCkvfNcH1YqHQvJVa1duWc73OyVGJUc05fhFaTZeQ/PYsrmyH0JVA==}
 
+  sponge-case@2.0.3:
+    resolution: {integrity: sha512-i4h9ZGRfxV6Xw3mpZSFOfbXjf0cQcYmssGWutgNIfFZ2VM+YIWfD71N/kjjwK6X/AAHzBr+rciEcn/L34S8TGw==}
+
   sprintf-js@1.0.3:
     resolution: {integrity: sha512-D9cPgkvLlV3t3IzL0D0YLvGA9Ahk4PcvVwUbN0dSGr1aP0Nrt4AEnTUbuGvquEC0mA64Gqt1fzirlRs5ibXx8g==}
 
@@ -10182,6 +10194,9 @@ packages:
   swap-case@1.1.2:
     resolution: {integrity: sha512-BAmWG6/bx8syfc6qXPprof3Mn5vQgf5dwdUNJhsNqU9WdPt5P+ES/wQ5bxfijy8zwZgZZHslC3iAsxsuQMCzJQ==}
 
+  swap-case@3.0.3:
+    resolution: {integrity: sha512-6p4op8wE9CQv7uDFzulI6YXUw4lD9n4oQierdbFThEKVWVQcbQcUjdP27W8XE7V4QnWmnq9jueSHceyyQnqQVA==}
+
   symbol-tree@3.2.4:
     resolution: {integrity: sha512-9QNk5KwDF+Bvz+PyObkmSYjI5ksVUYtjW7AU22r2NKcfLJcXp96hkDWU3+XndOsUb+AQ9QhfzfCT2O+CNWT5Tw==}
 
@@ -10324,6 +10339,9 @@ packages:
 
   title-case@2.1.1:
     resolution: {integrity: sha512-EkJoZ2O3zdCz3zJsYCsxyq2OC5hrxR9mfdd5I+w8h/tmFfeOxJ+vvkxsKxdmN0WtS9zLdHEgfgVOiMVgv+Po4Q==}
+
+  title-case@4.3.2:
+    resolution: {integrity: sha512-I/nkcBo73mO42Idfv08jhInV61IMb61OdIFxk+B4Gu1oBjWBPOLmhZdsli+oJCVaD+86pYQA93cJfFt224ZFAA==}
 
   tlds@1.255.0:
     resolution: {integrity: sha512-tcwMRIioTcF/FcxLev8MJWxCp+GUALRhFEqbDoZrnowmKSGqPrl5pqS+Sut2m8BgJ6S4FExCSSpGffZ0Tks6Aw==}
@@ -21729,6 +21747,8 @@ snapshots:
     dependencies:
       through: 2.3.8
 
+  sponge-case@2.0.3: {}
+
   sprintf-js@1.0.3: {}
 
   sprintf-js@1.1.3: {}
@@ -22014,6 +22034,8 @@ snapshots:
       lower-case: 1.1.4
       upper-case: 1.1.3
 
+  swap-case@3.0.3: {}
+
   symbol-tree@3.2.4: {}
 
   synckit@0.8.5:
@@ -22194,6 +22216,8 @@ snapshots:
     dependencies:
       no-case: 2.3.2
       upper-case: 1.1.3
+
+  title-case@4.3.2: {}
 
   tlds@1.255.0: {}
 

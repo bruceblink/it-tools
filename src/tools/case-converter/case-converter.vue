@@ -13,6 +13,10 @@ import {
   snakeCase,
   trainCase,
 } from 'change-case';
+import { spongeCase } from 'sponge-case';
+import { swapCase } from 'swap-case';
+import { titleCase } from 'title-case';
+
 import InputCopyable from '../../components/InputCopyable.vue';
 import { useQueryParam, useQueryParamOrStorage } from '@/composable/queryParams';
 import { useValidation } from '@/composable/validation';
@@ -54,6 +58,10 @@ const formats = computed(() => [
   {
     label: t('tools.case-converter.texts.label-camelcase'),
     value: camelCase(inputCleaned.value),
+  },
+  {
+    label: t('tools.case-converter.texts.label-titlecase'),
+    value: titleCase(inputCleaned.value),
   },
   {
     label: t('tools.case-converter.texts.label-capitalcase'),
@@ -101,6 +109,14 @@ const formats = computed(() => [
       .split('')
       .map((char, index) => (index % 2 === 0 ? char.toUpperCase() : char.toLowerCase()))
       .join(''),
+  },
+  {
+    label: t('tools.case-converter.texts.label-spongecase'),
+    value: spongeCase(inputCleaned.value),
+  },
+  {
+    label: t('tools.case-converter.texts.label-swapcase'),
+    value: swapCase(inputCleaned.value),
   },
 ]);
 

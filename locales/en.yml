@@ -595,6 +595,9 @@ tools:
       placeholder-your-string: Your string...
       label-cleaning-regex: 'Cleaning regex:'
       placeholder-your-cleaning-regex: Your cleaning regex...
+      label-titlecase: 'Titlecase:'
+      label-spongecase: 'Spongecase:'
+      label-swapcase: 'Swapcase:'
   html-entities:
     title: Escape HTML entities
     description: >-
