@@ -1,6 +1,6 @@
 import { type MaybeRef, get } from '@vueuse/core';
 import { jsonrepair } from 'jsonrepair';
-import '@/utils/json5-bigint';
+import '@/utils/json5-bignum';
 
 export { sortObjectKeys, formatJson };
 
@@ -18,7 +18,7 @@ function sortObjectKeys<T>(obj: T): T {
     .reduce((sortedObj, key) => {
       sortedObj[key] = sortObjectKeys((obj as Record<string, unknown>)[key]);
       return sortedObj;
-    }, {} as Record<string, unknown>) as T;
+    }, Object.create(obj, {}) as Record<string, unknown>) as T;
 }
 
 function unescapeUnicodeJSON(str: string) {
@@ -42,7 +42,7 @@ function formatJson({
 }) {
   const unwrappedJson = get(rawJson);
   const jsonString = get(repairJson) ? jsonrepair(unwrappedJson) : unwrappedJson;
-  const parsedObject = JSON.parseBigInt(get(unescapeUnicode) ? unescapeUnicodeJSON(jsonString) : jsonString);
+  const parsedObject = JSON.parseBigNum(get(unescapeUnicode) ? unescapeUnicodeJSON(jsonString) : jsonString);
 
   return JSON.stringify(get(sortKeys) ? sortObjectKeys(parsedObject) : parsedObject, null, get(indentSize));
 }

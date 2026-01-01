@@ -54,7 +54,7 @@ const formattedJson = computed(() => {
   const jsonTextValue = jsonText.value;
   try {
     return JSON.stringify(
-      JSON.parseBigInt(jsonTextValue),
+      JSON.parseBigNum(jsonTextValue),
       null, indentSize.value);
   }
   catch {

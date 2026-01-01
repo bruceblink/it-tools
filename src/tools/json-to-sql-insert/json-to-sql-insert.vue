@@ -22,7 +22,7 @@ const tableName = useQueryParamOrStorage({ name: 'table', storageName: 'json-to-
 
 const sqlOutput = computed(() => {
   try {
-    let arr = JSON.parseBigInt(jsonInput.value);
+    let arr = JSON.parseBigNum(jsonInput.value);
     if (!Array.isArray(arr)) {
       arr = [arr];
     }

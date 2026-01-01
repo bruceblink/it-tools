@@ -26,7 +26,7 @@ const result = computedAsync(async () => {
   const jqtypeValue = jqtype.value;
 
   try {
-    const obj = JSON.parseBigInt(jsonString);
+    const obj = JSON.parseBigNum(jsonString);
     if (jqtypeValue === 'jq') {
       return JSON.stringify(await jq.json(obj, jqOrJsonPathString), null, indent);
     }

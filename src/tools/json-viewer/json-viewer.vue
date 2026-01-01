@@ -28,7 +28,7 @@ const rawJsonValidation = useValidation({
   source: rawJson,
   rules: [
     {
-      validator: v => v === '' || (get(repairJson) ? jsonrepair(v) : JSON.parseBigInt(v)),
+      validator: v => v === '' || (get(repairJson) ? jsonrepair(v) : JSON.parseBigNum(v)),
       get message() {
         return t('tools.json-viewer.text.provided-json-is-not-valid') + (!get(repairJson) ? t('tools.json-viewer.text.try-again-with-repairjsonlabel', [repairJsonLabel]) : '');
       },
