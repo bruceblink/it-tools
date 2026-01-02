@@ -2,7 +2,7 @@
 import { onMounted } from 'vue';
 import { useLocalStorage } from '@vueuse/core';
 
-const options = useLocalStorage<{ label: string; value: string }[]>('gitattr-gen:opts', []);
+const options = useLocalStorage<{ label: string; value: string }[]>('gitattr-gen:opts2', []);
 const selected = ref<string[]>([]);
 const output = ref<string>('');
 
@@ -19,17 +19,49 @@ async function loadOptions() {
     return;
   }
 
-  const res = await fetch('https://api.github.com/repos/alexkaratarakis/gitattributes/contents');
-  const files = await res.json();
-  options.value = files
-    .filter((f: any) => f.name.endsWith('.gitattributes'))
-    .map((f: any) => f.name.replace('.gitattributes', ''))
-    .filter(Boolean)
-    .map((name: string) => ({
+  try {
+    const res = await fetch('https://api.github.com/repos/alexkaratarakis/gitattributes/git/trees/master?recursive=true');
+    const files = await res.json();
+    options.value = files.tree
+      .filter((f: any) => f.path.endsWith('.gitattributes'))
+      .map((f: any) => f.path.replace('.gitattributes', ''))
+      .filter(Boolean)
+      .map((name: string) => ({
+        label: name,
+        value: name,
+      }));
+    lastFetched.value = now;
+  }
+  catch {
+    options.value = [
+      'ActionScript',
+      'Ada',
+      'Ballerina',
+      'C++',
+      'CSharp',
+      'Common',
+      'Delphi',
+      'Drupal',
+      'Fortran',
+      'Fountain',
+      'Go',
+      'Java',
+      'Lua',
+      'Matlab',
+      'ObjectiveC',
+      'Pascal',
+      'Perl',
+      'Python',
+      'R',
+      'Rails',
+      'Servoy',
+      'VisualStudio',
+      'Web',
+    ].map(name => ({
       label: name,
       value: name,
     }));
-  lastFetched.value = now;
+  }
 }
 
 async function generateOutput() {
