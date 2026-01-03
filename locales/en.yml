@@ -749,6 +749,7 @@ tools:
       tag-hey: Hey!
       tag-welcome-to-this-html-wysiwyg-editor: Welcome to this html wysiwyg editor
       tag-click-here-to-paste-or-edit-raw-html: Click here to paste or edit raw html
+      label-xhtmlfy: 'XHtml:'
   yaml-to-toml:
     title: YAML to TOML
     description: Parse and convert YAML to TOML.
