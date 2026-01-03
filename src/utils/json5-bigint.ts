@@ -30,14 +30,15 @@ JSON.parseBigInt = function (jsonStr: string, options?: { minDigits?: number }):
   return JSON5.parse(safeStr, (_key, value) => {
     if (typeof value === 'string') {
       if (bigintRegex.test(value)) {
+        const bigintValue = value.slice(1, -1);
         try {
           if (typeof BigInt !== 'undefined') {
             // take only part xxx between ¤xxx¤
-            return BigInt(value.substring(1, value.length - 1));
+            return BigInt(bigintValue);
           }
         }
         catch {
-          return value;
+          return bigintValue;
         }
       }
     }

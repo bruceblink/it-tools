@@ -29,9 +29,9 @@ JSON.parseBigNum = function (jsonStr: string): unknown {
   return JSON5.parse(safeStr, (_key, value) => {
     if (typeof value === 'string') {
       if (bignumRegex.test(value)) {
+        // take only part xxx between ¤xxx¤
+        const number_string = value.slice(1, -1);
         try {
-          // take only part xxx between ¤xxx¤
-          const number_string = value.substring(1, value.length - 1);
           const full_precision = new Decimal(number_string);
           const json_number = Number(number_string);
           if (json_number.toString() === full_precision.toString()) {
@@ -42,7 +42,7 @@ JSON.parseBigNum = function (jsonStr: string): unknown {
           }
         }
         catch {
-          return value;
+          return number_string;
         }
       }
     }
