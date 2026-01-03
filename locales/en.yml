@@ -5574,6 +5574,12 @@ tools:
       heading-1: Heading 1
       inline-code: Inline code
       strike: Strike
+      heading-5: Heading 5
+      text-left: Align Left
+      text-center: Align Center
+      text-right: Align Right
+      text-justify: Align Justify
+      clear-align: Clear Alignment
   unicode-formatter:
     title: Unicode Formatter
     description: Format text using Unicode fonts
