@@ -5707,7 +5707,7 @@ tools:
   tool:
     layout:
       text:
-        made-with-npmpackages-join-n: Made with {0}\n
+        made-with-npmpackages: Made with {0}
   json-viewer:
     texts:
       label-sort-keys: "Sort keys :"
